@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">اودن</string>
+    <string name="information">ڄاڻ</string>
+    <string name="share">حصيداري ڪريو</string>
+    <string name="action_select_all">سڀ چونڊيو</string>
+    <string name="no_activity_found_to_handle_uri">ڪا به ايپليڪيشن نه ملي جيڪا هن قسم جي فائل کي سپورٽ ڪري.</string>
+    <string name="documentation">دستاويزي</string>
+    <string name="no_marked_file_delete">حذف ڪرڻ لاءِ ڪا به فائل نشان نه آهي</string>
+    <string name="file_not_found">فائل ڊائون لوڊ نه ٿي سگھي</string>
+    <string name="name_not_valid">نالو صحيح ناهي</string>
+
+    <string name="delete">حذف ڪريو</string>
+    <string name="revert_operation">موٽڻ</string>
+    <string name="delete_files">فائلون حذف ڪرڻ</string>
+    <string name="delete_file">فائل ڊليٽ ڪرڻ</string>
+
+
+    <string name="share_link">لنڪ شيئر ڪريو</string>
+    <string name="warning">ڊيڄاريندڙ</string>
+    <string name="reset_application_data">سڀ ايپليڪيشن ڊيٽا ختم ٿي ويندي.</string>
+
+
+    <string name="homepage">هوم صفحو</string>
+    <string name="title">عنوان</string>
+    <string name="home">گهر</string>
+    <string name="files">فائلون</string>
+    <string name="file_menu">فائل مينيو</string>
+
+
+    <string name="uri_qrcode">URI QR ڪوڊ</string>
+    <string name="important">اهم</string>
+
+    <string name="files_view">فائلون ڏسو</string>
+    <string name="port">پورٽ</string>
+    <string name="unknown">پهچ: اڻڄاتل</string>
+    <string name="local_network">رسائي: مقامي نيٽ ورڪ</string>
+    <string name="relays_network">پهچ: رلي ۽ مقامي نيٽ ورڪ</string>
+
+    <string name="limitation">ڊيٽا شيئرنگ صرف IPv6 پروٽوڪول استعمال ڪندي ساٿين سان ممڪن آهي.</string>
+    <string name="relays">رلي</string>
+    <string name="connections">ڪنيڪشن</string>
+    <string name="reset">ري سيٽ ڪريو</string>
+</resources>

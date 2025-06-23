@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ʻOdin</string>
+    <string name="information">ʻIkepili</string>
+    <string name="share">Kaʻana like</string>
+    <string name="action_select_all">E koho i nā mea a pau</string>
+    <string name="no_activity_found_to_handle_uri">ʻAʻohe palapala i loaʻa e kākoʻo ana i kēia ʻano faila.</string>
+    <string name="documentation">Palapala</string>
+    <string name="no_marked_file_delete">ʻAʻohe faila i kaha ʻia no ka holoi ʻana</string>
+    <string name="file_not_found">ʻAʻole hiki ke hoʻoiho ʻia ka faila</string>
+    <string name="name_not_valid">ʻAʻole kūpono ka inoa</string>
+
+    <string name="delete">Holoi</string>
+    <string name="revert_operation">Hoʻi hou</string>
+    <string name="delete_files">Holoi ʻia nā faila</string>
+    <string name="delete_file">Holoi waihona</string>
+
+
+    <string name="share_link">Kaʻana like</string>
+    <string name="warning">ʻŌlelo aʻo</string>
+    <string name="reset_application_data">E holoi ʻia nā ʻikepili noi a pau.</string>
+
+
+    <string name="homepage">ʻaoʻao home</string>
+    <string name="title">Poʻo inoa</string>
+    <string name="home">Home</string>
+    <string name="files">Nā waihona</string>
+    <string name="file_menu">Papa kuhikuhi waihona</string>
+
+
+    <string name="uri_qrcode">URI QR code</string>
+    <string name="important">Mea nui</string>
+
+    <string name="files_view">Nānā Kōnae</string>
+    <string name="port">Awa</string>
+    <string name="unknown">Loaʻa: ʻAʻole ʻike ʻia</string>
+    <string name="local_network">Hiki ke kiʻi ʻia: Pūnaewele kūloko</string>
+    <string name="relays_network">Hiki ke kiʻi: Relays a me ka pūnaewele kūloko</string>
+
+    <string name="limitation">Hiki ke kaʻana like ʻikepili me nā hoa e hoʻohana ana i ka protocol IPv6.</string>
+    <string name="relays">Nā Relay</string>
+    <string name="connections">Nā pilina</string>
+    <string name="reset">Hoʻoponopono hou</string>
+</resources>

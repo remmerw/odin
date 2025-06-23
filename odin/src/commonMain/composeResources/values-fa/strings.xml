@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">اودین</string>
+    <string name="information">اطلاعات</string>
+    <string name="share">اشتراک گذاری</string>
+    <string name="action_select_all">انتخاب همه</string>
+    <string name="no_activity_found_to_handle_uri">هیچ برنامه‌ای یافت نشد که از این نوع فایل پشتیبانی کند.</string>
+    <string name="documentation">مستندات</string>
+    <string name="no_marked_file_delete">هیچ فایلی برای حذف علامت گذاری نشده است</string>
+    <string name="file_not_found">فایل دانلود نشد</string>
+    <string name="name_not_valid">نام معتبر نیست</string>
+
+    <string name="delete">حذف</string>
+    <string name="revert_operation">برگردانید</string>
+    <string name="delete_files">فایل ها در حال حذف شدن</string>
+    <string name="delete_file">در حال حذف فایل</string>
+
+
+    <string name="share_link">لینک را به اشتراک بگذارید</string>
+    <string name="warning">هشدار</string>
+    <string name="reset_application_data">تمام داده های برنامه حذف خواهد شد.</string>
+
+
+    <string name="homepage">صفحه نخست</string>
+    <string name="title">عنوان</string>
+    <string name="home">صفحه اصلی</string>
+    <string name="files">فایل ها</string>
+    <string name="file_menu">منوی فایل</string>
+
+
+    <string name="uri_qrcode">کد QR URI</string>
+    <string name="important">مهم</string>
+
+    <string name="files_view">مشاهده فایل ها</string>
+    <string name="port">بندر</string>
+    <string name="unknown">قابلیت دسترسی: نامعلوم</string>
+    <string name="local_network">قابلیت دسترسی: شبکه محلی</string>
+    <string name="relays_network">قابلیت دسترسی: رله ها و شبکه محلی</string>
+
+    <string name="limitation">به اشتراک گذاری داده تنها با همتایان با استفاده از پروتکل IPv6 امکان پذیر است.</string>
+    <string name="relays">رله ها</string>
+    <string name="connections">اتصالات</string>
+    <string name="reset">بازنشانی کنید</string>
+</resources>

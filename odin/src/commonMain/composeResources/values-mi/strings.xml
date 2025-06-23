@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Nga korero</string>
+    <string name="share">Tiri</string>
+    <string name="action_select_all">Tīpakohia Katoa</string>
+    <string name="no_activity_found_to_handle_uri">Kaore i kitea he tono e tautoko ana i tenei momo konae.</string>
+    <string name="documentation">Tuhinga</string>
+    <string name="no_marked_file_delete">Karekau he konae kua tohua hei muku</string>
+    <string name="file_not_found">Kāore i taea te tiki kōnae</string>
+    <string name="name_not_valid">Ko te ingoa kaore e tika</string>
+
+    <string name="delete">Mukua</string>
+    <string name="revert_operation">Whakahoki</string>
+    <string name="delete_files">Ka mukua nga konae</string>
+    <string name="delete_file">Te muku kōnae</string>
+
+
+    <string name="share_link">Tiri Hononga</string>
+    <string name="warning">Whakatupato</string>
+    <string name="reset_application_data">Ka mukua nga raraunga tono katoa.</string>
+
+
+    <string name="homepage">Whārangi Kāinga</string>
+    <string name="title">Taitara</string>
+    <string name="home">Kainga</string>
+    <string name="files">Kōnae</string>
+    <string name="file_menu">Tahua Kōnae</string>
+
+
+    <string name="uri_qrcode">URI QR waehere</string>
+    <string name="important">He mea nui</string>
+
+    <string name="files_view">Tirohanga Kōnae</string>
+    <string name="port">Tauranga</string>
+    <string name="unknown">Taeatanga : Kaore i te mohiotia</string>
+    <string name="local_network">Taeatanga : Whatunga Paetata</string>
+    <string name="relays_network">Taeatanga : Relay me te Whatunga Paetata</string>
+
+    <string name="limitation">Ka taea anake te tiri raraunga me nga hoa e whakamahi ana i te kawa IPv6.</string>
+    <string name="relays">Rerei</string>
+    <string name="connections">Hononga</string>
+    <string name="reset">Tautuhi Anō</string>
+</resources>

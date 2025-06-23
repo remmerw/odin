@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Enfòmasyon</string>
+    <string name="share">Pataje</string>
+    <string name="action_select_all">Seleksyone tout</string>
+    <string name="no_activity_found_to_handle_uri">Pa jwenn okenn aplikasyon ki sipòte kalite dosye sa a.</string>
+    <string name="documentation">Dokimantasyon</string>
+    <string name="no_marked_file_delete">Pa gen fichye ki make pou efase</string>
+    <string name="file_not_found">Fichye pa t \'kapab telechaje</string>
+    <string name="name_not_valid">Non pa valab</string>
+
+    <string name="delete">Efase</string>
+    <string name="revert_operation">Retounen</string>
+    <string name="delete_files">Fichye efase</string>
+    <string name="delete_file">File efase</string>
+
+
+    <string name="share_link">Pataje Link</string>
+    <string name="warning">Avètisman</string>
+    <string name="reset_application_data">Tout done aplikasyon yo pral efase.</string>
+
+
+    <string name="homepage">Paj dakèy</string>
+    <string name="title">Tit</string>
+    <string name="home">Lakay</string>
+    <string name="files">Dosye</string>
+    <string name="file_menu">File Menu</string>
+
+
+    <string name="uri_qrcode">URI kòd QR</string>
+    <string name="important">Enpòtan</string>
+
+    <string name="files_view">Fichye View</string>
+    <string name="port">Port</string>
+    <string name="unknown">Reachability: Enkoni</string>
+    <string name="local_network">Reachability: Rezo lokal</string>
+    <string name="relays_network">Reachability: rle ak rezo lokal</string>
+
+    <string name="limitation">Pataj done se sèlman posib ak kamarad yo lè l sèvi avèk pwotokòl IPv6 la.</string>
+    <string name="relays">Relè</string>
+    <string name="connections">Koneksyon</string>
+    <string name="reset">Reyajiste</string>
+</resources>

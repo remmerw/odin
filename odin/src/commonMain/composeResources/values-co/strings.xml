@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odinu</string>
+    <string name="information">infurmazione</string>
+    <string name="share">sparte</string>
+    <string name="action_select_all">Selezziunà tuttu</string>
+    <string name="no_activity_found_to_handle_uri">Nisuna applicazione truvata chì sustene stu tipu di fugliale.</string>
+    <string name="documentation">Documentazione</string>
+    <string name="no_marked_file_delete">Nisun schedariu marcatu per sguassà</string>
+    <string name="file_not_found">U schedariu ùn pò esse scaricatu</string>
+    <string name="name_not_valid">U nome ùn hè micca validu</string>
+
+    <string name="delete">Sguassà</string>
+    <string name="revert_operation">Ritorna</string>
+    <string name="delete_files">Cancellazione di schedari</string>
+    <string name="delete_file">Eliminazione di u schedariu</string>
+
+
+    <string name="share_link">Share Link</string>
+    <string name="warning">Attenzione</string>
+    <string name="reset_application_data">Tutti i dati di l\'applicazione seranu sguassati.</string>
+
+
+    <string name="homepage">Homepage</string>
+    <string name="title">Titulu</string>
+    <string name="home">A casa</string>
+    <string name="files">I schedari</string>
+    <string name="file_menu">Menu File</string>
+
+
+    <string name="uri_qrcode">Codice QR URI</string>
+    <string name="important">Impurtante</string>
+
+    <string name="files_view">File View</string>
+    <string name="port">Portu</string>
+    <string name="unknown">Raggiungibilità: scunnisciutu</string>
+    <string name="local_network">Raggiungibilità: Rete Locale</string>
+    <string name="relays_network">Raggiungibilità: Relè è Rete Locale</string>
+
+    <string name="limitation">A spartera di dati hè pussibule solu cù i pari chì utilizanu u protocolu IPv6.</string>
+    <string name="relays">Relè</string>
+    <string name="connections">Cunnessioni</string>
+    <string name="reset">Resettate</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Ma `lumot</string>
+    <string name="share">Ulashish</string>
+    <string name="action_select_all">Hammasini belgilash</string>
+    <string name="no_activity_found_to_handle_uri">Bunday faylni qo\'llab-quvvatlaydigan dastur topilmadi.</string>
+    <string name="documentation">Hujjatlar</string>
+    <string name="no_marked_file_delete">Hech qanday fayl oʻchirish uchun belgilanmagan</string>
+    <string name="file_not_found">Faylni yuklab bo‘lmadi</string>
+    <string name="name_not_valid">Nomi yaroqsiz</string>
+
+    <string name="delete">Oʻchirish</string>
+    <string name="revert_operation">Orqaga qaytarish</string>
+    <string name="delete_files">Fayllarni o\'chirish</string>
+    <string name="delete_file">Faylni o\'chirish</string>
+
+
+    <string name="share_link">Havola ulashish</string>
+    <string name="warning">Ogohlantirish</string>
+    <string name="reset_application_data">Barcha ilova maʼlumotlari oʻchirib tashlanadi.</string>
+
+
+    <string name="homepage">Bosh sahifa</string>
+    <string name="title">Sarlavha</string>
+    <string name="home">Uy</string>
+    <string name="files">Fayllar</string>
+    <string name="file_menu">Fayl menyusi</string>
+
+
+    <string name="uri_qrcode">URI QR kodi</string>
+    <string name="important">Muhim</string>
+
+    <string name="files_view">Fayllarni ko\'rish</string>
+    <string name="port">Port</string>
+    <string name="unknown">Qabul qilish imkoniyati: noma\'lum</string>
+    <string name="local_network">Qabul qilish imkoniyati: Mahalliy tarmoq</string>
+    <string name="relays_network">Erish imkoniyati: o\'rni va mahalliy tarmoq</string>
+
+    <string name="limitation">Ma\'lumot almashish faqat IPv6 protokolidan foydalanadigan tengdoshlar bilan mumkin.</string>
+    <string name="relays">Relelar</string>
+    <string name="connections">Ulanishlar</string>
+    <string name="reset">Qayta o\'rnatish</string>
+</resources>

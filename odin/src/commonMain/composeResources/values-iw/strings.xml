@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">אודין</string>
+    <string name="information">מֵידָע</string>
+    <string name="share">לַחֲלוֹק</string>
+    <string name="action_select_all">בחר הכל</string>
+    <string name="no_activity_found_to_handle_uri">לא נמצאה אפליקציה שתומכת בקובץ מסוג זה.</string>
+    <string name="documentation">תיעוד</string>
+    <string name="no_marked_file_delete">אין קבצים מסומנים למחיקה</string>
+    <string name="file_not_found">לא ניתן היה להוריד את הקובץ</string>
+    <string name="name_not_valid">השם לא חוקי</string>
+
+    <string name="delete">לִמְחוֹק</string>
+    <string name="revert_operation">לַחֲזוֹר</string>
+    <string name="delete_files">מחיקת קבצים</string>
+    <string name="delete_file">מחיקת קובץ</string>
+
+
+    <string name="share_link">שתף קישור</string>
+    <string name="warning">אַזהָרָה</string>
+    <string name="reset_application_data">כל נתוני האפליקציה יימחקו.</string>
+
+
+    <string name="homepage">דף הבית</string>
+    <string name="title">כותרת</string>
+    <string name="home">בית</string>
+    <string name="files">קבצים</string>
+    <string name="file_menu">תפריט קבצים</string>
+
+
+    <string name="uri_qrcode">קוד QR של URI</string>
+    <string name="important">חָשׁוּב</string>
+
+    <string name="files_view">תצוגת קבצים</string>
+    <string name="port">נמל</string>
+    <string name="unknown">הגעה: לא ידוע</string>
+    <string name="local_network">גישה: רשת מקומית</string>
+    <string name="relays_network">גישה: ממסרים ורשת מקומית</string>
+
+    <string name="limitation">שיתוף נתונים אפשרי רק עם עמיתים המשתמשים בפרוטוקול IPv6.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Connections</string>
+    <string name="reset">אִתחוּל</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">اوډین</string>
+    <string name="information">معلومات</string>
+    <string name="share">شریکول</string>
+    <string name="action_select_all">ټول وټاکئ</string>
+    <string name="no_activity_found_to_handle_uri">هیڅ غوښتنلیک ونه موندل شو چې د دې ډول فایل ملاتړ وکړي.</string>
+    <string name="documentation">اسناد</string>
+    <string name="no_marked_file_delete">د حذف کولو لپاره هیڅ فایلونه په نښه شوي ندي</string>
+    <string name="file_not_found">دوتنه ډاونلوډ نشوه</string>
+    <string name="name_not_valid">نوم د اعتبار وړ نه دی</string>
+
+    <string name="delete">ړنګول</string>
+    <string name="revert_operation">بیرته راګرځول</string>
+    <string name="delete_files">د فایلونو حذف کول</string>
+    <string name="delete_file">د دوتنې ړنګول</string>
+
+
+    <string name="share_link">لینک شریک کړئ</string>
+    <string name="warning">خبرتیا</string>
+    <string name="reset_application_data">د غوښتنلیک ټول معلومات به حذف شي.</string>
+
+
+    <string name="homepage">کورپاڼه</string>
+    <string name="title">عنوان</string>
+    <string name="home">کور</string>
+    <string name="files">فایلونه</string>
+    <string name="file_menu">د فایل مینو</string>
+
+
+    <string name="uri_qrcode">URI QR کوډ</string>
+    <string name="important">مهم</string>
+
+    <string name="files_view">د فایلونو لید</string>
+    <string name="port">پورټ</string>
+    <string name="unknown">د لاسرسي وړتیا: نامعلوم</string>
+    <string name="local_network">د لاسرسي وړتیا: سیمه ایز شبکه</string>
+    <string name="relays_network">د لاسرسي وړتیا: ریلیز او سیمه ایز شبکه</string>
+
+    <string name="limitation">د معلوماتو شریکول یوازې د هغو همکارانو سره امکان لري چې د IPv6 پروتوکول کاروي.</string>
+    <string name="relays">ریلیز</string>
+    <string name="connections">ارتباطات</string>
+    <string name="reset">بیا تنظیم کړئ</string>
+</resources>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="information">Informação</string>
+    <string name="share">Compartilhar</string>
+    <string name="action_select_all">Selecionar Todo</string>
+    <string name="no_activity_found_to_handle_uri">Não foi encontrado nenhum aplicativo que pode suportar este tipo de arquivo.</string>
+    <string name="documentation">Documentação</string>
+    <string name="no_marked_file_delete">Nenhum arquivo marcado para excluir</string>
+    <string name="file_not_found">O arquivo não pôde ser baixado</string>
+    <string name="name_not_valid">Nome não é válido</string>
+
+    <string name="delete">Excluir</string>
+    <string name="revert_operation">Reverter</string>
+    <string name="delete_files">Excluir arquivos</string>
+    <string name="delete_file">Excluir arquivo</string>
+    <string name="share_link">Compartilhar Link</string>
+    <string name="warning">Alerta</string>
+    <string name="reset_application_data">Todos os dados do aplicativo serão excluídos.</string>
+
+
+    <string name="homepage">Página inicial</string>
+    <string name="title">Título</string>
+    <string name="home">Casa</string>
+    <string name="files">Arquivo</string>
+    <string name="file_menu">Menu de arquivo</string>
+
+    <string name="uri_qrcode">Código QR URI</string>
+    <string name="important">Importante</string>
+    <string name="files_view">Visualização de arquivos</string>
+    <string name="port">Port</string>
+    <string name="unknown">Acessibilidade : Desconhecida</string>
+    <string name="local_network">Acessibilidade : Rede local</string>
+    <string name="relays_network">Acessibilidade : Relés e rede local</string>
+
+</resources>

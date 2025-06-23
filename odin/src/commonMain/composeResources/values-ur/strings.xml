@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">اوڈن</string>
+    <string name="information">معلومات</string>
+    <string name="share">بانٹیں</string>
+    <string name="action_select_all">تمام منتخب کریں</string>
+    <string name="no_activity_found_to_handle_uri">ایسی کوئی ایپلیکیشن نہیں ملی جو اس قسم کی فائل کو سپورٹ کرتی ہو۔</string>
+    <string name="documentation">دستاویزی</string>
+    <string name="no_marked_file_delete">حذف کرنے کے لیے کوئی فائل نشان زد نہیں ہے۔</string>
+    <string name="file_not_found">فائل ڈاؤن لوڈ نہیں ہو سکی</string>
+    <string name="name_not_valid">نام درست نہیں ہے۔</string>
+
+    <string name="delete">حذف کریں۔</string>
+    <string name="revert_operation">واپس لوٹنا</string>
+    <string name="delete_files">فائلیں حذف ہو رہی ہیں۔</string>
+    <string name="delete_file">فائل ڈیلیٹ کرنا</string>
+
+
+    <string name="share_link">لنک شیئر کریں۔</string>
+    <string name="warning">وارننگ</string>
+    <string name="reset_application_data">تمام ایپلیکیشن ڈیٹا کو حذف کر دیا جائے گا۔</string>
+
+
+    <string name="homepage">ہوم پیج</string>
+    <string name="title">عنوان</string>
+    <string name="home">گھر</string>
+    <string name="files">فائلوں</string>
+    <string name="file_menu">فائل مینو</string>
+
+
+    <string name="uri_qrcode">URI QR کوڈ</string>
+    <string name="important">اہم</string>
+
+    <string name="files_view">فائلیں دیکھیں</string>
+    <string name="port">بندرگاہ</string>
+    <string name="unknown">قابل رسائی: نامعلوم</string>
+    <string name="local_network">قابل رسائی: مقامی نیٹ ورک</string>
+    <string name="relays_network">قابل رسائی: ریلے اور مقامی نیٹ ورک</string>
+
+    <string name="limitation">ڈیٹا شیئرنگ صرف IPv6 پروٹوکول استعمال کرنے والے ساتھیوں کے ساتھ ممکن ہے۔</string>
+    <string name="relays">ریلے</string>
+    <string name="connections">کنکشنز</string>
+    <string name="reset">دوبارہ ترتیب دیں۔</string>
+</resources>

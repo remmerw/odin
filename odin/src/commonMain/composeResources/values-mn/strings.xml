@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Один</string>
+    <string name="information">Мэдээлэл</string>
+    <string name="share">Хуваалцах</string>
+    <string name="action_select_all">Бүгдийг сонгох</string>
+    <string name="no_activity_found_to_handle_uri">Энэ төрлийн файлыг дэмждэг програм олдсонгүй.</string>
+    <string name="documentation">Баримт бичиг</string>
+    <string name="no_marked_file_delete">Устгахаар тэмдэглэсэн файл байхгүй</string>
+    <string name="file_not_found">Файлыг татаж чадсангүй</string>
+    <string name="name_not_valid">Нэр буруу байна</string>
+
+    <string name="delete">Устгах</string>
+    <string name="revert_operation">Буцах</string>
+    <string name="delete_files">Файлуудыг устгаж байна</string>
+    <string name="delete_file">Файл устгаж байна</string>
+
+
+    <string name="share_link">Холбоосыг хуваалцах</string>
+    <string name="warning">Анхааруулга</string>
+    <string name="reset_application_data">Бүх програмын өгөгдөл устах болно.</string>
+
+
+    <string name="homepage">Нүүр хуудас</string>
+    <string name="title">Гарчиг</string>
+    <string name="home">Гэр</string>
+    <string name="files">Файлууд</string>
+    <string name="file_menu">Файл цэс</string>
+
+
+    <string name="uri_qrcode">URI QR код</string>
+    <string name="important">Чухал</string>
+
+    <string name="files_view">Файл харах</string>
+    <string name="port">Порт</string>
+    <string name="unknown">Хүрэх боломж: Тодорхойгүй</string>
+    <string name="local_network">Хүрэх боломж: Дотоод сүлжээ</string>
+    <string name="relays_network">Хүрэх боломж: Релей ба дотоод сүлжээ</string>
+
+    <string name="limitation">Өгөгдөл хуваалцах нь зөвхөн IPv6 протоколыг ашигладаг үе тэнгийнхэнтэй л боломжтой.</string>
+    <string name="relays">Реле</string>
+    <string name="connections">Холболтууд</string>
+    <string name="reset">Дахин тохируулах</string>
+</resources>

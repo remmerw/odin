@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Inligting</string>
+    <string name="share">Deel</string>
+    <string name="action_select_all">Kies Alles</string>
+    <string name="no_activity_found_to_handle_uri">Geen toepassing gevind wat hierdie soort lêer ondersteun nie.</string>
+    <string name="documentation">Dokumentasie</string>
+    <string name="no_marked_file_delete">Geen lêers gemerk vir uitvee nie</string>
+    <string name="file_not_found">Lêer kon nie afgelaai word nie</string>
+    <string name="name_not_valid">Naam nie geldig nie</string>
+
+    <string name="delete">Vee uit</string>
+    <string name="revert_operation">Keer terug</string>
+    <string name="delete_files">Lêers word uitgevee</string>
+    <string name="delete_file">Lêer verwyder</string>
+
+
+    <string name="share_link">Deel skakel</string>
+    <string name="warning">Waarskuwing</string>
+    <string name="reset_application_data">Alle toepassingdata sal uitgevee word.</string>
+
+
+    <string name="homepage">Tuisblad</string>
+    <string name="title">Titel</string>
+    <string name="home">Tuis</string>
+    <string name="files">Lêers</string>
+    <string name="file_menu">Lêer-kieslys</string>
+
+
+    <string name="uri_qrcode">URI QR-kode</string>
+    <string name="important">Belangrik</string>
+
+    <string name="files_view">Lêers-aansig</string>
+    <string name="port">Port</string>
+    <string name="unknown">Bereikbaarheid: Onbekend</string>
+    <string name="local_network">Bereikbaarheid: Plaaslike netwerk</string>
+    <string name="relays_network">Bereikbaarheid: Relais en plaaslike netwerk</string>
+
+    <string name="limitation">Data sharing is only possible with peers using the IPv6 protocol.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Connections</string>
+    <string name="reset">Reset</string>
+</resources>

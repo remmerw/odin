@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Один</string>
+    <string name="information">Информация</string>
+    <string name="share">Поделиться</string>
+    <string name="action_select_all">Полная выборка</string>
+    <string name="no_activity_found_to_handle_uri">Не найдено приложений, поддерживающих этот тип файла.</string>
+    <string name="documentation">Документация</string>
+    <string name="no_marked_file_delete">Файл не отмечен как удалённый</string>
+    <string name="file_not_found">Файл не найден</string>
+    <string name="name_not_valid">Неверное имя</string>
+
+    <string name="delete">Исключить</string>
+    <string name="revert_operation">Восстановитель</string>
+    <string name="delete_files">Удалить файл</string>
+    <string name="delete_file">Удалить файл</string>
+
+
+    <string name="share_link">Общие ссылки</string>
+    <string name="warning">Внимание!</string>
+    <string name="reset_application_data">Все данные приложения будут удалены.</string>
+
+
+    <string name="homepage">Домашняя страница</string>
+    <string name="title">Заголовок</string>
+    <string name="home">Домой</string>
+    <string name="files">Файл</string>
+    <string name="file_menu">Меню Файл</string>
+
+
+    <string name="uri_qrcode">Код QR URI</string>
+    <string name="important">Важное</string>
+
+    <string name="files_view">Предварительный просмотр файлов</string>
+    <string name="port">Порт</string>
+    <string name="unknown">Доступность : Неизвестный</string>
+    <string name="local_network">Доступность : Локальная сеть</string>
+    <string name="relays_network">Доступность : Местное время и сеть</string>
+
+    <string name="limitation">Обмен данными возможен только с узлами, использующими протокол IPv6.</string>
+    <string name="relays">Реле</string>
+    <string name="connections">Соединения</string>
+    <string name="reset">Перезагрузить</string>
+</resources>

@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="untitled">Untitled</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="app_name">Odin</string>
+    <string name="information">Information</string>
+    <string name="share">Share</string>
+    <string name="action_select_all" tools:keep="@string/action_select_all">Select All</string>
+    <string name="no_activity_found_to_handle_uri">No application found which support this kind of file.</string>
+    <string name="documentation">Documentation</string>
+    <string name="no_marked_file_delete" tools:keep="@string/no_marked_file_delete">No files marked for deletion</string>
+    <string name="file_not_found" tools:keep="@string/file_not_found">File could not be downloaded</string>
+    <string name="name_not_valid" tools:keep="@string/name_not_valid">Name not valid</string>
+
+    <string name="delete" tools:keep="@string/delete">Delete</string>
+    <string name="revert_operation" tools:keep="@string/revert_operation">Revert</string>
+    <string name="delete_files" tools:keep="@string/delete_files">Files deleting</string>
+    <string name="delete_file" tools:keep="@string/delete_file">File deleting</string>
+
+
+    <string name="share_link">Share Link</string>
+    <string name="warning">Warning</string>
+    <string name="reset_application_data">All application data will be deleted.</string>
+
+
+    <string name="homepage">Homepage</string>
+    <string name="title" tools:keep="@string/title">Title</string>
+    <string name="home">Home</string>
+    <string name="files">Files</string>
+    <string name="file_menu" tools:keep="@string/file_menu">File Menu</string>
+
+
+    <string name="uri_qrcode">URI QR code</string>
+    <string name="important" tools:keep="@string/important">Important</string>
+
+    <string name="files_view" tools:keep="@string/files_view">Files View</string>
+    <string name="port">Port</string>
+    <string name="unknown">Reachability : Unknown</string>
+    <string name="local_network">Reachability : Local Network</string>
+    <string name="relays_network">Reachability : Relays and Local Network</string>
+
+    <string name="limitation">Data sharing is only possible with peers using the IPv6 protocol.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Connections</string>
+    <string name="reset">Reset</string>
+    <string name="port_forwarding" translatable="false">Port Forwarding</string>
+    <string name="protocol" translatable="false">Protocol</string>
+    <string name="port_forwarding_info" translatable="false">Port forwarding allows you to specify that all communications received on a certain port are forwarded directly to your device. You set port forwarding rules up on your router. The following list provides information which might be required for the port forwarding.</string>
+    <string name="application" translatable="false">Application</string>
+    <string name="ipv" translatable="false">Interface</string>
+</resources>

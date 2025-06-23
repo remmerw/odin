@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Informacion</string>
+    <string name="share">Shpërndaje</string>
+    <string name="action_select_all">Selektoj të gjitha</string>
+    <string name="no_activity_found_to_handle_uri">Nuk u gjet asnjë aplikacion që mbështet këtë lloj skedari.</string>
+    <string name="documentation">Dokumentacioni</string>
+    <string name="no_marked_file_delete">Nuk ka skedarë të shënuar për fshirje</string>
+    <string name="file_not_found">Skedari nuk mund të shkarkohej</string>
+    <string name="name_not_valid">Emri nuk është i vlefshëm</string>
+
+    <string name="delete">Fshije</string>
+    <string name="revert_operation">Kthehu</string>
+    <string name="delete_files">Fshirja e skedarëve</string>
+    <string name="delete_file">Fshirja e skedarit</string>
+
+
+    <string name="share_link">Ndani lidhjen</string>
+    <string name="warning">Paralajmërim</string>
+    <string name="reset_application_data">Të gjitha të dhënat e aplikacionit do të fshihen.</string>
+
+
+    <string name="homepage">Faqja kryesore</string>
+    <string name="title">Titulli</string>
+    <string name="home">Shtëpi</string>
+    <string name="files">Skedarët</string>
+    <string name="file_menu">Menyja e skedarit</string>
+
+
+    <string name="uri_qrcode">Kodi QR URI</string>
+    <string name="important">E rëndësishme</string>
+
+    <string name="files_view">Pamja e skedarëve</string>
+    <string name="port">Port</string>
+    <string name="unknown">Arritshmëria: E panjohur</string>
+    <string name="local_network">Arritshmëria: Rrjeti lokal</string>
+    <string name="relays_network">Arritshmëria: Reletë dhe Rrjeti Lokal</string>
+
+    <string name="limitation">Data sharing is only possible with peers using the IPv6 protocol.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Connections</string>
+    <string name="reset">Reset</string>
+</resources>

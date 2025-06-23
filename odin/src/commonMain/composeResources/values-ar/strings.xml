@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">أودين</string>
+    <string name="information">معلومة</string>
+    <string name="share">يشارك</string>
+    <string name="action_select_all">اختر الكل</string>
+    <string name="no_activity_found_to_handle_uri">لم يتم العثور على تطبيق يدعم هذا النوع من الملفات.</string>
+    <string name="documentation">توثيق</string>
+    <string name="no_marked_file_delete">لم يتم وضع علامة على الملفات للحذف</string>
+    <string name="file_not_found">تعذر تنزيل الملف</string>
+    <string name="name_not_valid">الاسم غير صحيح</string>
+
+    <string name="delete">يمسح</string>
+    <string name="revert_operation">يرجع</string>
+    <string name="delete_files">حذف الملفات</string>
+    <string name="delete_file">حذف ملف</string>
+
+
+    <string name="share_link">رابط المشاركة</string>
+    <string name="warning">تحذير</string>
+    <string name="reset_application_data">سيتم حذف جميع بيانات التطبيق.</string>
+
+
+    <string name="homepage">الصفحة الرئيسية</string>
+    <string name="title">عنوان</string>
+    <string name="home">بيت</string>
+    <string name="files">الملفات</string>
+    <string name="file_menu">القائمة ملف</string>
+
+
+    <string name="uri_qrcode">رمز الاستجابة السريعة URI</string>
+    <string name="important">مهم</string>
+
+    <string name="files_view">عرض الملفات</string>
+    <string name="port">المنفذ٪</string>
+    <string name="unknown">قابلية الوصول: غير معروف</string>
+    <string name="local_network">قابلية الوصول: الشبكة المحلية</string>
+    <string name="relays_network">قابلية الوصول: المرحلات والشبكة المحلية</string>
+
+    <string name="limitation">لا يمكن مشاركة البيانات إلا مع أقرانهم الذين يستخدمون بروتوكول IPv6.</string>
+    <string name="relays">يمرر</string>
+    <string name="connections">روابط</string>
+    <string name="reset">إعادة ضبط</string>
+</resources>

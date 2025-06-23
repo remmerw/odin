@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Informació</string>
+    <string name="share">Compartir</string>
+    <string name="action_select_all">Seleccionar tot</string>
+    <string name="no_activity_found_to_handle_uri">No s\'ha trobat cap aplicació que admeti aquest tipus de fitxers.</string>
+    <string name="documentation">Documentació</string>
+    <string name="no_marked_file_delete">No s\'ha marcat cap fitxer per suprimir-lo</string>
+    <string name="file_not_found">No s\'ha pogut baixar el fitxer</string>
+    <string name="name_not_valid">Nom no vàlid</string>
+
+    <string name="delete">Suprimeix</string>
+    <string name="revert_operation">Revertir</string>
+    <string name="delete_files">Supressió de fitxers</string>
+    <string name="delete_file">Supressió de fitxers</string>
+
+
+    <string name="share_link">Compartir Enllaç</string>
+    <string name="warning">Avís</string>
+    <string name="reset_application_data">S\'eliminaran totes les dades de l\'aplicació.</string>
+
+
+    <string name="homepage">Pàgina d\'inici</string>
+    <string name="title">Títol</string>
+    <string name="home">Casa</string>
+    <string name="files">Fitxers</string>
+    <string name="file_menu">Menú Fitxer</string>
+
+
+    <string name="uri_qrcode">Codi QR URI</string>
+    <string name="important">Important</string>
+
+    <string name="files_view">Visualització de fitxers</string>
+    <string name="port">Port</string>
+    <string name="unknown">Accessibilitat: desconeguda</string>
+    <string name="local_network">Accessibilitat: Xarxa local</string>
+    <string name="relays_network">Accessibilitat: Relés i Xarxa Local</string>
+
+    <string name="limitation">L\'intercanvi de dades només és possible amb companys que utilitzen el protocol IPv6.</string>
+    <string name="relays">Relleus</string>
+    <string name="connections">Connexions</string>
+    <string name="reset">Restableix</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Informação</string>
+    <string name="share">Compartilhar</string>
+    <string name="action_select_all">Selecionar tudo</string>
+    <string name="no_activity_found_to_handle_uri">Nenhum aplicativo encontrado que suporte esse tipo de arquivo.</string>
+    <string name="documentation">Documentação</string>
+    <string name="no_marked_file_delete">Nenhum arquivo marcado para exclusão</string>
+    <string name="file_not_found">O arquivo não pôde ser baixado</string>
+    <string name="name_not_valid">Nome inválido</string>
+
+    <string name="delete">Excluir</string>
+    <string name="revert_operation">Reverter</string>
+    <string name="delete_files">Exclusão de arquivos</string>
+    <string name="delete_file">Exclusão de arquivo</string>
+
+
+    <string name="share_link">Compartilhar link</string>
+    <string name="warning">Aviso</string>
+    <string name="reset_application_data">Todos os dados do aplicativo serão excluídos.</string>
+
+
+    <string name="homepage">Página inicial</string>
+    <string name="title">Título</string>
+    <string name="home">Lar</string>
+    <string name="files">arquivos</string>
+    <string name="file_menu">Menu de arquivo</string>
+
+
+    <string name="uri_qrcode">código QR URI</string>
+    <string name="important">Importante</string>
+
+    <string name="files_view">Visualização de arquivos</string>
+    <string name="port">Porta</string>
+    <string name="unknown">Acessibilidade: Desconhecido</string>
+    <string name="local_network">Acessibilidade: rede local</string>
+    <string name="relays_network">Acessibilidade: relés e rede local</string>
+
+    <string name="limitation">O compartilhamento de dados só é possível com pares que utilizam o protocolo IPv6.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Connections</string>
+    <string name="reset">Reiniciar</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Impormasyon</string>
+    <string name="share">Ibahagi</string>
+    <string name="action_select_all">Piliin lahat</string>
+    <string name="no_activity_found_to_handle_uri">Walang nakitang application na sumusuporta sa ganitong uri ng file.</string>
+    <string name="documentation">Dokumentasyon</string>
+    <string name="no_marked_file_delete">Walang mga file na minarkahan para sa pagtanggal</string>
+    <string name="file_not_found">Hindi ma-download ang file</string>
+    <string name="name_not_valid">Hindi wasto ang pangalan</string>
+
+    <string name="delete">Tanggalin</string>
+    <string name="revert_operation">Ibalik</string>
+    <string name="delete_files">Tinatanggal ang mga file</string>
+    <string name="delete_file">Pagtanggal ng file</string>
+
+
+    <string name="share_link">Ibahagi ang Link</string>
+    <string name="warning">Babala</string>
+    <string name="reset_application_data">Ang lahat ng data ng application ay tatanggalin.</string>
+
+
+    <string name="homepage">Homepage</string>
+    <string name="title">Pamagat</string>
+    <string name="home">Bahay</string>
+    <string name="files">Mga file</string>
+    <string name="file_menu">File Menu</string>
+
+
+    <string name="uri_qrcode">URI QR code</string>
+    <string name="important">Mahalaga</string>
+
+    <string name="files_view">View ng mga File</string>
+    <string name="port">Port</string>
+    <string name="unknown">Maaabot: Hindi alam</string>
+    <string name="local_network">Maaabot : Lokal na Network</string>
+    <string name="relays_network">Maaabot : Mga Relay at Lokal na Network</string>
+
+    <string name="limitation">Ang pagbabahagi ng data ay posible lamang sa mga kapantay na gumagamit ng IPv6 protocol.</string>
+    <string name="relays">Mga relay</string>
+    <string name="connections">Mga koneksyon</string>
+    <string name="reset">I-reset</string>
+</resources>

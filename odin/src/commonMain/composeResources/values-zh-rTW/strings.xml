@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">奧丁</string>
+    <string name="information">信息</string>
+    <string name="share">分享</string>
+    <string name="action_select_all">全選</string>
+    <string name="no_activity_found_to_handle_uri">找不到支持此類文件的應用程序。</string>
+    <string name="documentation">文檔</string>
+    <string name="no_marked_file_delete">沒有標記為刪除的文件</string>
+    <string name="file_not_found">無法下載文件</string>
+    <string name="name_not_valid">名稱無效</string>
+
+    <string name="delete">刪除</string>
+    <string name="revert_operation">恢復</string>
+    <string name="delete_files">文件刪除</string>
+    <string name="delete_file">文件刪除</string>
+
+
+    <string name="share_link">分享鏈接</string>
+    <string name="warning">警告</string>
+    <string name="reset_application_data">所有申請數據將被刪除。</string>
+
+
+    <string name="homepage">主頁</string>
+    <string name="title">標題</string>
+    <string name="home">家</string>
+    <string name="files">文件</string>
+    <string name="file_menu">文件菜單</string>
+
+
+    <string name="uri_qrcode">網址二維碼</string>
+    <string name="important">重要的</string>
+
+    <string name="files_view">文件視圖</string>
+    <string name="port">港口</string>
+    <string name="unknown">可達性：未知</string>
+    <string name="local_network">可達性：本地網絡</string>
+    <string name="relays_network">可達性：中繼和本地網絡</string>
+
+    <string name="limitation">資料共享只能與使用 IPv6 協定的對等方進行。</string>
+    <string name="relays">繼電器</string>
+    <string name="connections">連接</string>
+    <string name="reset">重置</string>
+</resources>

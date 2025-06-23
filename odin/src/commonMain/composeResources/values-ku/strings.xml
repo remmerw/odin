@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Agahî</string>
+    <string name="share">Par</string>
+    <string name="action_select_all">Hemî Hilbijêre</string>
+    <string name="no_activity_found_to_handle_uri">Serlêdanek ku bi vî rengî pelê piştgirî dike nehat dîtin.</string>
+    <string name="documentation">Documentation</string>
+    <string name="no_marked_file_delete">Ti pel ji bo jêbirinê nehatine nîşankirin</string>
+    <string name="file_not_found">Pelê nehat daxistin</string>
+    <string name="name_not_valid">Nav ne derbasdar e</string>
+
+    <string name="delete">Jêbirin</string>
+    <string name="revert_operation">Şûndehatin</string>
+    <string name="delete_files">Pelên jêbirin</string>
+    <string name="delete_file">Pelê jêbirin</string>
+
+
+    <string name="share_link">Share Link</string>
+    <string name="warning">Gazî</string>
+    <string name="reset_application_data">Hemî daneyên serîlêdanê dê werin jêbirin.</string>
+
+
+    <string name="homepage">Homepage</string>
+    <string name="title">Nav</string>
+    <string name="home">Xane</string>
+    <string name="files">Pelên</string>
+    <string name="file_menu">Pêşeka Pelê</string>
+
+
+    <string name="uri_qrcode">Koda QR ya URI</string>
+    <string name="important">Giring</string>
+
+    <string name="files_view">Dîtina Pelan</string>
+    <string name="port">Bender</string>
+    <string name="unknown">Gihîştin : Nenas</string>
+    <string name="local_network">Gihîştin : Tora Herêmî</string>
+    <string name="relays_network">Gihîştin: Relay û Tora Herêmî</string>
+
+    <string name="limitation">Parvekirina daneyê tenê bi hevalên ku protokola IPv6 bikar tînin re gengaz e.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Girêdanên</string>
+    <string name="reset">Reset</string>
+</resources>

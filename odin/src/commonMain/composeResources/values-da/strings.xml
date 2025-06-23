@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Information</string>
+    <string name="share">Del</string>
+    <string name="action_select_all">Vælg alle</string>
+    <string name="no_activity_found_to_handle_uri">Der blev ikke fundet nogen applikation, der understøtter denne type fil.</string>
+    <string name="documentation">Dokumentation</string>
+    <string name="no_marked_file_delete">Ingen filer markeret til sletning</string>
+    <string name="file_not_found">Filen kunne ikke downloades</string>
+    <string name="name_not_valid">Navn er ikke gyldigt</string>
+
+    <string name="delete">Slet</string>
+    <string name="revert_operation">Vende tilbage</string>
+    <string name="delete_files">Sletning af filer</string>
+    <string name="delete_file">Fil sletning</string>
+
+
+    <string name="share_link">Del link</string>
+    <string name="warning">Advarsel</string>
+    <string name="reset_application_data">Alle applikationsdata vil blive slettet.</string>
+
+
+    <string name="homepage">Hjemmeside</string>
+    <string name="title">Titel</string>
+    <string name="home">Hjem</string>
+    <string name="files">Filer</string>
+    <string name="file_menu">Fil menu</string>
+
+
+    <string name="uri_qrcode">URI QR-kode</string>
+    <string name="important">Vigtig</string>
+
+    <string name="files_view">Visning af filer</string>
+    <string name="port">Havn</string>
+    <string name="unknown">Tilgængelighed: Ukendt</string>
+    <string name="local_network">Tilgængelighed: Lokalt netværk</string>
+    <string name="relays_network">Tilgængelighed: Relæer og lokalt netværk</string>
+
+    <string name="limitation">Datadeling er kun mulig med peers, der bruger IPv6-protokollen.</string>
+    <string name="relays">Relæer</string>
+    <string name="connections">Forbindelser</string>
+    <string name="reset">Nulstil</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">informație</string>
+    <string name="share">Acțiune</string>
+    <string name="action_select_all">Selectează tot</string>
+    <string name="no_activity_found_to_handle_uri">Nu a fost găsită nicio aplicație care să accepte acest tip de fișier.</string>
+    <string name="documentation">Documentație</string>
+    <string name="no_marked_file_delete">Niciun fișier marcat pentru ștergere</string>
+    <string name="file_not_found">Fișierul nu a putut fi descărcat</string>
+    <string name="name_not_valid">Numele nu este valid</string>
+
+    <string name="delete">Șterge</string>
+    <string name="revert_operation">Reveni</string>
+    <string name="delete_files">Ștergerea fișierelor</string>
+    <string name="delete_file">Ștergerea fișierului</string>
+
+
+    <string name="share_link">Imparte link-ul</string>
+    <string name="warning">Avertizare</string>
+    <string name="reset_application_data">Toate datele aplicației vor fi șterse.</string>
+
+
+    <string name="homepage">Pagina principala</string>
+    <string name="title">Titlu</string>
+    <string name="home">Acasă</string>
+    <string name="files">Fișiere</string>
+    <string name="file_menu">Meniul Fișier</string>
+
+
+    <string name="uri_qrcode">Cod URI QR</string>
+    <string name="important">Important</string>
+
+    <string name="files_view">Vizualizare fișiere</string>
+    <string name="port">Port</string>
+    <string name="unknown">Accesibilitate: necunoscut</string>
+    <string name="local_network">Accesibilitate: Rețea locală</string>
+    <string name="relays_network">Accesibilitate: relee și rețea locală</string>
+
+    <string name="limitation">Partajarea datelor este posibilă numai cu colegii care utilizează protocolul IPv6.</string>
+    <string name="relays">relee</string>
+    <string name="connections">Conexiuni</string>
+    <string name="reset">Resetați</string>
+</resources>

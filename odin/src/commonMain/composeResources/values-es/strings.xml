@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odín</string>
+    <string name="information">Información</string>
+    <string name="share">Compartir</string>
+    <string name="action_select_all">Seleccionar todo</string>
+    <string name="no_activity_found_to_handle_uri">No se encontró ninguna aplicación que admita este tipo de archivo.</string>
+    <string name="documentation">Documentación</string>
+    <string name="no_marked_file_delete">No hay archivos marcados para borrar</string>
+    <string name="file_not_found">No se pudo descargar el archivo</string>
+    <string name="name_not_valid">Nombre no válido</string>
+
+    <string name="delete">Borrar</string>
+    <string name="revert_operation">Revertir</string>
+    <string name="delete_files">Eliminación de archivos</string>
+    <string name="delete_file">Eliminación de archivos</string>
+
+
+    <string name="share_link">Compartir enlace</string>
+    <string name="warning">Advertencia</string>
+    <string name="reset_application_data">Todos los datos de la aplicación serán eliminados.</string>
+
+
+    <string name="homepage">Página principal</string>
+    <string name="title">Título</string>
+    <string name="home">Hogar</string>
+    <string name="files">archivos</string>
+    <string name="file_menu">Menú Archivo</string>
+
+
+    <string name="uri_qrcode">Código QR URI</string>
+    <string name="important">Importante</string>
+
+    <string name="files_view">Vista de archivos</string>
+    <string name="port">Puerto</string>
+    <string name="unknown">Accesibilidad: Desconocido</string>
+    <string name="local_network">Accesibilidad: red local</string>
+    <string name="relays_network">Accesibilidad: relés y red local</string>
+
+    <string name="limitation">El intercambio de datos sólo es posible con pares que utilizan el protocolo IPv6.</string>
+    <string name="relays">Relés</string>
+    <string name="connections">Conexiones</string>
+    <string name="reset">Reiniciar</string>
+</resources>

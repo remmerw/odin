@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ओडिन</string>
+    <string name="information">जानकारी</string>
+    <string name="share">शेयर करना</string>
+    <string name="action_select_all">सबका चयन करें</string>
+    <string name="no_activity_found_to_handle_uri">ऐसा कोई एप्लिकेशन नहीं मिला जो इस प्रकार की फ़ाइल का समर्थन करता हो।</string>
+    <string name="documentation">प्रलेखन</string>
+    <string name="no_marked_file_delete">हटाने के लिए चिह्नित कोई फ़ाइल नहीं</string>
+    <string name="file_not_found">फ़ाइल डाउनलोड नहीं की जा सकी</string>
+    <string name="name_not_valid">नाम मान्य नहीं है</string>
+
+    <string name="delete">मिटाना</string>
+    <string name="revert_operation">फिर लौट आना</string>
+    <string name="delete_files">फ़ाइलें हटाएं</string>
+    <string name="delete_file">फ़ाइल नष्ट करें</string>
+
+
+    <string name="share_link">लिंक शेयर करें</string>
+    <string name="warning">चेतावनी</string>
+    <string name="reset_application_data">सभी एप्लिकेशन डेटा हटा दिए जाएंगे।</string>
+
+
+    <string name="homepage">मुखपृष्ठ</string>
+    <string name="title">शीर्षक</string>
+    <string name="home">घर</string>
+    <string name="files">फ़ाइलें</string>
+    <string name="file_menu">फ़ाइल मेनू</string>
+
+
+    <string name="uri_qrcode">यूआरआई क्यूआर कोड</string>
+    <string name="important">महत्वपूर्ण</string>
+
+    <string name="files_view">फ़ाइलें देखें</string>
+    <string name="port">पत्तन</string>
+    <string name="unknown">पहुंच योग्यता: अज्ञात</string>
+    <string name="local_network">रीचैबिलिटी: लोकल नेटवर्क</string>
+    <string name="relays_network">रीचैबिलिटी: रिले और लोकल नेटवर्क</string>
+
+    <string name="limitation">डेटा साझाकरण केवल IPv6 प्रोटोकॉल का उपयोग करने वाले साथियों के साथ ही संभव है।</string>
+    <string name="relays">रिले</string>
+    <string name="connections">सम्बन्ध</string>
+    <string name="reset">रीसेट</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Bilgi</string>
+    <string name="share">Paylaşmak</string>
+    <string name="action_select_all">Hepsini seç</string>
+    <string name="no_activity_found_to_handle_uri">Bu tür dosyaları destekleyen hiçbir uygulama bulunamadı.</string>
+    <string name="documentation">Belgeler</string>
+    <string name="no_marked_file_delete">Silinmek üzere işaretlenmiş dosya yok</string>
+    <string name="file_not_found">Dosya indirilemedi</string>
+    <string name="name_not_valid">Ad geçerli değil</string>
+
+    <string name="delete">Silmek</string>
+    <string name="revert_operation">Geri al</string>
+    <string name="delete_files">Dosyayı sil</string>
+    <string name="delete_file">Dosyayı sil</string>
+
+
+    <string name="share_link">Linki paylaş</string>
+    <string name="warning">Uyarı</string>
+    <string name="reset_application_data">Tüm uygulama verileri silinecektir.</string>
+
+
+    <string name="homepage">Anasayfa</string>
+    <string name="title">Başlık</string>
+    <string name="home">Ev</string>
+    <string name="files">Dosyalar</string>
+    <string name="file_menu">Dosya menüsü</string>
+
+
+    <string name="uri_qrcode">URI QR kodu</string>
+    <string name="important">Önemli</string>
+
+    <string name="files_view">Dosya Görünümü</string>
+    <string name="port">bağlantı noktası</string>
+    <string name="unknown">Ulaşılabilirlik : Bilinmiyor</string>
+    <string name="local_network">Ulaşılabilirlik : Yerel Ağ</string>
+    <string name="relays_network">Erişilebilirlik : Röleler ve Yerel Ağ</string>
+
+    <string name="limitation">Veri paylaşımı yalnızca IPv6 protokolünü kullanan eşlerle mümkündür.</string>
+    <string name="relays">Röleler</string>
+    <string name="connections">Bağlantılar</string>
+    <string name="reset">Sıfırla</string>
+</resources>

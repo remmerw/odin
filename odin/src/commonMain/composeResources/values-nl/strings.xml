@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Informatie</string>
+    <string name="share">Deel</string>
+    <string name="action_select_all">Selecteer alles</string>
+    <string name="no_activity_found_to_handle_uri">Geen applicatie gevonden die dit type bestand ondersteunt.</string>
+    <string name="documentation">Documentatie</string>
+    <string name="no_marked_file_delete">Geen bestanden gemarkeerd voor verwijdering</string>
+    <string name="file_not_found">Bestand kon niet worden gedownload</string>
+    <string name="name_not_valid">Naam niet geldig</string>
+
+    <string name="delete">Verwijderen</string>
+    <string name="revert_operation">Terugdraaien</string>
+    <string name="delete_files">Bestanden verwijderen</string>
+    <string name="delete_file">Bestand verwijderen</string>
+
+
+    <string name="share_link">Deel link</string>
+    <string name="warning">Waarschuwing</string>
+    <string name="reset_application_data">Alle sollicitatiegegevens worden verwijderd.</string>
+
+
+    <string name="homepage">Startpagina</string>
+    <string name="title">Titel</string>
+    <string name="home">Thuis</string>
+    <string name="files">Bestanden</string>
+    <string name="file_menu">Bestandsmenu</string>
+
+
+    <string name="uri_qrcode">URI QR-code</string>
+    <string name="important">Belangrijk</string>
+
+    <string name="files_view">Bestanden bekijken</string>
+    <string name="port">Haven</string>
+    <string name="unknown">Bereikbaarheid : Onbekend</string>
+    <string name="local_network">Bereikbaarheid: Lokaal netwerk</string>
+    <string name="relays_network">Bereikbaarheid: relais en lokaal netwerk</string>
+
+    <string name="limitation">Het delen van gegevens is alleen mogelijk met peers die het IPv6-protocol gebruiken.</string>
+    <string name="relays">relais</string>
+    <string name="connections">Verbindingen</string>
+    <string name="reset">Opnieuw instellen</string>
+</resources>

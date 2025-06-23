@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">သတင်းအချက်အလက်</string>
+    <string name="share">မျှဝေပါ။</string>
+    <string name="action_select_all">အားလုံးကို ရွေးပါ။</string>
+    <string name="no_activity_found_to_handle_uri">ဤဖိုင်အမျိုးအစားကို ပံ့ပိုးပေးသည့် အပလီကေးရှင်း မတွေ့ပါ။</string>
+    <string name="documentation">စာတမ်းပြုစုခြင်း။</string>
+    <string name="no_marked_file_delete">ဖျက်ရန်အတွက် အမှတ်အသားပြုထားသည့် ဖိုင်မရှိပါ။</string>
+    <string name="file_not_found">ဖိုင်ကို ဒေါင်းလုဒ်လုပ်၍မရပါ။</string>
+    <string name="name_not_valid">အမည် မမှန်ပါ။</string>
+
+    <string name="delete">ဖျက်ပါ။</string>
+    <string name="revert_operation">ပြန်ပြောင်း</string>
+    <string name="delete_files">ဖိုင်များကို ဖျက်ခြင်း။</string>
+    <string name="delete_file">ဖိုင်ဖျက်ခြင်း။</string>
+
+
+    <string name="share_link">လင့်ကိုမျှဝေပါ</string>
+    <string name="warning">သတိပေးချက်</string>
+    <string name="reset_application_data">အပလီကေးရှင်းဒေတာအားလုံးကို ဖျက်လိုက်ပါမည်။</string>
+
+
+    <string name="homepage">ပင်မစာမျက်နှာ</string>
+    <string name="title">ခေါင်းစဥ်</string>
+    <string name="home">အိမ်</string>
+    <string name="files">ဖို</string>
+    <string name="file_menu">ဖိုင်မီနူး</string>
+
+
+    <string name="uri_qrcode">URI QR ကုဒ်</string>
+    <string name="important">အရေးကြီးတယ်။</string>
+
+    <string name="files_view">Files View</string>
+    <string name="port">ဆိပ်ကမ်း</string>
+    <string name="unknown">လက်လှမ်းမီနိုင်မှု- အမည်မသိ</string>
+    <string name="local_network">လက်လှမ်းမီနိုင်မှု- ဒေသတွင်းကွန်ရက်</string>
+    <string name="relays_network">လက်လှမ်းမီနိုင်မှု- Relay များနှင့် Local Network</string>
+
+    <string name="limitation">IPv6 ပရိုတိုကောကို အသုံးပြုသည့် ရွယ်တူများနှင့်သာ ဒေတာမျှဝေခြင်း ဖြစ်နိုင်သည်။</string>
+    <string name="relays">Relay များ</string>
+    <string name="connections">ချိတ်ဆက်မှုများ</string>
+    <string name="reset">ပြန်လည်သတ်မှတ်ပါ။</string>
+</resources>

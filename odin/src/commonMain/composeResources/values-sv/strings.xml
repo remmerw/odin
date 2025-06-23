@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Oden</string>
+    <string name="information">Information</string>
+    <string name="share">Dela med sig</string>
+    <string name="action_select_all">Välj alla</string>
+    <string name="no_activity_found_to_handle_uri">Ingen applikation hittades som stöder denna typ av fil.</string>
+    <string name="documentation">Dokumentation</string>
+    <string name="no_marked_file_delete">Inga filer markerade för radering</string>
+    <string name="file_not_found">Filen kunde inte laddas ned</string>
+    <string name="name_not_valid">Namnet är inte giltigt</string>
+
+    <string name="delete">Radera</string>
+    <string name="revert_operation">Återgå</string>
+    <string name="delete_files">Filer raderas</string>
+    <string name="delete_file">Filen raderas</string>
+
+
+    <string name="share_link">Dela länk</string>
+    <string name="warning">Varning</string>
+    <string name="reset_application_data">All applikationsdata kommer att raderas.</string>
+
+
+    <string name="homepage">Hemsida</string>
+    <string name="title">Titel</string>
+    <string name="home">Hem</string>
+    <string name="files">Filer</string>
+    <string name="file_menu">Arkiv-menyn</string>
+
+
+    <string name="uri_qrcode">URI QR-kod</string>
+    <string name="important">Viktig</string>
+
+    <string name="files_view">Filvy</string>
+    <string name="port">Hamn</string>
+    <string name="unknown">Tillgänglighet: Okänd</string>
+    <string name="local_network">Tillgänglighet: Lokalt nätverk</string>
+    <string name="relays_network">Tillgänglighet: Reläer och lokalt nätverk</string>
+
+    <string name="limitation">Datadelning är endast möjligt med peers som använder IPv6-protokollet.</string>
+    <string name="relays">Reläer</string>
+    <string name="connections">Anslutningar</string>
+    <string name="reset">Återställa</string>
+</resources>

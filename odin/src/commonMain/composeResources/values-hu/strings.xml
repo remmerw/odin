@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Információ</string>
+    <string name="share">Ossza meg</string>
+    <string name="action_select_all">Mindet kiválaszt</string>
+    <string name="no_activity_found_to_handle_uri">Nem található olyan alkalmazás, amely támogatja ezt a fajta fájlt.</string>
+    <string name="documentation">Dokumentáció</string>
+    <string name="no_marked_file_delete">Nincsenek törlésre jelölt fájlok</string>
+    <string name="file_not_found">A fájlt nem sikerült letölteni</string>
+    <string name="name_not_valid">A név érvénytelen</string>
+
+    <string name="delete">Töröl</string>
+    <string name="revert_operation">Visszaszáll</string>
+    <string name="delete_files">Fájlok törlése</string>
+    <string name="delete_file">Fájl törlése</string>
+
+
+    <string name="share_link">Hivatkozás megosztása</string>
+    <string name="warning">Figyelem</string>
+    <string name="reset_application_data">Az alkalmazás összes adata törlődik.</string>
+
+
+    <string name="homepage">Kezdőlap</string>
+    <string name="title">Cím</string>
+    <string name="home">itthon</string>
+    <string name="files">Fájlok</string>
+    <string name="file_menu">Fájl menü</string>
+
+
+    <string name="uri_qrcode">URI QR-kód</string>
+    <string name="important">Fontos</string>
+
+    <string name="files_view">Fájlok nézete</string>
+    <string name="port">Kikötő</string>
+    <string name="unknown">Elérhetőség: Ismeretlen</string>
+    <string name="local_network">Elérhetőség: Helyi hálózat</string>
+    <string name="relays_network">Elérhetőség: Relék és helyi hálózat</string>
+
+    <string name="limitation">Az adatmegosztás csak az IPv6 protokollt használó partnerekkel lehetséges.</string>
+    <string name="relays">Relék</string>
+    <string name="connections">Kapcsolatok</string>
+    <string name="reset">Visszaállítás</string>
+</resources>

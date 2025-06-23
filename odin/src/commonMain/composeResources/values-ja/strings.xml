@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">オーディン</string>
+    <string name="information">情報＃ジョウホウ＃</string>
+    <string name="share">共有＃キョウユウ＃</string>
+    <string name="action_select_all">すべて選択</string>
+    <string name="no_activity_found_to_handle_uri">このようなファイルをサポートするアプリケーションが見つかりませんでした。</string>
+    <string name="documentation">ドキュメント</string>
+    <string name="no_marked_file_delete">削除としてマークされたファイルはありません</string>
+    <string name="file_not_found">ファイルをダウンロードできません</string>
+    <string name="name_not_valid">名前が無効です</string>
+
+    <string name="delete">削除</string>
+    <string name="revert_operation">リストア</string>
+    <string name="delete_files">ファイルを削除</string>
+    <string name="delete_file">ファイルを削除</string>
+
+
+    <string name="share_link">共有リンク</string>
+    <string name="warning">に警告</string>
+    <string name="reset_application_data">すべてのアプリケーションデータが削除されます。</string>
+
+
+    <string name="homepage">ホーム・ページ</string>
+    <string name="title">タイトル</string>
+    <string name="home">家</string>
+    <string name="files">フォルダ＃フォルダ＃</string>
+    <string name="file_menu">「ファイル」メニュー</string>
+
+
+    <string name="uri_qrcode">URI二次元コード</string>
+    <string name="important">重要な</string>
+
+    <string name="files_view">ファイルビュー</string>
+    <string name="port">ポート</string>
+    <string name="unknown">達成性 不明な</string>
+    <string name="local_network">達成性 ローカルネットワーク</string>
+    <string name="relays_network">達成性 リレーとローカルネットワーク</string>
+
+    <string name="limitation">データ共有は、IPv6 プロトコルを使用するピアとのみ可能です。</string>
+    <string name="relays">リレー</string>
+    <string name="connections">接続</string>
+    <string name="reset">リセット</string>
+</resources>

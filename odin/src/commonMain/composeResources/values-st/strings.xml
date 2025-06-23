@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Boitsebiso</string>
+    <string name="share">Arolelana</string>
+    <string name="action_select_all">Kgetha Tsohle</string>
+    <string name="no_activity_found_to_handle_uri">Ha ho sesebelisoa se fumanoeng se tšehetsang mofuta ona oa faele.</string>
+    <string name="documentation">Litokomane</string>
+    <string name="no_marked_file_delete">Ha ho lifaele tse tšoailoeng hore li hlakole</string>
+    <string name="file_not_found">Faele ha e khone ho khoasolla</string>
+    <string name="name_not_valid">Lebitso ha le sebetse</string>
+
+    <string name="delete">Hlakola</string>
+    <string name="revert_operation">Kgutla</string>
+    <string name="delete_files">Lifaele li hlakotsoe</string>
+    <string name="delete_file">Ho hlakolwa ha faele</string>
+
+
+    <string name="share_link">Arolelana Sehokelo</string>
+    <string name="warning">Tlhokomediso</string>
+    <string name="reset_application_data">Lintlha tsohle tsa ts\'ebeliso li tla hlakoloa.</string>
+
+
+    <string name="homepage">Leqephe la lapeng</string>
+    <string name="title">Sehlooho</string>
+    <string name="home">Lehae</string>
+    <string name="files">Lifaele</string>
+    <string name="file_menu">Menu ea Faele</string>
+
+
+    <string name="uri_qrcode">URI QR khoutu</string>
+    <string name="important">Bohlokoa</string>
+
+    <string name="files_view">Files View</string>
+    <string name="port">Boema-kepe</string>
+    <string name="unknown">Ho fihlella : Ha e tsejoe</string>
+    <string name="local_network">Rechability : Local Network</string>
+    <string name="relays_network">Rechability : Relays le Local Network</string>
+
+    <string name="limitation">Ho abelanoa ha data ho ka khoneha feela le balekane ba sebelisang protocol ea IPv6.</string>
+    <string name="relays">Li-relay</string>
+    <string name="connections">Lihokelo</string>
+    <string name="reset">Seta bocha</string>
+</resources>

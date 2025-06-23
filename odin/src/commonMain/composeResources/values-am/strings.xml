@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ኦዲን</string>
+    <string name="information">መረጃ</string>
+    <string name="share">አጋራ</string>
+    <string name="action_select_all">ሁሉንም ምረጥ</string>
+    <string name="no_activity_found_to_handle_uri">ይህን አይነት ፋይል የሚደግፍ ምንም መተግበሪያ አልተገኘም።</string>
+    <string name="documentation">ሰነድ</string>
+    <string name="no_marked_file_delete">ለመሰረዝ ምልክት የተደረገባቸው ፋይሎች የሉም</string>
+    <string name="file_not_found">ፋይል ሊወርድ አልቻለም</string>
+    <string name="name_not_valid">ስም የሚሰራ አይደለም።</string>
+
+    <string name="delete">ሰርዝ</string>
+    <string name="revert_operation">ተመለስ</string>
+    <string name="delete_files">ፋይሎችን በመሰረዝ ላይ</string>
+    <string name="delete_file">ፋይል በመሰረዝ ላይ</string>
+
+
+    <string name="share_link">አገናኝ አጋራ</string>
+    <string name="warning">ማስጠንቀቂያ</string>
+    <string name="reset_application_data">ሁሉም የመተግበሪያ ውሂብ ይሰረዛል።</string>
+
+
+    <string name="homepage">መነሻ ገጽ</string>
+    <string name="title">ርዕስ</string>
+    <string name="home">ቤት</string>
+    <string name="files">ፋይሎች</string>
+    <string name="file_menu">የፋይል ምናሌ</string>
+
+
+    <string name="uri_qrcode">የዩአርአይ QR ኮድ</string>
+    <string name="important">አስፈላጊ</string>
+
+    <string name="files_view">የፋይሎች እይታ</string>
+    <string name="port">ወደብ</string>
+    <string name="unknown">ተደራሽነት: ያልታወቀ</string>
+    <string name="local_network">ተደራሽነት: የአካባቢ አውታረ መረብ</string>
+    <string name="relays_network">ተደራሽነት: ማስተላለፊያዎች እና አካባቢያዊ አውታረ መረቦች</string>
+
+    <string name="limitation">Data sharing is only possible with peers using the IPv6 protocol.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Connections</string>
+    <string name="reset">ዳግም አስጀምር</string>
+</resources>

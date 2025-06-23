@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ਓਡਿਨ</string>
+    <string name="information">ਜਾਣਕਾਰੀ</string>
+    <string name="share">ਸ਼ੇਅਰ ਕਰੋ</string>
+    <string name="action_select_all">ਸਾਰਿਆ ਨੂੰ ਚੁਣੋ</string>
+    <string name="no_activity_found_to_handle_uri">ਕੋਈ ਐਪਲੀਕੇਸ਼ਨ ਨਹੀਂ ਮਿਲੀ ਜੋ ਇਸ ਕਿਸਮ ਦੀ ਫਾਈਲ ਦਾ ਸਮਰਥਨ ਕਰਦੀ ਹੈ।</string>
+    <string name="documentation">ਦਸਤਾਵੇਜ਼ੀਕਰਨ</string>
+    <string name="no_marked_file_delete">ਮਿਟਾਉਣ ਲਈ ਕੋਈ ਵੀ ਫ਼ਾਈਲਾਂ ਮਾਰਕ ਨਹੀਂ ਕੀਤੀਆਂ ਗਈਆਂ</string>
+    <string name="file_not_found">ਫ਼ਾਈਲ ਡਾਊਨਲੋਡ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ</string>
+    <string name="name_not_valid">ਨਾਮ ਵੈਧ ਨਹੀਂ ਹੈ</string>
+
+    <string name="delete">ਮਿਟਾਓ</string>
+    <string name="revert_operation">ਵਾਪਸੀ ਕਰੋ</string>
+    <string name="delete_files">ਫਾਈਲਾਂ ਨੂੰ ਮਿਟਾਇਆ ਜਾ ਰਿਹਾ ਹੈ</string>
+    <string name="delete_file">ਫ਼ਾਈਲ ਨੂੰ ਮਿਟਾਇਆ ਜਾ ਰਿਹਾ ਹੈ</string>
+
+
+    <string name="share_link">ਲਿੰਕ ਸਾਂਝਾ ਕਰੋ</string>
+    <string name="warning">ਚੇਤਾਵਨੀ</string>
+    <string name="reset_application_data">ਸਾਰਾ ਐਪਲੀਕੇਸ਼ਨ ਡੇਟਾ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।</string>
+
+
+    <string name="homepage">ਹੋਮਪੇਜ</string>
+    <string name="title">ਸਿਰਲੇਖ</string>
+    <string name="home">ਘਰ</string>
+    <string name="files">ਫਾਈਲਾਂ</string>
+    <string name="file_menu">ਫਾਈਲ ਮੀਨੂ</string>
+
+
+    <string name="uri_qrcode">URI QR ਕੋਡ</string>
+    <string name="important">ਮਹੱਤਵਪੂਰਨ</string>
+
+    <string name="files_view">ਫਾਈਲਾਂ ਦਾ ਦ੍ਰਿਸ਼</string>
+    <string name="port">ਪੋਰਟ</string>
+    <string name="unknown">ਪਹੁੰਚਯੋਗਤਾ: ਅਣਜਾਣ</string>
+    <string name="local_network">ਪਹੁੰਚਯੋਗਤਾ: ਸਥਾਨਕ ਨੈੱਟਵਰਕ</string>
+    <string name="relays_network">ਪਹੁੰਚਯੋਗਤਾ: ਰੀਲੇਅ ਅਤੇ ਸਥਾਨਕ ਨੈੱਟਵਰਕ</string>
+
+    <string name="limitation">ਡੇਟਾ ਸ਼ੇਅਰਿੰਗ ਸਿਰਫ IPv6 ਪ੍ਰੋਟੋਕੋਲ ਦੀ ਵਰਤੋਂ ਕਰਨ ਵਾਲੇ ਸਾਥੀਆਂ ਨਾਲ ਸੰਭਵ ਹੈ।</string>
+    <string name="relays">ਰੀਲੇਅ</string>
+    <string name="connections">ਕਨੈਕਸ਼ਨ</string>
+    <string name="reset">ਰੀਸੈਟ ਕਰੋ</string>
+</resources>

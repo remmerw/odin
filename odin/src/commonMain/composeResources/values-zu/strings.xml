@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Ulwazi</string>
+    <string name="share">Yabelana</string>
+    <string name="action_select_all">Khetha konke</string>
+    <string name="no_activity_found_to_handle_uri">Alukho uhlelo lokusebenza olutholakele olusekela lolu hlobo lwefayela.</string>
+    <string name="documentation">Amadokhumenti</string>
+    <string name="no_marked_file_delete">Awekho amafayela amakelwe ukususwa</string>
+    <string name="file_not_found">Ifayela alikwazanga ukulandwa</string>
+    <string name="name_not_valid">Igama alivumelekile</string>
+
+    <string name="delete">Susa</string>
+    <string name="revert_operation">Buyela emuva</string>
+    <string name="delete_files">Amafayela ayasuswa</string>
+    <string name="delete_file">Ukususa ifayela</string>
+
+
+    <string name="share_link">Yabelana Ngesixhumanisi</string>
+    <string name="warning">Isexwayiso</string>
+    <string name="reset_application_data">Yonke idatha yohlelo lokusebenza izosuswa.</string>
+
+
+    <string name="homepage">Ikhasi eliyisiqalo</string>
+    <string name="title">Isihloko</string>
+    <string name="home">Ikhaya</string>
+    <string name="files">Amafayela</string>
+    <string name="file_menu">Imenyu Yefayela</string>
+
+
+    <string name="uri_qrcode">Ikhodi ye-URI QR</string>
+    <string name="important">Okubalulekile</string>
+
+    <string name="files_view">Ukubuka Kwamafayela</string>
+    <string name="port">Itheku</string>
+    <string name="unknown">Ukufinyeleleka : Akwaziwa</string>
+    <string name="local_network">Ukufinyeleleka : Inethiwekhi Yasendaweni</string>
+    <string name="relays_network">Ukufinyeleleka : Ukudluliselwa kanye Nenethiwekhi Yasendaweni</string>
+
+    <string name="limitation">Ukwabelana ngedatha kungenzeka kuphela kontanga abasebenzisa iphrothokholi ye-IPv6.</string>
+    <string name="relays">Ukudluliselwa</string>
+    <string name="connections">Ukuxhumana</string>
+    <string name="reset">Setha kabusha</string>
+</resources>

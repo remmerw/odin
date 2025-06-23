@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Один</string>
+    <string name="information">Маалымат</string>
+    <string name="share">Бөлүшүү</string>
+    <string name="action_select_all">Баарын тандаңыз</string>
+    <string name="no_activity_found_to_handle_uri">Мындай файлды колдогон бир дагы колдонмо табылган жок.</string>
+    <string name="documentation">Документация</string>
+    <string name="no_marked_file_delete">Жок кылуу үчүн белгиленген файлдар жок</string>
+    <string name="file_not_found">Файл жүктөлүп алынбай койду</string>
+    <string name="name_not_valid">Аты жараксыз</string>
+
+    <string name="delete">Жок кылуу</string>
+    <string name="revert_operation">Кайтаруу</string>
+    <string name="delete_files">Файлдар жок кылынууда</string>
+    <string name="delete_file">Файл жок кылынууда</string>
+
+
+    <string name="share_link">Шилтемени бөлүшүү</string>
+    <string name="warning">Эскертүү</string>
+    <string name="reset_application_data">Колдонмонун бардык дайындары жок кылынат.</string>
+
+
+    <string name="homepage">Башкы бет</string>
+    <string name="title">Title</string>
+    <string name="home">Үй</string>
+    <string name="files">Файлдар</string>
+    <string name="file_menu">Файл менюсу</string>
+
+
+    <string name="uri_qrcode">URI QR коду</string>
+    <string name="important">Маанилүү</string>
+
+    <string name="files_view">Файлдарды көрүү</string>
+    <string name="port">Порт</string>
+    <string name="unknown">Жеткиликтүүлүк: Белгисиз</string>
+    <string name="local_network">Жеткиликтүүлүк: Жергиликтүү тармак</string>
+    <string name="relays_network">Жеткиликтүүлүк: Реле жана жергиликтүү тармак</string>
+
+    <string name="limitation">Маалыматтарды бөлүшүү IPv6 протоколун колдонгон курбулар менен гана мүмкүн.</string>
+    <string name="relays">Релелер</string>
+    <string name="connections">Байланыштар</string>
+    <string name="reset">Калыбына келтирүү</string>
+</resources>

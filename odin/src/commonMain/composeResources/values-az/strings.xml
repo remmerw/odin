@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Məlumat</string>
+    <string name="share">Paylaşın</string>
+    <string name="action_select_all">Hamısını seç</string>
+    <string name="no_activity_found_to_handle_uri">Bu cür faylı dəstəkləyən proqram tapılmadı.</string>
+    <string name="documentation">Sənədlər</string>
+    <string name="no_marked_file_delete">Silinmək üçün qeyd olunan fayl yoxdur</string>
+    <string name="file_not_found">Faylı endirmək mümkün olmadı</string>
+    <string name="name_not_valid">Ad etibarlı deyil</string>
+
+    <string name="delete">Sil</string>
+    <string name="revert_operation">Geri qaytarın</string>
+    <string name="delete_files">Faylların silinməsi</string>
+    <string name="delete_file">Faylın silinməsi</string>
+
+
+    <string name="share_link">Linki Paylaşın</string>
+    <string name="warning">Xəbərdarlıq</string>
+    <string name="reset_application_data">Bütün tətbiq məlumatları silinəcək.</string>
+
+
+    <string name="homepage">Əsas səhifə</string>
+    <string name="title">Başlıq</string>
+    <string name="home">Ev</string>
+    <string name="files">Fayllar</string>
+    <string name="file_menu">Fayl Menyu</string>
+
+
+    <string name="uri_qrcode">URI QR kodu</string>
+    <string name="important">Əhəmiyyətli</string>
+
+    <string name="files_view">Fayl Görünüşü</string>
+    <string name="port">Liman</string>
+    <string name="unknown">Əlçatanlıq: Naməlum</string>
+    <string name="local_network">Əlçatanlıq: Yerli Şəbəkə</string>
+    <string name="relays_network">Əlçatanlıq: Rele və Yerli Şəbəkə</string>
+
+    <string name="limitation">Məlumat mübadiləsi yalnız IPv6 protokolundan istifadə edən həmyaşıdlarla mümkündür.</string>
+    <string name="relays">Röleler</string>
+    <string name="connections">Əlaqələr</string>
+    <string name="reset">Sıfırlayın</string>
+</resources>

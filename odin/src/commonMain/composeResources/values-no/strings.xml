@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Informasjon</string>
+    <string name="share">Dele</string>
+    <string name="action_select_all">Velg alle</string>
+    <string name="no_activity_found_to_handle_uri">Fant ingen applikasjoner som støtter denne typen filer.</string>
+    <string name="documentation">Dokumentasjon</string>
+    <string name="no_marked_file_delete">Ingen filer merket for sletting</string>
+    <string name="file_not_found">Filen kunne ikke lastes ned</string>
+    <string name="name_not_valid">Navnet er ikke gyldig</string>
+
+    <string name="delete">Slett</string>
+    <string name="revert_operation">Gå tilbake</string>
+    <string name="delete_files">Filer slettes</string>
+    <string name="delete_file">Fil sletter</string>
+
+
+    <string name="share_link">Dele lenke</string>
+    <string name="warning">Advarsel</string>
+    <string name="reset_application_data">Alle applikasjonsdata vil bli slettet.</string>
+
+
+    <string name="homepage">Hjemmeside</string>
+    <string name="title">Tittel</string>
+    <string name="home">Hjem</string>
+    <string name="files">Filer</string>
+    <string name="file_menu">Filmeny</string>
+
+
+    <string name="uri_qrcode">URI QR-kode</string>
+    <string name="important">Viktig</string>
+
+    <string name="files_view">Filvisning</string>
+    <string name="port">Havn</string>
+    <string name="unknown">Tilgjengelighet: Ukjent</string>
+    <string name="local_network">Tilgjengelighet: Lokalt nettverk</string>
+    <string name="relays_network">Tilgjengelighet: Reléer og lokalt nettverk</string>
+
+    <string name="limitation">Datadeling er bare mulig med jevnaldrende som bruker IPv6-protokollen.</string>
+    <string name="relays">Reléer</string>
+    <string name="connections">Tilkoblinger</string>
+    <string name="reset">Nullstille</string>
+</resources>

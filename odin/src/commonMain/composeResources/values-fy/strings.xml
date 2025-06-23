@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Ynformaasje</string>
+    <string name="share">Diele</string>
+    <string name="action_select_all">Selektearje alles</string>
+    <string name="no_activity_found_to_handle_uri">Gjin applikaasje fûn dy\'t dit soarte triem stipet.</string>
+    <string name="documentation">Dokumintaasje</string>
+    <string name="no_marked_file_delete">Gjin triemmen markearre foar wiskjen</string>
+    <string name="file_not_found">Triem koe net ynladen wurde</string>
+    <string name="name_not_valid">Namme net jildich</string>
+
+    <string name="delete">Wiskje</string>
+    <string name="revert_operation">Weromsette</string>
+    <string name="delete_files">Triemmen wiskjen</string>
+    <string name="delete_file">Triem wiskjen</string>
+
+
+    <string name="share_link">Diel link</string>
+    <string name="warning">Warskôging</string>
+    <string name="reset_application_data">Alle applikaasjegegevens wurde wiske.</string>
+
+
+    <string name="homepage">Homepage</string>
+    <string name="title">Titel</string>
+    <string name="home">Thús</string>
+    <string name="files">Bestannen</string>
+    <string name="file_menu">File Menu</string>
+
+
+    <string name="uri_qrcode">URI QR-koade</string>
+    <string name="important">Belangryk</string>
+
+    <string name="files_view">Files View</string>
+    <string name="port">Haven</string>
+    <string name="unknown">Bereikberens: Unbekend</string>
+    <string name="local_network">Bereikberens: Lokaal netwurk</string>
+    <string name="relays_network">Bereikberens: relais en lokaal netwurk</string>
+
+    <string name="limitation">Diele fan gegevens is allinich mooglik mei peers dy\'t it IPv6-protokol brûke.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Ferbinings</string>
+    <string name="reset">Weromsette</string>
+</resources>

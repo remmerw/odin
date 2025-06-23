@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ಓಡಿನ್</string>
+    <string name="information">ಮಾಹಿತಿ</string>
+    <string name="share">ಹಂಚಿಕೊಳ್ಳಿ</string>
+    <string name="action_select_all">ಎಲ್ಲವನ್ನು ಆರಿಸು</string>
+    <string name="no_activity_found_to_handle_uri">ಈ ರೀತಿಯ ಫೈಲ್ ಅನ್ನು ಬೆಂಬಲಿಸುವ ಯಾವುದೇ ಅಪ್ಲಿಕೇಶನ್ ಕಂಡುಬಂದಿಲ್ಲ.</string>
+    <string name="documentation">ದಾಖಲೆ</string>
+    <string name="no_marked_file_delete">ಅಳಿಸುವಿಕೆಗಾಗಿ ಯಾವುದೇ ಫೈಲ್‌ಗಳನ್ನು ಗುರುತಿಸಲಾಗಿಲ್ಲ</string>
+    <string name="file_not_found">ಫೈಲ್ ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
+    <string name="name_not_valid">ಹೆಸರು ಮಾನ್ಯವಾಗಿಲ್ಲ</string>
+
+    <string name="delete">ಅಳಿಸಿ</string>
+    <string name="revert_operation">ಹಿಂತಿರುಗಿ</string>
+    <string name="delete_files">ಫೈಲ್‌ಗಳನ್ನು ಅಳಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="delete_file">ಫೈಲ್ ಅಳಿಸಲಾಗುತ್ತಿದೆ</string>
+
+
+    <string name="share_link">ಲಿಂಕ್ ಹಂಚಿಕೊಳ್ಳಿ</string>
+    <string name="warning">ಎಚ್ಚರಿಕೆ</string>
+    <string name="reset_application_data">ಎಲ್ಲಾ ಅಪ್ಲಿಕೇಶನ್ ಡೇಟಾವನ್ನು ಅಳಿಸಲಾಗುತ್ತದೆ.</string>
+
+
+    <string name="homepage">ಮುಖಪುಟ</string>
+    <string name="title">ಶೀರ್ಷಿಕೆ</string>
+    <string name="home">ಮನೆ</string>
+    <string name="files">ಕಡತಗಳನ್ನು</string>
+    <string name="file_menu">ಫೈಲ್ ಮೆನು</string>
+
+
+    <string name="uri_qrcode">URI QR ಕೋಡ್</string>
+    <string name="important">ಪ್ರಮುಖ</string>
+
+    <string name="files_view">ಫೈಲ್‌ಗಳ ವೀಕ್ಷಣೆ</string>
+    <string name="port">ಬಂದರು</string>
+    <string name="unknown">ತಲುಪುವಿಕೆ: ತಿಳಿದಿಲ್ಲ</string>
+    <string name="local_network">ತಲುಪುವಿಕೆ: ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್</string>
+    <string name="relays_network">ತಲುಪುವಿಕೆ : ರಿಲೇಗಳು ಮತ್ತು ಸ್ಥಳೀಯ ನೆಟ್‌ವರ್ಕ್</string>
+
+    <string name="limitation">IPv6 ಪ್ರೋಟೋಕಾಲ್ ಬಳಸುವ ಗೆಳೆಯರೊಂದಿಗೆ ಮಾತ್ರ ಡೇಟಾ ಹಂಚಿಕೆ ಸಾಧ್ಯ.</string>
+    <string name="relays">ರಿಲೇಗಳು</string>
+    <string name="connections">ಸಂಪರ್ಕಗಳು</string>
+    <string name="reset">ಮರುಹೊಂದಿಸಿ</string>
+</resources>

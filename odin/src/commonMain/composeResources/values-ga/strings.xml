@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Eolas</string>
+    <string name="share">Comhroinn</string>
+    <string name="action_select_all">Roghnú go léir</string>
+    <string name="no_activity_found_to_handle_uri">Níor aimsíodh feidhmchlár a thacaíonn leis an gcineál seo comhaid.</string>
+    <string name="documentation">Doiciméadúchán</string>
+    <string name="no_marked_file_delete">Níl aon chomhad marcáilte le scriosadh</string>
+    <string name="file_not_found">Níorbh fhéidir an comhad a íoslódáil</string>
+    <string name="name_not_valid">Níl an t-ainm bailí</string>
+
+    <string name="delete">Scrios</string>
+    <string name="revert_operation">Fill ar ais</string>
+    <string name="delete_files">Comhaid á scriosadh</string>
+    <string name="delete_file">Comhad á scriosadh</string>
+
+
+    <string name="share_link">Comhroinn Nasc</string>
+    <string name="warning">Rabhadh</string>
+    <string name="reset_application_data">Scriosfar na sonraí feidhmchláir go léir.</string>
+
+
+    <string name="homepage">Leathanach baile</string>
+    <string name="title">Teideal</string>
+    <string name="home">Baile</string>
+    <string name="files">Comhaid</string>
+    <string name="file_menu">Roghchlár Comhad</string>
+
+
+    <string name="uri_qrcode">Cód URI QR</string>
+    <string name="important">Tábhachtach</string>
+
+    <string name="files_view">Amharc Comhaid</string>
+    <string name="port">Port</string>
+    <string name="unknown">Insroichteacht: Anaithnid</string>
+    <string name="local_network">Insroichteacht : Líonra Áitiúil</string>
+    <string name="relays_network">Inrochtaineacht : Athsheachadáin agus Líonra Áitiúil</string>
+
+    <string name="limitation">Ní féidir sonraí a roinnt ach le piaraí a úsáideann an prótacal IPv6.</string>
+    <string name="relays">Athsheachadáin</string>
+    <string name="connections">Naisc</string>
+    <string name="reset">Athshocraigh</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ओडिन</string>
+    <string name="information">माहिती</string>
+    <string name="share">शेअर करा</string>
+    <string name="action_select_all">सर्व निवडा</string>
+    <string name="no_activity_found_to_handle_uri">या प्रकारच्या फाइलला समर्थन देणारा कोणताही अनुप्रयोग आढळला नाही.</string>
+    <string name="documentation">दस्तऐवजीकरण</string>
+    <string name="no_marked_file_delete">हटवण्‍यासाठी कोणत्याही फायली चिन्हांकित नाहीत</string>
+    <string name="file_not_found">फाइल डाउनलोड करता आली नाही</string>
+    <string name="name_not_valid">नाव वैध नाही</string>
+
+    <string name="delete">हटवा</string>
+    <string name="revert_operation">पूर्वस्थितीवर येणे</string>
+    <string name="delete_files">फाइल्स हटवत आहे</string>
+    <string name="delete_file">फाइल हटवत आहे</string>
+
+
+    <string name="share_link">दुवा सामायिक करा</string>
+    <string name="warning">चेतावणी</string>
+    <string name="reset_application_data">सर्व अनुप्रयोग डेटा हटविला जाईल.</string>
+
+
+    <string name="homepage">मुखपृष्ठ</string>
+    <string name="title">शीर्षक</string>
+    <string name="home">मुख्यपृष्ठ</string>
+    <string name="files">फाईल्स</string>
+    <string name="file_menu">फाइल मेनू</string>
+
+
+    <string name="uri_qrcode">URI QR कोड</string>
+    <string name="important">महत्वाचे</string>
+
+    <string name="files_view">फाइल्स पहा</string>
+    <string name="port">बंदर</string>
+    <string name="unknown">पोहोचण्यायोग्यता: अज्ञात</string>
+    <string name="local_network">पोहोचण्यायोग्यता: स्थानिक नेटवर्क</string>
+    <string name="relays_network">पोहोचण्यायोग्यता: रिले आणि स्थानिक नेटवर्क</string>
+
+    <string name="limitation">डेटा शेअरिंग फक्त IPv6 प्रोटोकॉल वापरून समवयस्कांसह शक्य आहे.</string>
+    <string name="relays">रिले</string>
+    <string name="connections">जोडण्या</string>
+    <string name="reset">रीसेट करा</string>
+</resources>

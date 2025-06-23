@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Alaye</string>
+    <string name="share">Pinpin</string>
+    <string name="action_select_all">Sa gbogbo re</string>
+    <string name="no_activity_found_to_handle_uri">Ko si ohun elo ti a rii eyiti o ṣe atilẹyin iru faili yii.</string>
+    <string name="documentation">Iwe aṣẹ</string>
+    <string name="no_marked_file_delete">Ko si awọn faili ti o samisi fun piparẹ</string>
+    <string name="file_not_found">Faili ko le ṣe igbasilẹ</string>
+    <string name="name_not_valid">Orukọ ko wulo</string>
+
+    <string name="delete">Paarẹ</string>
+    <string name="revert_operation">Pada</string>
+    <string name="delete_files">Awọn faili piparẹ</string>
+    <string name="delete_file">Npaarẹ faili</string>
+
+
+    <string name="share_link">Pin Ọna asopọ</string>
+    <string name="warning">Ikilo</string>
+    <string name="reset_application_data">Gbogbo data ohun elo yoo paarẹ.</string>
+
+
+    <string name="homepage">Oju-iwe akọọkan</string>
+    <string name="title">Akọle</string>
+    <string name="home">Ile</string>
+    <string name="files">Awọn faili</string>
+    <string name="file_menu">Akojọ faili</string>
+
+
+    <string name="uri_qrcode">URI QR koodu</string>
+    <string name="important">Pataki</string>
+
+    <string name="files_view">Wiwo awọn faili</string>
+    <string name="port">Ibudo</string>
+    <string name="unknown">Wiwọle: Aimọ</string>
+    <string name="local_network">Wiwọle: Nẹtiwọọki agbegbe</string>
+    <string name="relays_network">Reachability: Relays ati Agbegbe Nẹtiwọọki</string>
+
+    <string name="limitation">Pipin data ṣee ṣe nikan pẹlu awọn ẹlẹgbẹ nipa lilo ilana IPv6.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Awọn isopọ</string>
+    <string name="reset">Tunto</string>
+</resources>

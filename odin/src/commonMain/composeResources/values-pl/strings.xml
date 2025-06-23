@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odyn</string>
+    <string name="information">Informacja</string>
+    <string name="share">Udział</string>
+    <string name="action_select_all">Zaznacz wszystko</string>
+    <string name="no_activity_found_to_handle_uri">Nie znaleziono aplikacji obsługującej ten rodzaj pliku.</string>
+    <string name="documentation">Dokumentacja</string>
+    <string name="no_marked_file_delete">Brak plików zaznaczonych do usunięcia</string>
+    <string name="file_not_found">Nie można pobrać pliku</string>
+    <string name="name_not_valid">Nazwa nieprawidłowa</string>
+
+    <string name="delete">Usuwać</string>
+    <string name="revert_operation">Odwracać</string>
+    <string name="delete_files">Usuwanie plików</string>
+    <string name="delete_file">Usuwanie plików</string>
+
+
+    <string name="share_link">Udostępnij link</string>
+    <string name="warning">Ostrzeżenie</string>
+    <string name="reset_application_data">Wszystkie dane aplikacji zostaną usunięte.</string>
+
+
+    <string name="homepage">Strona główna</string>
+    <string name="title">Tytuł</string>
+    <string name="home">Dom</string>
+    <string name="files">Akta</string>
+    <string name="file_menu">Menu plików</string>
+
+
+    <string name="uri_qrcode">Kod QR URI</string>
+    <string name="important">Ważny</string>
+
+    <string name="files_view">Widok plików</string>
+    <string name="port">Port</string>
+    <string name="unknown">Osiągalność: Nieznana</string>
+    <string name="local_network">Dostępność: Sieć lokalna</string>
+    <string name="relays_network">Dostępność: przekaźniki i sieć lokalna</string>
+
+    <string name="limitation">Udostępnianie danych jest możliwe tylko z urządzeniami równorzędnymi korzystającymi z protokołu IPv6.</string>
+    <string name="relays">Przekaźniki</string>
+    <string name="connections">Znajomości</string>
+    <string name="reset">Resetowanie</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">ඔඩින්</string>
+    <string name="information">විස්තර</string>
+    <string name="share">බෙදාගන්න</string>
+    <string name="action_select_all">සියල්ල තෝරන්න</string>
+    <string name="no_activity_found_to_handle_uri">මෙවැනි ගොනු සඳහා සහය දක්වන යෙදුමක් හමු නොවීය.</string>
+    <string name="documentation">ලේඛනගත කිරීම</string>
+    <string name="no_marked_file_delete">මකාදැමීම සඳහා ගොනු සලකුණු කර නැත</string>
+    <string name="file_not_found">ගොනුව බාගැනීමට නොහැකි විය</string>
+    <string name="name_not_valid">නම වලංගු නැත</string>
+
+    <string name="delete">මකන්න</string>
+    <string name="revert_operation">ආපසු හරවන්න</string>
+    <string name="delete_files">ගොනු මකා දැමීම</string>
+    <string name="delete_file">ගොනුව මකා දැමීම</string>
+
+
+    <string name="share_link">සබැඳිය බෙදාගන්න</string>
+    <string name="warning">අවවාදයයි</string>
+    <string name="reset_application_data">සියලුම යෙදුම් දත්ත මකා දැමෙනු ඇත.</string>
+
+
+    <string name="homepage">මුල් පිටුව</string>
+    <string name="title">ශීර්ෂය</string>
+    <string name="home">ගෙදර</string>
+    <string name="files">ගොනු</string>
+    <string name="file_menu">ගොනු මෙනුව</string>
+
+
+    <string name="uri_qrcode">URI QR කේතය</string>
+    <string name="important">වැදගත්</string>
+
+    <string name="files_view">ගොනු දසුන</string>
+    <string name="port">වරාය</string>
+    <string name="unknown">ළඟා විය හැකි බව: නොදන්නා</string>
+    <string name="local_network">ළඟා විය හැකි: දේශීය ජාලය</string>
+    <string name="relays_network">ළඟා විය හැකි: රිලේ සහ දේශීය ජාලය</string>
+
+    <string name="limitation">දත්ත බෙදාගැනීම කළ හැක්කේ IPv6 ප්‍රොටෝකෝලය භාවිතා කරන සම වයසේ මිතුරන් සමඟ පමණි.</string>
+    <string name="relays">රිලේස්</string>
+    <string name="connections">සම්බන්ධතා</string>
+    <string name="reset">යළි පිහිටුවන්න</string>
+</resources>

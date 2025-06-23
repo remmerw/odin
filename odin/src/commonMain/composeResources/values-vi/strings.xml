@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Thông tin</string>
+    <string name="share">Chia sẻ</string>
+    <string name="action_select_all">Chọn tất cả</string>
+    <string name="no_activity_found_to_handle_uri">Không tìm thấy ứng dụng nào hỗ trợ loại tệp này.</string>
+    <string name="documentation">Tài liệu</string>
+    <string name="no_marked_file_delete">Không có tệp nào được đánh dấu để xóa</string>
+    <string name="file_not_found">Không thể tải xuống tệp</string>
+    <string name="name_not_valid">Tên không hợp lệ</string>
+
+    <string name="delete">Xóa bỏ</string>
+    <string name="revert_operation">hoàn nguyên</string>
+    <string name="delete_files">xóa tập tin</string>
+    <string name="delete_file">xóa tập tin</string>
+
+
+    <string name="share_link">Chia sẻ đường link</string>
+    <string name="warning">Cảnh báo</string>
+    <string name="reset_application_data">Tất cả dữ liệu ứng dụng sẽ bị xóa.</string>
+
+
+    <string name="homepage">Trang chủ</string>
+    <string name="title">Tiêu đề</string>
+    <string name="home">Trang chủ</string>
+    <string name="files">Các tập tin</string>
+    <string name="file_menu">Danh sách dữ liệu</string>
+
+
+    <string name="uri_qrcode">Mã QR URI</string>
+    <string name="important">Quan trọng</string>
+
+    <string name="files_view">Xem tệp</string>
+    <string name="port">Hải cảng</string>
+    <string name="unknown">Khả năng tiếp cận: Không xác định</string>
+    <string name="local_network">Khả năng tiếp cận : Mạng cục bộ</string>
+    <string name="relays_network">Khả năng tiếp cận: Rơle và Mạng cục bộ</string>
+
+    <string name="limitation">Chỉ có thể chia sẻ dữ liệu với các đồng nghiệp sử dụng giao thức IPv6.</string>
+    <string name="relays">Rơle</string>
+    <string name="connections">Kết nối</string>
+    <string name="reset">Cài lại</string>
+</resources>

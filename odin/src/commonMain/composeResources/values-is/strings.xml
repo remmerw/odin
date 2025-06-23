@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Óðinn</string>
+    <string name="information">Upplýsingar</string>
+    <string name="share">Deila</string>
+    <string name="action_select_all">Velja allt</string>
+    <string name="no_activity_found_to_handle_uri">Ekkert forrit fannst sem styður þessa tegund skráa.</string>
+    <string name="documentation">Skjöl</string>
+    <string name="no_marked_file_delete">Engar skrár merktar til eyðingar</string>
+    <string name="file_not_found">Ekki var hægt að hlaða niður skrá</string>
+    <string name="name_not_valid">Nafn ekki gilt</string>
+
+    <string name="delete">Eyða</string>
+    <string name="revert_operation">Til baka</string>
+    <string name="delete_files">Eyða skrám</string>
+    <string name="delete_file">Skrá eyðir</string>
+
+
+    <string name="share_link">Deila hlekk</string>
+    <string name="warning">Viðvörun</string>
+    <string name="reset_application_data">Öllum umsóknargögnum verður eytt.</string>
+
+
+    <string name="homepage">Heimasíða</string>
+    <string name="title">Titill</string>
+    <string name="home">Heim</string>
+    <string name="files">Skrár</string>
+    <string name="file_menu">Skráarvalmynd</string>
+
+
+    <string name="uri_qrcode">URI QR kóða</string>
+    <string name="important">Mikilvægt</string>
+
+    <string name="files_view">Skráarsýn</string>
+    <string name="port">Höfn</string>
+    <string name="unknown">Aðgengi: Óþekkt</string>
+    <string name="local_network">Aðgengi: Staðbundið net</string>
+    <string name="relays_network">Aðgengi : Relays og Local Network</string>
+
+    <string name="limitation">Gagnamiðlun er aðeins möguleg með jafningjum sem nota IPv6 samskiptareglur.</string>
+    <string name="relays">Relays</string>
+    <string name="connections">Tengingar</string>
+    <string name="reset">Endurstilla</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Habari</string>
+    <string name="share">Shiriki</string>
+    <string name="action_select_all">Chagua Zote</string>
+    <string name="no_activity_found_to_handle_uri">Hakuna programu iliyopatikana inayotumia aina hii ya faili.</string>
+    <string name="documentation">Nyaraka</string>
+    <string name="no_marked_file_delete">Hakuna faili zilizowekwa alama za kufutwa</string>
+    <string name="file_not_found">Faili haikuweza kupakuliwa</string>
+    <string name="name_not_valid">Jina si sahihi</string>
+
+    <string name="delete">Futa</string>
+    <string name="revert_operation">Rudisha</string>
+    <string name="delete_files">Faili zinafutwa</string>
+    <string name="delete_file">Kufuta faili</string>
+
+
+    <string name="share_link">Shiriki Kiungo</string>
+    <string name="warning">Onyo</string>
+    <string name="reset_application_data">Data yote ya programu itafutwa.</string>
+
+
+    <string name="homepage">Ukurasa wa nyumbani</string>
+    <string name="title">Kichwa</string>
+    <string name="home">Nyumbani</string>
+    <string name="files">Mafaili</string>
+    <string name="file_menu">Menyu ya Faili</string>
+
+
+    <string name="uri_qrcode">Msimbo wa QR wa URI</string>
+    <string name="important">Muhimu</string>
+
+    <string name="files_view">Mwonekano wa Faili</string>
+    <string name="port">Bandari</string>
+    <string name="unknown">Upatikanaji : Haijulikani</string>
+    <string name="local_network">Upatikanaji : Mtandao wa Karibu</string>
+    <string name="relays_network">Upatikanaji : Relays na Mtandao wa Karibu</string>
+
+    <string name="limitation">Kushiriki data kunawezekana tu na programu zingine zinazotumia itifaki ya IPv6.</string>
+    <string name="relays">Reli</string>
+    <string name="connections">Viunganishi</string>
+    <string name="reset">Weka upya</string>
+</resources>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Information</string>
+    <string name="share">anjara</string>
+    <string name="action_select_all">Select All</string>
+    <string name="no_activity_found_to_handle_uri">Tsy misy fampiharana hita manohana ity karazana rakitra ity.</string>
+    <string name="documentation">tahirin-kevitra</string>
+    <string name="no_marked_file_delete">Tsy misy rakitra voamarika ho fafana</string>
+    <string name="file_not_found">Tsy azo alaina ny rakitra</string>
+    <string name="name_not_valid">Tsy manan-kery ny anarana</string>
+
+    <string name="delete">Mamafa</string>
+    <string name="revert_operation">hiverina</string>
+    <string name="delete_files">Famafana rakitra</string>
+    <string name="delete_file">Famafana rakitra</string>
+
+
+    <string name="share_link">Zarao rohy</string>
+    <string name="warning">FAMPITANDREMANA</string>
+    <string name="reset_application_data">Ho voafafa ny angona fampiharana rehetra.</string>
+
+
+    <string name="homepage">pejy fandraisana</string>
+    <string name="title">Lohateny</string>
+    <string name="home">an-trano</string>
+    <string name="files">rakitra</string>
+    <string name="file_menu">File Menu</string>
+
+
+    <string name="uri_qrcode">URI QR code</string>
+    <string name="important">ZAVA-DEHIBE</string>
+
+    <string name="files_view">Files View</string>
+    <string name="port">Port</string>
+    <string name="unknown">Reachability: Tsy fantatra</string>
+    <string name="local_network">Reachability: Tambajotra eo an-toerana</string>
+    <string name="relays_network">Reachability: Relay sy tambajotra eo an-toerana</string>
+
+    <string name="limitation">Ny fizarana angon-drakitra dia tsy azo atao afa-tsy amin\'ny namana mampiasa ny protocol IPv6.</string>
+    <string name="relays">notantarain\'ilay</string>
+    <string name="connections">fifandraisana</string>
+    <string name="reset">Mamerina</string>
+</resources>

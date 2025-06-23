@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Informatiounen</string>
+    <string name="share">Deelen</string>
+    <string name="action_select_all">Alles auswielen</string>
+    <string name="no_activity_found_to_handle_uri">Keng Applikatioun fonnt déi dës Aart vu Fichier ënnerstëtzen.</string>
+    <string name="documentation">Dokumentatioun</string>
+    <string name="no_marked_file_delete">Keng Dateie markéiert fir ze läschen</string>
+    <string name="file_not_found">De Fichier konnt net erofgeluede ginn</string>
+    <string name="name_not_valid">Numm net valabel</string>
+
+    <string name="delete">Läschen</string>
+    <string name="revert_operation">Zréck</string>
+    <string name="delete_files">Dateien läschen</string>
+    <string name="delete_file">Fichier läschen</string>
+
+
+    <string name="share_link">Deelen Link</string>
+    <string name="warning">Warnung</string>
+    <string name="reset_application_data">All Applikatiounsdaten ginn geläscht.</string>
+
+
+    <string name="homepage">Homepage</string>
+    <string name="title">Titel</string>
+    <string name="home">Doheem</string>
+    <string name="files">Fichieren</string>
+    <string name="file_menu">Datei Menu</string>
+
+
+    <string name="uri_qrcode">URI QR Code</string>
+    <string name="important">Wichteg</string>
+
+    <string name="files_view">Dateien View</string>
+    <string name="port">Port</string>
+    <string name="unknown">Erreechbarkeet: Onbekannt</string>
+    <string name="local_network">Erreechbarkeet: Lokal Netzwierk</string>
+    <string name="relays_network">Erreechbarkeet: Relais a Lokal Netzwierk</string>
+
+    <string name="limitation">Dateenaustausch ass nëmme méiglech mat Kollegen déi den IPv6 Protokoll benotzen.</string>
+    <string name="relays">Relais</string>
+    <string name="connections">Verbindungen</string>
+    <string name="reset">Zerécksetzen</string>
+</resources>

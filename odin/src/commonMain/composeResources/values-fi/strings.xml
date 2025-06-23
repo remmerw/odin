@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Odin</string>
+    <string name="information">Tiedot</string>
+    <string name="share">Jaa</string>
+    <string name="action_select_all">Valitse kaikki</string>
+    <string name="no_activity_found_to_handle_uri">Sellaista tiedostoa tukevaa sovellusta ei löytynyt.</string>
+    <string name="documentation">Dokumentointi</string>
+    <string name="no_marked_file_delete">Ei tiedostoja merkitty poistettavaksi</string>
+    <string name="file_not_found">Tiedostoa ei voitu ladata</string>
+    <string name="name_not_valid">Nimi ei kelpaa</string>
+
+    <string name="delete">Poistaa</string>
+    <string name="revert_operation">Palauta</string>
+    <string name="delete_files">Tiedostojen poistaminen</string>
+    <string name="delete_file">Tiedoston poistaminen</string>
+
+
+    <string name="share_link">Jaa linkki</string>
+    <string name="warning">Varoitus</string>
+    <string name="reset_application_data">Kaikki sovellustiedot poistetaan.</string>
+
+
+    <string name="homepage">Kotisivu</string>
+    <string name="title">Otsikko</string>
+    <string name="home">Koti</string>
+    <string name="files">Tiedostot</string>
+    <string name="file_menu">Tiedosto-valikko</string>
+
+
+    <string name="uri_qrcode">URI QR-koodi</string>
+    <string name="important">Tärkeä</string>
+
+    <string name="files_view">Tiedostojen näkymä</string>
+    <string name="port">Portti</string>
+    <string name="unknown">Saavutettavuus: Tuntematon</string>
+    <string name="local_network">Saavutettavuus: Paikallinen verkko</string>
+    <string name="relays_network">Saavutettavuus: Releet ja paikallisverkko</string>
+
+    <string name="limitation">Tietojen jakaminen on mahdollista vain IPv6-protokollaa käyttävien ikäisensä kanssa.</string>
+    <string name="relays">Releet</string>
+    <string name="connections">Liitännät</string>
+    <string name="reset">Nollaa</string>
+</resources>

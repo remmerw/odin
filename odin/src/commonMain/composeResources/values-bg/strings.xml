@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Один</string>
+    <string name="information">Информация</string>
+    <string name="share">Дял</string>
+    <string name="action_select_all">Избери всички</string>
+    <string name="no_activity_found_to_handle_uri">Не е намерено приложение, което да поддържа този вид файл.</string>
+    <string name="documentation">Документация</string>
+    <string name="no_marked_file_delete">Няма маркирани файлове за изтриване</string>
+    <string name="file_not_found">Файлът не можа да бъде изтеглен</string>
+    <string name="name_not_valid">Името не е валидно</string>
+
+    <string name="delete">Изтрий</string>
+    <string name="revert_operation">Връщане</string>
+    <string name="delete_files">Изтриване на файлове</string>
+    <string name="delete_file">Изтриване на файл</string>
+
+
+    <string name="share_link">Сподели връзка</string>
+    <string name="warning">Внимание</string>
+    <string name="reset_application_data">Всички данни на приложението ще бъдат изтрити.</string>
+
+
+    <string name="homepage">Начална страница</string>
+    <string name="title">Заглавие</string>
+    <string name="home">У дома</string>
+    <string name="files">файлове</string>
+    <string name="file_menu">Меню Файл</string>
+
+
+    <string name="uri_qrcode">URI QR код</string>
+    <string name="important">важно</string>
+
+    <string name="files_view">Преглед на файлове</string>
+    <string name="port">Порт</string>
+    <string name="unknown">Достъпност: Неизвестна</string>
+    <string name="local_network">Достъпност: Локална мрежа</string>
+    <string name="relays_network">Достъпност: Релета и локална мрежа</string>
+
+    <string name="limitation">Споделянето на данни е възможно само с партньори, използващи протокола IPv6.</string>
+    <string name="relays">Релета</string>
+    <string name="connections">Връзки</string>
+    <string name="reset">Нулиране</string>
+</resources>
