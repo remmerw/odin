@@ -349,13 +349,13 @@ fun initializeOdin(context: Context): Odin {
     val datastore = createDataStore(context)
     val files = createFiles(context)
     val peers = createPeers(context)
-    val path = Path(context.filesDir.absolutePath, "rind")
+    val path = Path(context.filesDir.absolutePath, "storage")
     if (!SystemFileSystem.exists(path)) {
         SystemFileSystem.createDirectories(path, true)
     }
 
-    val rind = newStorage(path)
-    val dark = newIdun(
+    val storage = newStorage(path)
+    val idun = newIdun(
         keys = keys(datastore),
         events = { event: Event ->
             if (event == Event.INCOMING_CONNECT_EVENT) {
@@ -368,7 +368,7 @@ fun initializeOdin(context: Context): Odin {
         peerStore = peers
     )
 
-    odin = AndroidOdin(context, datastore, files, rind, dark, peers)
+    odin = AndroidOdin(context, datastore, files, storage, idun, peers)
 
     return odin()
 }

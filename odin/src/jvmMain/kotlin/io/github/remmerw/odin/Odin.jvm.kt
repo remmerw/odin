@@ -175,8 +175,8 @@ internal fun initializeOdin(): Odin {
     val peers = createPeers()
 
 
-    val rind = newStorage()
-    val dark = newIdun(
+    val storage = newStorage()
+    val idun = newIdun(
         keys = keys(datastore),
         events = { event: Event ->
             if (event == Event.INCOMING_CONNECT_EVENT) {
@@ -189,7 +189,7 @@ internal fun initializeOdin(): Odin {
         peerStore = peers
     )
 
-    odin = JvmOdin(datastore, files, rind, dark, peers)
+    odin = JvmOdin(datastore, files, storage, idun, peers)
 
     return odin()
 }
