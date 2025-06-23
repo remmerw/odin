@@ -78,7 +78,7 @@ class StateModel() : ViewModel() {
     }
 
     fun pageUri(): String {
-        return "pns:://" + odin().idun().peerId().toBase58()
+        return "pns://" + odin().idun().peerId().toBase58()
     }
 
 
