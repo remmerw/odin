@@ -37,6 +37,7 @@ import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
 import io.github.remmerw.idun.newStorage
 import io.github.remmerw.odin.core.CONTENT_DOWNLOAD
+import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.MimeType
 import io.github.remmerw.odin.core.Peers
@@ -45,14 +46,11 @@ import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.no_activity_found_to_handle_uri
 import io.github.remmerw.odin.generated.resources.share
 import io.github.remmerw.odin.generated.resources.share_link
-import io.github.remmerw.odin.odin
 import kotlinx.coroutines.launch
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
-import tech.lp2p.odin.core.FileInfo
-import threads.odin.debug
 import java.net.Inet6Address
 import java.net.InetAddress
 import java.net.NetworkInterface
@@ -250,7 +248,6 @@ private class CustomWebViewClient(val warning: (StringResource) -> Unit) :
     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
 
         val uri = request.url
-        debug("Activity", "shouldOverrideUrlLoading : $uri")
 
         when (uri.scheme) {
             "pns" -> {
@@ -271,7 +268,6 @@ private class CustomWebViewClient(val warning: (StringResource) -> Unit) :
     ): WebResourceResponse? {
         val uri = Uri.parse(request.url.toString())
 
-        debug("Activity", "shouldInterceptRequest : $uri")
 
         if (uri.scheme == "pns") {
             val peerId = extractPeerIdFromUri(uri)

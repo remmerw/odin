@@ -12,6 +12,7 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import io.github.remmerw.idun.Node
+import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.MimeType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ensureActive
@@ -19,7 +20,6 @@ import kotlinx.coroutines.withContext
 import kotlinx.io.Buffer
 import kotlinx.io.RawSource
 import kotlinx.io.buffered
-import tech.lp2p.odin.core.FileInfo
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileInputStream
