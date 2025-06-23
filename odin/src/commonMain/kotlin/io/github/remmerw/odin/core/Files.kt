@@ -30,6 +30,10 @@ abstract class Files : RoomDatabase() {
         filesDao().delete(idx)
     }
 
+    suspend fun reset() {
+        filesDao().reset()
+    }
+
 }
 
 

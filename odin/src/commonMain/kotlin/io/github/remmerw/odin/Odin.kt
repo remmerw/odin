@@ -24,7 +24,6 @@ import io.github.remmerw.odin.core.directoryContent
 import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.setPrivateKey
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okio.Path.Companion.toPath

@@ -29,4 +29,7 @@ interface FilesDao {
 
     @Query("SELECT name FROM FileInfo")
     suspend fun names(): List<String>
+
+    @Query("DELETE FROM FileInfo")
+    suspend fun reset()
 }

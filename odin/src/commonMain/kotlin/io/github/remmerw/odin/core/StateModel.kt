@@ -10,9 +10,6 @@ import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.relays_network
 import io.github.remmerw.odin.generated.resources.unknown
 import io.github.remmerw.odin.odin
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
-import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.StringResource
@@ -50,9 +47,9 @@ class StateModel() : ViewModel() {
     }
 
     fun reset() {
-        viewModelScope.async(Dispatchers.IO) {
+        viewModelScope.launch {
             odin().storage().reset()
-            odin().files().clearAllTables() // should not run on Main UI thread
+            odin().files().reset()
             odin().initPage()
         }
     }
