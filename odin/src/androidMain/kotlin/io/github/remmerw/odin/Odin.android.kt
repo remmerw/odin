@@ -3,6 +3,7 @@ package io.github.remmerw.odin
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebView
@@ -48,6 +49,8 @@ import io.github.remmerw.odin.generated.resources.share
 import io.github.remmerw.odin.generated.resources.share_link
 import io.github.vinceglb.filekit.FileKit
 import io.github.vinceglb.filekit.manualFileKitCoreInitialization
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
@@ -57,6 +60,7 @@ import java.net.Inet6Address
 import java.net.InetAddress
 import java.net.NetworkInterface
 import java.util.UUID
+import kotlin.time.measureTime
 
 private var odin: Odin? = null
 
@@ -347,34 +351,51 @@ private fun createDataStore(context: Context): DataStore<Preferences> = createDa
 )
 
 
-fun initializeOdin(context: Context): Odin {
+fun initializeOdin(context: Context) {
 
-    // Initialize FileKit
-    FileKit.manualFileKitCoreInitialization(context)
+    val time = measureTime {
+        // Initialize FileKit
+        FileKit.manualFileKitCoreInitialization(context)
 
-    val datastore = createDataStore(context)
-    val files = createFiles(context)
-    val peers = createPeers(context)
-    val path = Path(context.filesDir.absolutePath, "storage")
-    if (!SystemFileSystem.exists(path)) {
-        SystemFileSystem.createDirectories(path, true)
+        val datastore = createDataStore(context)
+        val files = createFiles(context)
+        val peers = createPeers(context)
+        val path = Path(context.filesDir.absolutePath, "storage")
+        if (!SystemFileSystem.exists(path)) {
+            SystemFileSystem.createDirectories(path, true)
+        }
+
+        val storage = newStorage(path)
+        val idun = newIdun(
+            keys = keys(datastore),
+            events = { event: Event ->
+                if (event == Event.INCOMING_CONNECT_EVENT) {
+                    odin!!.numIncomingConnections()
+                }
+                if (event == Event.OUTGOING_RESERVE_EVENT) {
+                    odin!!.numRelays()
+                }
+            },
+            peerStore = peers
+        )
+
+        odin = AndroidOdin(context, datastore, files, storage, idun, peers)
+
+
+
+
+        kotlinx.coroutines.MainScope().launch {
+
+            odin!!.initPage()
+            odin!!.runService()
+
+            delay(5000) // 5 sec initial delay
+            while (isActive) {
+                odin!!.makeReservations()
+                delay((60 * 30 * 1000).toLong()) // 30 min
+            }
+        }
     }
 
-    val storage = newStorage(path)
-    val idun = newIdun(
-        keys = keys(datastore),
-        events = { event: Event ->
-            if (event == Event.INCOMING_CONNECT_EVENT) {
-                odin!!.numIncomingConnections()
-            }
-            if (event == Event.OUTGOING_RESERVE_EVENT) {
-                odin!!.numRelays()
-            }
-        },
-        peerStore = peers
-    )
-
-    odin = AndroidOdin(context, datastore, files, storage, idun, peers)
-
-    return odin()
+    Log.e("App", "App started " + time.inWholeMilliseconds)
 }
