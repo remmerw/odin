@@ -52,6 +52,7 @@ import io.github.vinceglb.filekit.manualFileKitCoreInitialization
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
 import org.jetbrains.compose.resources.StringResource
@@ -370,10 +371,14 @@ fun initializeOdin(context: Context) {
             keys = keys(datastore),
             events = { event: Event ->
                 if (event == Event.INCOMING_CONNECT_EVENT) {
-                    odin!!.numIncomingConnections()
+                    runBlocking { // todo is this smart ???
+                        odin!!.numIncomingConnections()
+                    }
                 }
                 if (event == Event.OUTGOING_RESERVE_EVENT) {
-                    odin!!.numRelays()
+                    runBlocking { // todo is this smart ???
+                        odin!!.numRelays()
+                    }
                 }
             },
             peerStore = peers

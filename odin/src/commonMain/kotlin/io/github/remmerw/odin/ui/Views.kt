@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import io.github.remmerw.asen.Peeraddr
+import io.github.remmerw.asen.encodePeerId
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.connections
 import io.github.remmerw.odin.generated.resources.relays
@@ -138,7 +139,7 @@ fun PeeraddrItem(peeraddr: Peeraddr) {
                     .weight(1.0f, true)
             ) {
                 Text(
-                    text = peeraddr.peerId.toBase58(), maxLines = 1,
+                    text = encodePeerId(peeraddr.peerId), maxLines = 1,
                     modifier = Modifier.fillMaxWidth(),
                     style = MaterialTheme.typography.bodySmall, softWrap = false
                 )

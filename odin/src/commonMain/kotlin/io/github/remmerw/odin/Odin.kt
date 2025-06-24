@@ -24,6 +24,7 @@ import io.github.remmerw.odin.core.directoryContent
 import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.setPrivateKey
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okio.Path.Companion.toPath
@@ -51,11 +52,11 @@ abstract class Odin {
         idun().runService(storage(), ODIN_PORT)
     }
 
-    fun numIncomingConnections() {
+    suspend fun numIncomingConnections() {
         numConnections = idun().numIncomingConnections()
     }
 
-    fun numRelays() {
+    suspend fun numRelays() {
         numRelays = idun().numReservations()
     }
 

@@ -15,6 +15,7 @@ import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
+import kotlinx.coroutines.runBlocking
 
 private var odin: Odin? = null
 
@@ -144,10 +145,14 @@ internal fun initializeOdin(): Odin {
         keys = keys(datastore),
         events = { event: Event ->
             if (event == Event.INCOMING_CONNECT_EVENT) {
-                odin!!.numIncomingConnections()
+                runBlocking { // todo
+                    odin!!.numIncomingConnections()
+                }
             }
             if (event == Event.OUTGOING_RESERVE_EVENT) {
-                odin!!.numRelays()
+                runBlocking { // todo
+                    odin!!.numRelays()
+                }
             }
         },
         peerStore = peers

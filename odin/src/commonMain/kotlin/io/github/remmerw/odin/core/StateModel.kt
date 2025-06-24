@@ -13,6 +13,7 @@ import io.github.remmerw.odin.generated.resources.unknown
 import io.github.remmerw.odin.odin
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.jetbrains.compose.resources.StringResource
 
 class StateModel() : ViewModel() {
@@ -107,11 +108,11 @@ class StateModel() : ViewModel() {
 
 
     fun incomingConnections(): List<String> {
-        return odin().idun().incomingConnections()
+        return runBlocking { odin().idun().incomingConnections() } // todo is this smart ???
     }
 
     fun reservations(): List<Peeraddr> {
-        return odin().idun().reservations()
+        return runBlocking { odin().idun().reservations() } // todo is this smart ???
     }
 
     enum class Reachability {

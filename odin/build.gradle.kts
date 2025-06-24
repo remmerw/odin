@@ -27,18 +27,9 @@ kotlin {
 
 
     jvm()
-
-    /*
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach { iosTarget ->
-        iosTarget.binaries.framework {
-            baseName = "odin" 
-            isStatic = true
-        }
-    }*/
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
 
 
     sourceSets {
@@ -52,7 +43,6 @@ kotlin {
                 implementation(libs.uri.kmp)
                 implementation(libs.androidx.datastore.preferences.core)
                 implementation(libs.androidx.datastore.preferences)
-                implementation(libs.atomicfu)
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material3)
@@ -62,8 +52,8 @@ kotlin {
                 implementation(libs.qrose)
                 implementation(libs.lifecycle)
 
-                implementation("io.github.remmerw:asen:0.2.7")
-                implementation("io.github.remmerw:idun:0.2.7")
+                implementation("io.github.remmerw:asen:0.2.8")
+                implementation("io.github.remmerw:idun:0.2.8")
 
                 implementation("io.github.vinceglb:filekit-core:0.10.0-beta04")
                 implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04")
@@ -131,9 +121,9 @@ android {
 
 dependencies {
     add("kspAndroid", libs.androidx.room.compiler)
-    //add("kspIosX64", libs.androidx.room.compiler)
-    //add("kspIosSimulatorArm64", libs.androidx.room.compiler)
-    //add("kspIosArm64", libs.androidx.room.compiler)
+    add("kspIosX64", libs.androidx.room.compiler)
+    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
+    add("kspIosArm64", libs.androidx.room.compiler)
     add("kspJvm", libs.androidx.room.compiler)
 }
 
