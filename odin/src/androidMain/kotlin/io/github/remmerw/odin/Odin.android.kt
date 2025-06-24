@@ -46,6 +46,8 @@ import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.no_activity_found_to_handle_uri
 import io.github.remmerw.odin.generated.resources.share
 import io.github.remmerw.odin.generated.resources.share_link
+import io.github.vinceglb.filekit.FileKit
+import io.github.vinceglb.filekit.manualFileKitCoreInitialization
 import kotlinx.coroutines.launch
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
@@ -346,6 +348,10 @@ private fun createDataStore(context: Context): DataStore<Preferences> = createDa
 
 
 fun initializeOdin(context: Context): Odin {
+
+    // Initialize FileKit
+    FileKit.manualFileKitCoreInitialization(context)
+
     val datastore = createDataStore(context)
     val files = createFiles(context)
     val peers = createPeers(context)

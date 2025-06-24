@@ -12,6 +12,8 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPosition
 import androidx.compose.ui.window.WindowState
 import androidx.lifecycle.viewmodel.compose.viewModel
+import dev.jordond.connectivity.Connectivity
+import dev.jordond.connectivity.compose.rememberConnectivityState
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.audio
@@ -58,6 +60,20 @@ fun ApplicationScope.App() {
         }
 
         val stateModel: StateModel = viewModel { StateModel() }
+
+
+        val state = rememberConnectivityState {
+            autoStart = true
+        }
+
+        when (state.status) {
+            is Connectivity.Status.Connected ->  stateModel.reachability(stateModel.evaluateReachability())
+            is Connectivity.Status.Disconnected ->  stateModel.reachability(StateModel.Reachability.UNKNOWN)
+            else -> {}
+        }
+
+
+
         Box(modifier = Modifier.safeDrawingPadding()) {
             MainView(stateModel)
         }

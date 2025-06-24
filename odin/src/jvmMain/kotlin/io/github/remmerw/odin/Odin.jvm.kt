@@ -16,10 +16,12 @@ import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
+import java.awt.Desktop
 import java.io.File
 import java.net.Inet6Address
 import java.net.InetAddress
 import java.net.NetworkInterface
+import java.net.URI
 import java.util.UUID
 
 private var odin: Odin? = null
@@ -33,7 +35,13 @@ internal class JvmOdin(
 ) : Odin() {
 
     override suspend fun sharePageUri(uri: String) {
-        // todo
+        if(Desktop.isDesktopSupported()){
+            val desktop = Desktop.getDesktop()
+            val mailto = URI("mailto:?subject=$uri?body=$uri")
+            desktop.mail(mailto)
+        } else {
+            throw Exception("no mail program")
+        }
     }
 
     override fun homepageImplemented(): Boolean {
@@ -46,6 +54,9 @@ internal class JvmOdin(
     }
 
     override fun uploadFiles(absolutePath: String) {
+        //val job = thread {
+
+        //}
         //UploadFilesWorker.load(context, name) // todo
     }
 

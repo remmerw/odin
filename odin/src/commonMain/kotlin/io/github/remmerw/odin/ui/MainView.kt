@@ -90,10 +90,10 @@ import kotlin.uuid.ExperimentalUuidApi
 import kotlin.uuid.Uuid
 
 
+
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalUuidApi::class)
 @Composable
 fun MainView(stateModel: StateModel) {
-
 
     fun loadUrisFile(uris: List<PlatformFile>) {
 
@@ -114,6 +114,10 @@ fun MainView(stateModel: StateModel) {
 
     }
 
+
+
+
+
     val launcher = rememberFilePickerLauncher(
         mode = FileKitMode.Multiple()
     ) { files ->
@@ -125,7 +129,7 @@ fun MainView(stateModel: StateModel) {
     var showResetDialog: Boolean by remember { mutableStateOf(false) }
     var showMenu: Boolean by remember { mutableStateOf(false) }
     var showRelays: Boolean by remember { mutableStateOf(false) }
-    var showConns: Boolean by remember { mutableStateOf(false) }
+    var showConnections: Boolean by remember { mutableStateOf(false) }
     var showInfo: Boolean by remember { mutableStateOf(false) }
     var showHomepage: Boolean by remember { mutableStateOf(false) }
 
@@ -259,7 +263,7 @@ fun MainView(stateModel: StateModel) {
                         },
                         modifier = Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp)
                     ) {
-                        IconButton(onClick = { showConns = true }) {
+                        IconButton(onClick = { showConnections = true }) {
                             Icon(
                                 painterResource(Res.drawable.lan_connect),
                                 contentDescription = stringResource(Res.string.connections)
@@ -357,8 +361,8 @@ fun MainView(stateModel: StateModel) {
         }
     }
 
-    if (showConns) {
-        ModalBottomSheet(onDismissRequest = { showConns = false }) {
+    if (showConnections) {
+        ModalBottomSheet(onDismissRequest = { showConnections = false }) {
             ConnectionsView(stateModel.incomingConnections())
         }
     }

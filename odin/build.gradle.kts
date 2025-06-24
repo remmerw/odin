@@ -68,6 +68,10 @@ kotlin {
                 implementation("io.github.vinceglb:filekit-core:0.10.0-beta04")
                 implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04")
                 implementation("io.github.vinceglb:filekit-dialogs-compose:0.10.0-beta04")
+
+                implementation(libs.connectivity.core)
+                implementation(libs.connectivity.compose)
+
             }
         }
 
@@ -85,19 +89,26 @@ kotlin {
 
         iosMain {
             dependencies {
-
+                implementation(libs.connectivity.device)
+                implementation(libs.connectivity.compose.device)
+                implementation(libs.connectivity.apple)
             }
         }
 
         jvmMain {
             dependencies {
                 implementation(compose.desktop.common)
+                implementation(libs.connectivity.http)
+                implementation(libs.connectivity.compose.http)
             }
         }
 
         androidMain {
             dependencies {
                 implementation(libs.androidx.work.runtime)
+                implementation(libs.connectivity.device)
+                implementation(libs.connectivity.compose.device)
+                implementation(libs.connectivity.android)
             }
         }
     }
