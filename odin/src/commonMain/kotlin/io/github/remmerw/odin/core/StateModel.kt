@@ -6,6 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.remmerw.asen.Peeraddr
+import io.github.remmerw.asen.encode58
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.relays_network
 import io.github.remmerw.odin.generated.resources.unknown
@@ -78,7 +79,7 @@ class StateModel() : ViewModel() {
     }
 
     fun pageUri(): String {
-        return "pns://" + odin().idun().peerId().toBase58()
+        return "pns://" + encode58(odin().idun().peerId().hash)
     }
 
 
