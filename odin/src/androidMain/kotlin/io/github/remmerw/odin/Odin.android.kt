@@ -375,8 +375,6 @@ fun initializeOdin(context: Context) {
         odin = AndroidOdin(context, datastore, files, storage, idun, peers)
 
 
-
-
         kotlinx.coroutines.MainScope().launch {
 
             odin!!.initPage()
