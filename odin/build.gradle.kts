@@ -1,4 +1,3 @@
-import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -14,7 +13,7 @@ plugins {
 }
 
 group = "io.github.remmerw"
-version = "0.2.3"
+version = "0.2.4"
 
 
 kotlin {
@@ -130,7 +129,7 @@ dependencies {
 
 
 mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral()
 
     signAllPublications()
 

@@ -31,8 +31,6 @@ import androidx.work.WorkManager
 import com.eygraber.uri.Uri
 import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
-import io.github.remmerw.asen.decode58
-import io.github.remmerw.idun.Event
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
@@ -43,6 +41,8 @@ import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.MimeType
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
+import io.github.remmerw.odin.core.extractCidFromUri
+import io.github.remmerw.odin.core.extractPeerIdFromUri
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.no_activity_found_to_handle_uri
 import io.github.remmerw.odin.generated.resources.share
@@ -52,7 +52,6 @@ import io.github.vinceglb.filekit.manualFileKitCoreInitialization
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
 import org.jetbrains.compose.resources.StringResource
@@ -254,7 +253,7 @@ private class CustomWebViewClient(val warning: (StringResource) -> Unit) :
 
     override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
 
-        val uri = request.url
+        val uri = Uri.parse(request.url.toString())
 
         when (uri.scheme) {
             "pns" -> {
@@ -289,32 +288,6 @@ private class CustomWebViewClient(val warning: (StringResource) -> Unit) :
         }
         return null
     }
-}
-
-internal fun extractPeerIdFromUri(pns: Uri): PeerId {
-    val host = validate(pns)
-    return PeerId(decode58(host))
-}
-
-internal fun validate(pns: Uri): String {
-    checkNotNull(pns.scheme) { "Scheme not defined" }
-    require(pns.scheme == "pns") { "Scheme not pns" }
-    val host = pns.host
-    checkNotNull(host) { "Host not defined" }
-    require(host.isNotBlank()) { "Host is empty" }
-    return host
-}
-
-internal fun extractCidFromUri(pns: Uri): Long? {
-    var path = pns.path
-    if (path != null) {
-        path = path.trim().removePrefix("/")
-        if (path.isNotBlank()) {
-            val cid = path.toLong(radix = 16)
-            return cid
-        }
-    }
-    return null
 }
 
 

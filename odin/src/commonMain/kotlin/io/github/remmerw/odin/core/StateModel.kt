@@ -22,16 +22,16 @@ class StateModel() : ViewModel() {
 
     var reachability: StringResource by mutableStateOf(Res.string.unknown)
 
-    val numRelays : Flow<Int> = flow {
-        while(true) {
+    val numRelays: Flow<Int> = flow {
+        while (true) {
             val latestRelays = odin().idun().numReservations()
             emit(latestRelays) // Emits the result of the request to the flow
             delay(500) // Suspends the coroutine for some time
         }
     }
 
-    val numConnections : Flow<Int> = flow {
-        while(true) {
+    val numConnections: Flow<Int> = flow {
+        while (true) {
             val latestConnections = odin().idun().numIncomingConnections()
             emit(latestConnections) // Emits the result of the request to the flow
             delay(500) // Suspends the coroutine for some time

@@ -31,7 +31,10 @@ abstract class Odin {
 
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
-        val content: String = directoryContent(fileInfos, deviceName())
+        val content: String = directoryContent(
+            idun().peerId(),
+            fileInfos, deviceName()
+        )
         storage().root(content.encodeToByteArray())
     }
 
