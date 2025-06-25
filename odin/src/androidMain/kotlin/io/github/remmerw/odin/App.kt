@@ -62,8 +62,8 @@ fun App() {
     }
 
     when (state.status) {
-        is Connectivity.Status.Connected ->  stateModel.reachability(stateModel.evaluateReachability())
-        is Connectivity.Status.Disconnected ->  stateModel.reachability(StateModel.Reachability.UNKNOWN)
+        is Connectivity.Status.Connected -> stateModel.reachability(stateModel.evaluateReachability())
+        is Connectivity.Status.Disconnected -> stateModel.reachability(StateModel.Reachability.UNKNOWN)
         else -> {}
     }
     KeepScreenOn()
