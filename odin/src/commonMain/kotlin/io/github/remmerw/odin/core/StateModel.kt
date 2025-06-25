@@ -11,7 +11,9 @@ import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.relays_network
 import io.github.remmerw.odin.generated.resources.unknown
 import io.github.remmerw.odin.odin
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.jetbrains.compose.resources.StringResource
@@ -20,6 +22,21 @@ class StateModel() : ViewModel() {
 
     var reachability: StringResource by mutableStateOf(Res.string.unknown)
 
+    val numRelays : Flow<Int> = flow {
+        while(true) {
+            val latestRelays = odin().idun().numReservations()
+            emit(latestRelays) // Emits the result of the request to the flow
+            delay(500) // Suspends the coroutine for some time
+        }
+    }
+
+    val numConnections : Flow<Int> = flow {
+        while(true) {
+            val latestConnections = odin().idun().numIncomingConnections()
+            emit(latestConnections) // Emits the result of the request to the flow
+            delay(500) // Suspends the coroutine for some time
+        }
+    }
 
     fun homepageImplemented(): Boolean {
         return odin().homepageImplemented()
@@ -40,9 +57,6 @@ class StateModel() : ViewModel() {
         odin().cancelWork(fileInfo)
     }
 
-    fun numRelays(): Int {
-        return odin().numRelays
-    }
 
     fun uploadFiles(name: String) {
         odin().uploadFiles(name)
@@ -56,16 +70,8 @@ class StateModel() : ViewModel() {
         }
     }
 
-    fun numConnections(): Int {
-        return odin().numConnections
-    }
-
     fun fileInfos(): Flow<List<FileInfo>> {
         return odin().files().filesDao().flowFileInfos()
-    }
-
-    fun reserveActive(): Boolean {
-        return odin().reserveActive
     }
 
 
@@ -105,7 +111,6 @@ class StateModel() : ViewModel() {
             Reachability.RELAYS
         }
     }
-
 
     fun incomingConnections(): List<String> {
         return runBlocking { odin().idun().incomingConnections() } // todo is this smart ???

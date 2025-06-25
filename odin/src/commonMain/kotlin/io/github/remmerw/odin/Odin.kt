@@ -1,10 +1,6 @@
 package io.github.remmerw.odin
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
@@ -32,9 +28,6 @@ import okio.Path.Companion.toPath
 const val ODIN_PORT: Int = 5001
 
 abstract class Odin {
-    var reserveActive: Boolean by mutableStateOf(false)
-    var numRelays: Int by mutableIntStateOf(0)
-    var numConnections: Int by mutableIntStateOf(0)
 
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
@@ -43,21 +36,11 @@ abstract class Odin {
     }
 
     suspend fun makeReservations() {
-        idun().makeReservations(peeraddrs(), 100, 120) { running ->
-            reserveActive = running
-        }
+        idun().makeReservations(peeraddrs(), 100, 120)
     }
 
     suspend fun runService() {
         idun().runService(storage(), ODIN_PORT)
-    }
-
-    suspend fun numIncomingConnections() {
-        numConnections = idun().numIncomingConnections()
-    }
-
-    suspend fun numRelays() {
-        numRelays = idun().numReservations()
     }
 
     abstract suspend fun sharePageUri(uri: String)

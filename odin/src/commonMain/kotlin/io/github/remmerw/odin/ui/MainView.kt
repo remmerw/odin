@@ -111,11 +111,7 @@ fun MainView(stateModel: StateModel) {
             }
             stateModel.uploadFiles(file.absolutePath())
         }
-
     }
-
-
-
 
 
     val launcher = rememberFilePickerLauncher(
@@ -137,7 +133,8 @@ fun MainView(stateModel: StateModel) {
     var isRefreshing by remember { mutableStateOf(false) }
     val pullToRefreshState = rememberPullToRefreshState()
     val fileInfos by stateModel.fileInfos().collectAsState(emptyList())
-
+    val numRelays by stateModel.numRelays.collectAsState(0)
+    val numConnections by stateModel.numConnections.collectAsState(0)
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
@@ -242,7 +239,7 @@ fun MainView(stateModel: StateModel) {
                     BadgedBox(
                         badge = {
                             Badge {
-                                Text(text = stateModel.numRelays().toString())
+                                Text(text = numRelays.toString())
                             }
                         },
                         modifier = Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp)
@@ -258,7 +255,7 @@ fun MainView(stateModel: StateModel) {
                     BadgedBox(
                         badge = {
                             Badge {
-                                Text(text = stateModel.numConnections().toString())
+                                Text(text = numConnections.toString())
                             }
                         },
                         modifier = Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp)
@@ -309,22 +306,12 @@ fun MainView(stateModel: StateModel) {
             Text(
                 text = stringResource(stateModel.reachability),
                 style = MaterialTheme.typography.labelLarge,
-                color = if (stateModel.reserveActive()) {
-                    MaterialTheme.colorScheme.error
-                } else {
-                    MaterialTheme.colorScheme.onSurface
-                },
+                color = MaterialTheme.colorScheme.onSurface,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
                     .align(Alignment.CenterHorizontally)
-                    .background(
-                        if (stateModel.reserveActive()) {
-                            MaterialTheme.colorScheme.onError
-                        } else {
-                            MaterialTheme.colorScheme.surface
-                        }
-                    )
+                    .background(MaterialTheme.colorScheme.surface)
             )
 
             PullToRefreshBox(

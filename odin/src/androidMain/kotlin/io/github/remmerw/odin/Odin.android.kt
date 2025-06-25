@@ -369,18 +369,6 @@ fun initializeOdin(context: Context) {
         val storage = newStorage(path)
         val idun = newIdun(
             keys = keys(datastore),
-            events = { event: Event ->
-                if (event == Event.INCOMING_CONNECT_EVENT) {
-                    runBlocking { // todo is this smart ???
-                        odin!!.numIncomingConnections()
-                    }
-                }
-                if (event == Event.OUTGOING_RESERVE_EVENT) {
-                    runBlocking { // todo is this smart ???
-                        odin!!.numRelays()
-                    }
-                }
-            },
             peerStore = peers
         )
 
