@@ -6,7 +6,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import io.github.remmerw.asen.Peeraddr
-import io.github.remmerw.idun.Event
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
@@ -15,7 +14,10 @@ import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
-import kotlinx.coroutines.runBlocking
+import kotlinx.cinterop.ExperimentalForeignApi
+import platform.Foundation.NSDocumentDirectory
+import platform.Foundation.NSFileManager
+import platform.Foundation.NSUserDomainMask
 
 private var odin: Odin? = null
 
@@ -122,6 +124,7 @@ private fun createDataStore(): DataStore<Preferences> = createDataStore(
 )
 
 
+@OptIn(ExperimentalForeignApi::class)
 private fun documentDirectory(): String {
     val documentDirectory = NSFileManager.defaultManager.URLForDirectory(
         directory = NSDocumentDirectory,
