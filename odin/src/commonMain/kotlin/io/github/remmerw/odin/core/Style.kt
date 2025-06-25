@@ -4,9 +4,7 @@ import com.eygraber.uri.Uri
 import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.decode58
 import io.github.remmerw.asen.encode58
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
-import kotlin.time.Clock
+import io.github.remmerw.asen.encodePeerId
 import kotlin.time.ExperimentalTime
 
 
@@ -254,12 +252,9 @@ fun directoryContent(peerId: PeerId, links: List<FileInfo>, title: String): Stri
     }
 
 
-    val zone = TimeZone.currentSystemDefault()
-    val time = Clock.System.now()
-
     answer.append("</body><div class=\"footer\">")
         .append("<p>")
-        .append(time.toLocalDateTime(zone).date.toString())
+        .append(encodePeerId(peerId))
         .append("</p>")
         .append("</div></html>")
 

@@ -37,7 +37,6 @@ kotlin {
                 implementation(libs.kotlin.stdlib)
                 implementation(libs.androidx.sqlite.bundled)
                 implementation(libs.androidx.room.runtime)
-                implementation(libs.kotlinx.datetime)
                 implementation(libs.kotlinx.io.core)
                 implementation(libs.uri.kmp)
                 implementation(libs.androidx.datastore.preferences.core)
