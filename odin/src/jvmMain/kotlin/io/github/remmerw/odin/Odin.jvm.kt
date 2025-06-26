@@ -7,6 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
+import io.github.remmerw.asen.bootstrap
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
@@ -192,6 +193,7 @@ actual fun initializeOdin(context: Context) {
     val storage = newStorage()
     val idun = newIdun(
         keys = keys(datastore),
+        bootstrap = bootstrap(),
         peerStore = peers
     )
 

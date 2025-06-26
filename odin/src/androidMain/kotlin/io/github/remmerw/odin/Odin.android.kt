@@ -30,6 +30,7 @@ import androidx.work.WorkManager
 import com.eygraber.uri.Uri
 import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
+import io.github.remmerw.asen.bootstrap
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
@@ -342,6 +343,7 @@ actual fun initializeOdin(context: Context) {
         val storage = newStorage(path)
         val idun = newIdun(
             keys = keys(datastore),
+            bootstrap = bootstrap(),
             peerStore = peers
         )
 
