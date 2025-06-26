@@ -12,7 +12,7 @@ class IdunTest {
 
 
     @Test
-    fun test(): Unit = runBlocking(Dispatchers.IO) {
+    fun testReservations(): Unit = runBlocking(Dispatchers.IO) {
 
         val context = org.kmp.testing.context()
 
@@ -33,4 +33,5 @@ class IdunTest {
 
         odin.idun().shutdown()
     }
+
 }
