@@ -1,6 +1,5 @@
 package io.github.remmerw.odin
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.util.Log
@@ -64,8 +63,11 @@ import kotlin.time.measureTime
 
 private var odin: Odin? = null
 
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+actual typealias Context = android.content.Context
+
 internal class AndroidOdin(
-    private val context: Context,
+    private val context: android.content.Context,
     private val datastore: DataStore<Preferences>,
     private val files: Files,
     private val storage: Storage,
@@ -325,7 +327,7 @@ private fun createDataStore(context: Context): DataStore<Preferences> = createDa
 )
 
 
-fun initializeOdin(context: Context) {
+actual fun initializeOdin(context: Context) {
 
     val time = measureTime {
         // Initialize FileKit

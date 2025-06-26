@@ -40,7 +40,7 @@ fun ApplicationScope.App() {
         icon = painterResource(Res.drawable.audio), // todo
 
     ) {
-        initializeOdin()
+        initializeOdin(JvmContext)
 
         val stateModel: StateModel = viewModel { StateModel() }
 

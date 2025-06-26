@@ -27,6 +27,9 @@ import okio.Path.Companion.toPath
 
 const val ODIN_PORT: Int = 5001
 
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+expect abstract class Context
+
 abstract class Odin {
 
     suspend fun initPage() {
@@ -64,6 +67,8 @@ abstract class Odin {
 expect fun Homepage(stateModel: StateModel)
 
 expect fun odin(): Odin
+
+expect fun initializeOdin(context: Context)
 
 @Suppress("KotlinNoActualForExpect", "EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object FilesConstructor : RoomDatabaseConstructor<Files> {
@@ -118,6 +123,5 @@ fun keys(datastore: DataStore<Preferences>): Keys {
         }
     }
 }
-
 
 

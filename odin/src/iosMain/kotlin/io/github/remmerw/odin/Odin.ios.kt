@@ -24,6 +24,10 @@ import platform.Foundation.NSUserDomainMask
 
 private var odin: Odin? = null
 
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+actual abstract class Context
+object IosContext : Context()
+
 internal class IosOdin(
     private val datastore: DataStore<Preferences>,
     private val files: Files,
@@ -140,7 +144,7 @@ private fun documentDirectory(): String {
 }
 
 
-internal fun initializeOdin(): Odin {
+actual fun initializeOdin(context: Context) {
     val datastore = createDataStore()
     val files = createFiles()
     val peers = createPeers()
@@ -165,6 +169,5 @@ internal fun initializeOdin(): Odin {
             delay((60 * 30 * 1000).toLong()) // 30 min
         }
     }
-
-    return odin()
 }
+

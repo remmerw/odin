@@ -77,11 +77,14 @@ kotlin {
         androidUnitTest {
             dependencies {
                 implementation(libs.kotlin.test)
+                implementation("androidx.test:runner:1.6.2")
+                implementation("androidx.test:core:1.6.1")
             }
         }
         androidInstrumentedTest.dependencies {
             implementation(libs.kotlin.test)
             implementation("androidx.test:runner:1.6.2")
+            implementation("androidx.test:core:1.6.1")
         }
 
         iosMain {

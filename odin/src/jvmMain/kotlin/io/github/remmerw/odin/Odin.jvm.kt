@@ -7,7 +7,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
-import io.github.remmerw.idun.Event
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
@@ -19,7 +18,6 @@ import io.github.remmerw.odin.core.StateModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import java.awt.Desktop
 import java.io.File
 import java.net.Inet6Address
@@ -29,6 +27,10 @@ import java.net.URI
 import java.util.UUID
 
 private var odin: Odin? = null
+
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+actual abstract class Context
+object JvmContext : Context()
 
 internal class JvmOdin(
     private val datastore: DataStore<Preferences>,
@@ -184,7 +186,7 @@ private fun createDataStore(): DataStore<Preferences> = createDataStore(
 )
 
 
-internal fun initializeOdin() {
+actual fun initializeOdin(context: Context) {
     val datastore = createDataStore()
     val files = createFiles()
     val peers = createPeers()
@@ -209,5 +211,4 @@ internal fun initializeOdin() {
             delay((60 * 30 * 1000).toLong()) // 30 min
         }
     }
-
 }
