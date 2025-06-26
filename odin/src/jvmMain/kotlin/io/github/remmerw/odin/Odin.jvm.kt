@@ -117,23 +117,19 @@ private fun isLanAddress(inetAddress: InetAddress): Boolean {
 private fun publicAddresses(): List<InetAddress> {
     val inetAddresses: MutableList<InetAddress> = ArrayList()
 
-    try {
-        val interfaces = NetworkInterface.getNetworkInterfaces()
+    val interfaces = NetworkInterface.getNetworkInterfaces()
 
-        for (networkInterface in interfaces) {
-            if (networkInterface.isUp) {
-                val addresses = networkInterface.inetAddresses
-                for (inetAddress in addresses) {
-                    if (inetAddress is Inet6Address) {
-                        if (!isLanAddress(inetAddress)) {
-                            inetAddresses.add(inetAddress)
-                        }
+    for (networkInterface in interfaces) {
+        if (networkInterface.isUp) {
+            val addresses = networkInterface.inetAddresses
+            for (inetAddress in addresses) {
+                if (inetAddress is Inet6Address) {
+                    if (!isLanAddress(inetAddress)) {
+                        inetAddresses.add(inetAddress)
                     }
                 }
             }
         }
-    } catch (throwable: Throwable) {
-        throw IllegalStateException(throwable)
     }
     return inetAddresses
 }
