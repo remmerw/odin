@@ -62,6 +62,8 @@ kotlin {
                 implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04") // todo
                 implementation("io.github.vinceglb:filekit-dialogs-compose:0.10.0-beta04") // todo
 
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+
                 implementation(libs.connectivity.core)
                 implementation(libs.connectivity.compose)
 
@@ -95,11 +97,30 @@ kotlin {
             }
         }
 
+        iosArm64Main {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-iosarm64:1.10.2")
+            }
+        }
+
+        iosSimulatorArm64Main {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-iossimulatorarm64:1.10.2")
+            }
+        }
+
+        iosX64Main {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-iosx64:1.10.2")
+            }
+        }
+
         jvmMain {
             dependencies {
                 implementation(compose.desktop.common)
                 implementation(libs.connectivity.http)
                 implementation(libs.connectivity.compose.http)
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.10.2")
             }
         }
 
@@ -109,6 +130,7 @@ kotlin {
                 implementation(libs.connectivity.device)
                 implementation(libs.connectivity.compose.device)
                 implementation(libs.connectivity.android)
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
             }
         }
     }
@@ -128,6 +150,7 @@ android {
     }
     packaging {
         resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
+        resources.excludes.add("DebugProbesKt.bin")
     }
 }
 
