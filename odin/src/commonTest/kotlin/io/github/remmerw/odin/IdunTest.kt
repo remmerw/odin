@@ -8,6 +8,8 @@ class IdunTest {
 
     @Test
     fun test() {
+
+        // TODO make real test
         assertTrue(true)
     }
 }
