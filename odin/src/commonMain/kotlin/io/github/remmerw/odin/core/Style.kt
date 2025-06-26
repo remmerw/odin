@@ -4,7 +4,6 @@ import com.eygraber.uri.Uri
 import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.decode58
 import io.github.remmerw.asen.encode58
-import io.github.remmerw.asen.encodePeerId
 import kotlin.time.ExperimentalTime
 
 
@@ -250,14 +249,6 @@ fun directoryContent(peerId: PeerId, links: List<FileInfo>, title: String): Stri
         }
         answer.append("</table></form>")
     }
-
-
-    answer.append("</body><div class=\"footer\">")
-        .append("<p>")
-        .append(encodePeerId(peerId))
-        .append("</p>")
-        .append("</div></html>")
-
 
     return answer.toString()
 }
