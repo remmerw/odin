@@ -2,8 +2,10 @@ package io.github.remmerw.odin
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlin.test.Test
+import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class IdunTest {
@@ -17,10 +19,18 @@ class IdunTest {
         initializeOdin(context)
 
         val odin = odin()
-        checkNotNull(odin)
+        assertNotNull(odin)
 
-        odin.runService()
-        // TODO make real test
-        assertTrue(true)
+        delay(30000)
+
+        val res = odin.reservationFeaturePossible()
+        println("Reservation feature possible $res")
+        assertTrue(res)
+
+        val numRelays = odin.idun().numReservations()
+        println("Number of relays $numRelays")
+        assertTrue(numRelays > 0)
+
+        odin.idun().shutdown()
     }
 }

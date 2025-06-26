@@ -15,9 +15,6 @@ import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
 import kotlinx.cinterop.ExperimentalForeignApi
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
 import platform.Foundation.NSDocumentDirectory
 import platform.Foundation.NSFileManager
 import platform.Foundation.NSUserDomainMask
@@ -158,16 +155,6 @@ actual fun initializeOdin(context: Context) {
 
     odin = IosOdin(datastore, files, storage, idun, peers)
 
-    kotlinx.coroutines.MainScope().launch {
-
-        odin!!.initPage()
-        odin!!.runService()
-
-        delay(5000) // 5 sec initial delay
-        while (isActive) {
-            odin!!.makeReservations()
-            delay((60 * 30 * 1000).toLong()) // 30 min
-        }
-    }
+    odin!!.startup()
 }
 

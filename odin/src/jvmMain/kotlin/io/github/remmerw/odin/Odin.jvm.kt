@@ -15,9 +15,6 @@ import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
 import java.awt.Desktop
 import java.io.File
 import java.net.Inet6Address
@@ -41,7 +38,7 @@ internal class JvmOdin(
 ) : Odin() {
 
     override suspend fun sharePageUri(uri: String) {
-        if(Desktop.isDesktopSupported()){
+        if (Desktop.isDesktopSupported()) {
             val desktop = Desktop.getDesktop()
             val mailto = URI("mailto:?subject=$uri?body=$uri")
             desktop.mail(mailto)
@@ -200,15 +197,5 @@ actual fun initializeOdin(context: Context) {
 
     odin = JvmOdin(datastore, files, storage, idun, peers)
 
-    kotlinx.coroutines.MainScope().launch {
-
-        odin!!.initPage()
-        odin!!.runService()
-
-        delay(5000) // 5 sec initial delay
-        while (isActive) {
-            odin!!.makeReservations()
-            delay((60 * 30 * 1000).toLong()) // 30 min
-        }
-    }
+    odin!!.startup()
 }

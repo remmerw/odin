@@ -21,7 +21,11 @@ import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.setPrivateKey
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import okio.Path.Companion.toPath
 
@@ -32,6 +36,19 @@ expect abstract class Context
 
 abstract class Odin {
 
+    fun startup(){
+        MainScope().launch {
+
+            initPage()
+            idun().runService(storage(), ODIN_PORT)
+
+            delay(5000) // 5 sec initial delay
+            while (isActive) {
+                makeReservations()
+                delay((60 * 30 * 1000).toLong()) // 30 min
+            }
+        }
+    }
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
         val content: String = directoryContent(
@@ -43,10 +60,6 @@ abstract class Odin {
 
     suspend fun makeReservations() {
         idun().makeReservations(peeraddrs(), 100, 120)
-    }
-
-    suspend fun runService() {
-        idun().runService(storage(), ODIN_PORT)
     }
 
     abstract suspend fun sharePageUri(uri: String)

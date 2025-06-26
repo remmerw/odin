@@ -48,8 +48,6 @@ import io.github.remmerw.odin.generated.resources.share
 import io.github.remmerw.odin.generated.resources.share_link
 import io.github.vinceglb.filekit.FileKit
 import io.github.vinceglb.filekit.manualFileKitCoreInitialization
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
@@ -349,18 +347,7 @@ actual fun initializeOdin(context: Context) {
 
         odin = AndroidOdin(context, datastore, files, storage, idun, peers)
 
-
-        kotlinx.coroutines.MainScope().launch {
-
-            odin!!.initPage()
-            odin!!.runService()
-
-            delay(5000) // 5 sec initial delay
-            while (isActive) {
-                odin!!.makeReservations()
-                delay((60 * 30 * 1000).toLong()) // 30 min
-            }
-        }
+        odin!!.startup()
     }
 
     Log.e("App", "App started " + time.inWholeMilliseconds)
