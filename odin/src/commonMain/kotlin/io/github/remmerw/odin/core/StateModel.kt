@@ -7,20 +7,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.encode58
-import io.github.remmerw.odin.generated.resources.Res
-import io.github.remmerw.odin.generated.resources.relays_network
-import io.github.remmerw.odin.generated.resources.unknown
 import io.github.remmerw.odin.odin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import org.jetbrains.compose.resources.StringResource
 
 class StateModel() : ViewModel() {
 
-    var reachability: StringResource by mutableStateOf(Res.string.unknown)
+    var reachability: Reachability by mutableStateOf(Reachability.UNKNOWN)
 
     val numRelays: Flow<Int> = flow {
         while (true) {
@@ -40,17 +36,6 @@ class StateModel() : ViewModel() {
 
     fun homepageImplemented(): Boolean {
         return odin().homepageImplemented()
-    }
-
-    fun reachability(reachability: Reachability) {
-        this.reachability = networkReachability(reachability)
-    }
-
-    fun networkReachability(reachability: Reachability): StringResource {
-        return when (reachability) {
-            Reachability.UNKNOWN -> Res.string.unknown
-            Reachability.RELAYS -> Res.string.relays_network
-        }
     }
 
     fun cancelWork(fileInfo: FileInfo) {
@@ -104,13 +89,6 @@ class StateModel() : ViewModel() {
 
     }
 
-    fun evaluateReachability(): Reachability {
-        return if (!odin().reservationFeaturePossible()) {
-            Reachability.UNKNOWN
-        } else {
-            Reachability.RELAYS
-        }
-    }
 
     fun incomingConnections(): List<String> {
         return runBlocking { odin().idun().incomingConnections() } // todo is this smart ???
@@ -118,10 +96,6 @@ class StateModel() : ViewModel() {
 
     fun reservations(): List<Peeraddr> {
         return runBlocking { odin().idun().reservations() } // todo is this smart ???
-    }
-
-    enum class Reachability {
-        UNKNOWN, RELAYS
     }
 
 }

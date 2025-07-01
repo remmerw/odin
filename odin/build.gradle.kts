@@ -97,23 +97,6 @@ kotlin {
             }
         }
 
-        iosArm64Main {
-            dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-iosarm64:1.10.2")
-            }
-        }
-
-        iosSimulatorArm64Main {
-            dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-iossimulatorarm64:1.10.2")
-            }
-        }
-
-        iosX64Main {
-            dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-iosx64:1.10.2")
-            }
-        }
 
         jvmMain {
             dependencies {

@@ -110,10 +110,6 @@ internal class AndroidOdin(
         UploadFilesWorker.Companion.load(context, absolutePath)
     }
 
-    override fun reservationFeaturePossible(): Boolean {
-        return publicAddresses().isNotEmpty()
-    }
-
     override fun deviceName(): String {
         val manufacturer = Build.MANUFACTURER
         val model = Build.MODEL

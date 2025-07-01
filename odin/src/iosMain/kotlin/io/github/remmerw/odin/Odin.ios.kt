@@ -51,12 +51,8 @@ internal class IosOdin(
         //UploadFilesWorker.load(context, name)
     }
 
-    override fun reservationFeaturePossible(): Boolean {
-        return false
-    }
-
     override fun deviceName(): String {
-        return io.github.remmerw.odin.deviceName()
+        return "" // todo
     }
 
     override fun peeraddrs(): List<Peeraddr> {
@@ -82,16 +78,6 @@ internal class IosOdin(
     override fun idun(): Idun {
         return idun
     }
-}
-
-
-private fun deviceName(): String { // todo
-    val manufacturer = "PC"
-    val model = "todo"
-    if (model.startsWith(manufacturer)) {
-        return model
-    }
-    return "$manufacturer $model"
 }
 
 

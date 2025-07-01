@@ -36,7 +36,7 @@ expect abstract class Context
 
 abstract class Odin {
 
-    fun startup(){
+    fun startup() {
         MainScope().launch {
 
             initPage()
@@ -49,6 +49,7 @@ abstract class Odin {
             }
         }
     }
+
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
         val content: String = directoryContent(
@@ -66,7 +67,6 @@ abstract class Odin {
     abstract fun homepageImplemented(): Boolean
     abstract fun cancelWork(fileInfo: FileInfo)
     abstract fun uploadFiles(absolutePath: String)
-    abstract fun reservationFeaturePossible(): Boolean
     abstract fun deviceName(): String
     abstract fun peeraddrs(): List<Peeraddr>
     abstract fun datastore(): DataStore<Preferences>

@@ -36,6 +36,7 @@
     <string name="files_view" tools:keep="@string/files_view">Files View</string>
     <string name="port">Port</string>
     <string name="unknown">Reachability : Unknown</string>
+    <string name="offline">Reachability : Offline</string>
     <string name="local_network">Reachability : Local Network</string>
     <string name="relays_network">Reachability : Relays and Local Network</string>
 

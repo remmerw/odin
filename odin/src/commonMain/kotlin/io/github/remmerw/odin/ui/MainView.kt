@@ -56,6 +56,7 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import io.github.remmerw.odin.Homepage
+import io.github.remmerw.odin.core.Reachability
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.access_point_network
@@ -67,10 +68,12 @@ import io.github.remmerw.odin.generated.resources.home
 import io.github.remmerw.odin.generated.resources.homepage
 import io.github.remmerw.odin.generated.resources.lan_connect
 import io.github.remmerw.odin.generated.resources.no_activity_found_to_handle_uri
+import io.github.remmerw.odin.generated.resources.offline
 import io.github.remmerw.odin.generated.resources.plus_thick
 import io.github.remmerw.odin.generated.resources.relays
 import io.github.remmerw.odin.generated.resources.reset
 import io.github.remmerw.odin.generated.resources.share
+import io.github.remmerw.odin.generated.resources.unknown
 import io.github.remmerw.odin.generated.resources.untitled
 import io.github.vinceglb.filekit.FileKit
 import io.github.vinceglb.filekit.PlatformFile
@@ -290,6 +293,7 @@ fun MainView(stateModel: StateModel) {
         },
     ) { innerPadding ->
 
+        val reachability: Reachability = remember { stateModel.reachability }
         val listState = rememberLazyListState()
         Column(
             modifier = Modifier
@@ -302,16 +306,26 @@ fun MainView(stateModel: StateModel) {
                 }
         ) {
 
-            Text(
-                text = stringResource(stateModel.reachability),
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onSurface,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .align(Alignment.CenterHorizontally)
-                    .background(MaterialTheme.colorScheme.surface)
-            )
+
+            if (numRelays == 0) {
+                Text(
+                    text =
+                        stringResource(
+                            if (reachability == Reachability.UNKNOWN) {
+                                Res.string.unknown
+                            } else {
+                                Res.string.offline
+                            }
+                        ),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.CenterHorizontally)
+                        .background(MaterialTheme.colorScheme.surface)
+                )
+            }
 
             PullToRefreshBox(
                 isRefreshing = isRefreshing,

@@ -23,10 +23,6 @@ class IdunTest {
 
         delay(30000)
 
-        val res = odin.reservationFeaturePossible()
-        println("Reservation feature possible $res")
-        assertTrue(res)
-
         val numRelays = odin.idun().numReservations()
         println("Number of relays $numRelays")
         assertTrue(numRelays > 0)

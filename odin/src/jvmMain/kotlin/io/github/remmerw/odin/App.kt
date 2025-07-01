@@ -14,6 +14,7 @@ import androidx.compose.ui.window.WindowState
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.jordond.connectivity.Connectivity
 import dev.jordond.connectivity.compose.rememberConnectivityState
+import io.github.remmerw.odin.core.Reachability
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.audio
@@ -50,11 +51,10 @@ fun ApplicationScope.App() {
         }
 
         when (state.status) {
-            is Connectivity.Status.Connected ->  stateModel.reachability(stateModel.evaluateReachability())
-            is Connectivity.Status.Disconnected ->  stateModel.reachability(StateModel.Reachability.UNKNOWN)
+            is Connectivity.Status.Connected -> stateModel.reachability = Reachability.UNKNOWN
+            is Connectivity.Status.Disconnected -> stateModel.reachability = Reachability.OFFLINE
             else -> {}
         }
-
 
 
         Box(modifier = Modifier.safeDrawingPadding()) {

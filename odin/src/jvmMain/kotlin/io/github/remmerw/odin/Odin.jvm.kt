@@ -64,10 +64,6 @@ internal class JvmOdin(
         //UploadFilesWorker.load(context, name) // todo
     }
 
-    override fun reservationFeaturePossible(): Boolean {
-        return publicAddresses().isNotEmpty()
-    }
-
     override fun deviceName(): String {
         val os = System.getProperty("os.name")
         val version = System.getProperty("os.version")
