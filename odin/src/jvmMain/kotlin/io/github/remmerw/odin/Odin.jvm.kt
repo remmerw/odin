@@ -176,7 +176,7 @@ private fun createDataStore(): DataStore<Preferences> = createDataStore(
 )
 
 
-actual fun initializeOdin(context: Context) {
+actual suspend fun initializeOdin(context: Context) {
     val datastore = createDataStore()
     val files = createFiles()
     val peers = createPeers()

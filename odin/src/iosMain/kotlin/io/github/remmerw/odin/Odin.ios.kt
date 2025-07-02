@@ -128,7 +128,7 @@ private fun documentDirectory(): String {
 }
 
 
-actual fun initializeOdin(context: Context) {
+actual suspend fun initializeOdin(context: Context) {
     val datastore = createDataStore()
     val files = createFiles()
     val peers = createPeers()

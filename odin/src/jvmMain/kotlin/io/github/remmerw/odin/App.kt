@@ -20,6 +20,8 @@ import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.audio
 import io.github.remmerw.odin.ui.MainView
 import io.github.vinceglb.filekit.FileKit
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 import java.awt.Dimension
 import java.awt.Toolkit
@@ -41,7 +43,9 @@ fun ApplicationScope.App() {
         icon = painterResource(Res.drawable.audio), // todo
 
     ) {
-        initializeOdin(JvmContext)
+        MainScope().launch {
+            initializeOdin(JvmContext)
+        }
 
         val stateModel: StateModel = viewModel { StateModel() }
 

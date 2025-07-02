@@ -322,7 +322,7 @@ private fun createDataStore(context: Context): DataStore<Preferences> = createDa
 )
 
 
-actual fun initializeOdin(context: Context) {
+actual suspend fun initializeOdin(context: Context) {
 
     val time = measureTime {
         // Initialize FileKit

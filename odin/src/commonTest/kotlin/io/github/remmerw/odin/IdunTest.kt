@@ -21,7 +21,7 @@ class IdunTest {
         val odin = odin()
         assertNotNull(odin)
 
-        delay(30000)
+        delay(45000)
 
         val numRelays = odin.idun().numReservations()
         println("Number of relays $numRelays")

@@ -21,11 +21,7 @@ import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.setPrivateKey
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import okio.Path.Companion.toPath
 
@@ -36,18 +32,9 @@ expect abstract class Context
 
 abstract class Odin {
 
-    fun startup() {
-        MainScope().launch {
-
-            initPage()
-            idun().runService(storage(), ODIN_PORT)
-
-            delay(5000) // 5 sec initial delay
-            while (isActive) {
-                makeReservations()
-                delay((60 * 30 * 1000).toLong()) // 30 min
-            }
-        }
+    suspend fun startup() {
+        initPage()
+        idun().startup(storage(), ODIN_PORT, 100, 120)
     }
 
     suspend fun initPage() {
@@ -81,7 +68,7 @@ expect fun Homepage(stateModel: StateModel)
 
 expect fun odin(): Odin
 
-expect fun initializeOdin(context: Context)
+expect suspend fun initializeOdin(context: Context)
 
 @Suppress("KotlinNoActualForExpect", "EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object FilesConstructor : RoomDatabaseConstructor<Files> {
