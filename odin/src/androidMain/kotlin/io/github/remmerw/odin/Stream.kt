@@ -2,13 +2,13 @@ package io.github.remmerw.odin
 
 import io.github.remmerw.idun.Channel
 import kotlinx.coroutines.runBlocking
-import kotlinx.io.Buffer
+import kotlinx.io.Source
+import kotlinx.io.buffered
 import java.io.IOException
 import java.io.InputStream
-import kotlin.math.min
 
 class Stream(private val channel: Channel) : InputStream() {
-    private var buffer: Buffer? = null
+    private var buffer: Source? = null
 
     override fun available(): Int {
         return channel.size().toInt()
@@ -17,7 +17,7 @@ class Stream(private val channel: Channel) : InputStream() {
     // todo maybe not blocking
     private fun loadNextData(): Unit = runBlocking {
         try {
-            buffer = channel.next()
+            buffer = channel.next()!!.buffered()
         } catch (throwable: Throwable) {
             throw IOException(throwable)
         }
@@ -39,8 +39,7 @@ class Stream(private val channel: Channel) : InputStream() {
     override fun read(bytes: ByteArray, off: Int, len: Int): Int {
         if (!hasData()) return -1
 
-        val max = min(len, buffer!!.size.toInt())
-        val read = buffer!!.readAtMostTo(bytes, off, off + max)
+        val read = buffer!!.readAtMostTo(bytes, off, off + len)
 
         if (buffer!!.exhausted()) {
             loadNextData()
