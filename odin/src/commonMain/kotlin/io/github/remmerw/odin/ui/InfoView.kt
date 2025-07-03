@@ -45,6 +45,7 @@ fun InfoView(stateModel: StateModel) {
 
 
     val homepage by remember { mutableStateOf(stateModel.pageUri()) }
+    val observedAddress by remember { mutableStateOf(stateModel.observedAddress())}
 
     Column(
         modifier = Modifier
@@ -62,6 +63,19 @@ fun InfoView(stateModel: StateModel) {
             style = MaterialTheme.typography.labelLarge,
             modifier = Modifier.padding(16.dp)
         )
+
+
+        if(observedAddress != null) {
+            if(observedAddress!!.inet4()) {
+                Text(
+                    text = observedAddress!!.address(),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.error,
+                    modifier = Modifier.padding(8.dp)
+                        .align(Alignment.CenterHorizontally)
+                )
+            }
+        }
 
         Image(
             painter = rememberQrCodePainter(homepage),

@@ -27,6 +27,7 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.Scaffold
@@ -132,7 +133,7 @@ fun MainView(stateModel: StateModel) {
     val fileInfos by stateModel.fileInfos().collectAsState(emptyList())
     val numRelays by stateModel.numRelays.collectAsState(0)
     val numConnections by stateModel.numConnections.collectAsState(0)
-
+    val reachability by stateModel.reachability.collectAsState(Reachability.UNKNOWN)
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
     val focusManager = LocalFocusManager.current
@@ -155,7 +156,12 @@ fun MainView(stateModel: StateModel) {
                     IconButton(onClick = { showInfo = true }) {
                         Icon(
                             imageVector = Icons.Outlined.Home,
-                            contentDescription = stringResource(Res.string.home)
+                            contentDescription = stringResource(Res.string.home),
+                            tint = if(reachability == Reachability.UNREACHABLE) {
+                                MaterialTheme.colorScheme.error
+                            } else {
+                                LocalContentColor.current // default
+                            }
                         )
                     }
                 },
@@ -281,7 +287,7 @@ fun MainView(stateModel: StateModel) {
         },
     ) { innerPadding ->
 
-        val reachability by stateModel.reachability.collectAsState(Reachability.UNKNOWN)
+
         val listState = rememberLazyListState()
         Column(
             modifier = Modifier

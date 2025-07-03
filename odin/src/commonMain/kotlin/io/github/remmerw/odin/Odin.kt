@@ -33,6 +33,9 @@ expect abstract class Context
 
 abstract class Odin {
     var reachability: Reachability = Reachability.UNKNOWN
+    var observedAddress: Peeraddr? = null
+
+
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
         val content: String = directoryContent(

@@ -57,6 +57,7 @@ fun ApplicationScope.App() {
                 val address = odin.idun().observedAddress()
                 if(address != null) {
                     val peeraddr = Peeraddr(peerId, address, ODIN_PORT.toUShort())
+                    odin.observedAddress = peeraddr
                     if(peeraddr.inet6()) {
                         odin.makeReservations(peeraddr)
                         delay(30 * 60 * 1000) // delay 30 min
