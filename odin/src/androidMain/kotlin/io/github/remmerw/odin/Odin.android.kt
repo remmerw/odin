@@ -322,7 +322,7 @@ private fun createDataStore(context: Context): DataStore<Preferences> = createDa
 )
 
 
-actual suspend fun initializeOdin(context: Context) {
+actual fun initializeOdin(context: Context) {
 
     val time = measureTime {
         // Initialize FileKit
@@ -344,8 +344,6 @@ actual suspend fun initializeOdin(context: Context) {
         )
 
         odin = AndroidOdin(context, datastore, files, storage, idun, peers)
-
-        odin!!.startup()
     }
 
     Log.e("App", "App started " + time.inWholeMilliseconds)

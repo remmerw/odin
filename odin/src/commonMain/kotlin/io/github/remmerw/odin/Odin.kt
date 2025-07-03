@@ -32,11 +32,6 @@ expect abstract class Context
 
 abstract class Odin {
 
-    suspend fun startup() {
-        initPage()
-        idun().startup(storage(), ODIN_PORT, 100, 120)
-    }
-
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
         val content: String = directoryContent(
@@ -68,7 +63,14 @@ expect fun Homepage(stateModel: StateModel)
 
 expect fun odin(): Odin
 
-expect suspend fun initializeOdin(context: Context)
+expect fun initializeOdin(context: Context)
+
+suspend fun startup() {
+    val odin = odin()
+    odin.initPage()
+    val storage = odin().storage()
+    odin().idun().startup(storage, ODIN_PORT)
+}
 
 @Suppress("KotlinNoActualForExpect", "EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object FilesConstructor : RoomDatabaseConstructor<Files> {
@@ -123,5 +125,3 @@ fun keys(datastore: DataStore<Preferences>): Keys {
         }
     }
 }
-
-

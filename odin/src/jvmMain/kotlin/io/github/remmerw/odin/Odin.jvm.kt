@@ -176,7 +176,7 @@ private fun createDataStore(): DataStore<Preferences> = createDataStore(
 )
 
 
-actual suspend fun initializeOdin(context: Context) {
+actual fun initializeOdin(context: Context) {
     val datastore = createDataStore()
     val files = createFiles()
     val peers = createPeers()
@@ -190,6 +190,4 @@ actual suspend fun initializeOdin(context: Context) {
     )
 
     odin = JvmOdin(datastore, files, storage, idun, peers)
-
-    odin!!.startup()
 }

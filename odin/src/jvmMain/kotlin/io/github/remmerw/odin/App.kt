@@ -21,6 +21,7 @@ import io.github.remmerw.odin.generated.resources.audio
 import io.github.remmerw.odin.ui.MainView
 import io.github.vinceglb.filekit.FileKit
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
 import java.awt.Dimension
@@ -43,8 +44,15 @@ fun ApplicationScope.App() {
         icon = painterResource(Res.drawable.audio), // todo
 
     ) {
+        initializeOdin(JvmContext)
+
         MainScope().launch {
-            initializeOdin(JvmContext)
+            startup()
+            while (true) {
+                val odin = odin()
+                odin.makeReservations()
+                delay(30 * 60 * 1000) // delay 30 min
+            }
         }
 
         val stateModel: StateModel = viewModel { StateModel() }

@@ -55,8 +55,8 @@ kotlin {
                 implementation(libs.qrose)
                 implementation(libs.lifecycle)
 
-                implementation("io.github.remmerw:asen:0.3.1")
-                implementation("io.github.remmerw:idun:0.3.0")
+                implementation("io.github.remmerw:asen:0.3.2")
+                implementation("io.github.remmerw:idun:0.3.2")
 
                 implementation("io.github.vinceglb:filekit-core:0.10.0-beta04") // todo
                 implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04") // todo
