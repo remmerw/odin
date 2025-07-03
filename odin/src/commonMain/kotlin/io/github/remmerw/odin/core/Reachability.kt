@@ -1,5 +1,5 @@
 package io.github.remmerw.odin.core
 
 enum class Reachability {
-    UNKNOWN, OFFLINE
+    UNKNOWN, OFFLINE, UNREACHABLE
 }

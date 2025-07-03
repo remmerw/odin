@@ -56,15 +56,15 @@ fun KeepScreenOn() {
 fun App() {
 
     val stateModel: StateModel = viewModel { StateModel() }
-
+    val odin = odin()
 
     val state = rememberConnectivityState {
         autoStart = true
     }
 
     when (state.status) {
-        is Connectivity.Status.Connected -> stateModel.reachability = Reachability.UNKNOWN
-        is Connectivity.Status.Disconnected -> stateModel.reachability = Reachability.OFFLINE
+        is Connectivity.Status.Connected -> odin.reachability = Reachability.UNKNOWN
+        is Connectivity.Status.Disconnected -> odin.reachability = Reachability.OFFLINE
         else -> {}
     }
     KeepScreenOn()

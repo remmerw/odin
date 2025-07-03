@@ -36,11 +36,8 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.pulltorefresh.PullToRefreshBox
-import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -74,6 +71,7 @@ import io.github.remmerw.odin.generated.resources.relays
 import io.github.remmerw.odin.generated.resources.reset
 import io.github.remmerw.odin.generated.resources.share
 import io.github.remmerw.odin.generated.resources.unknown
+import io.github.remmerw.odin.generated.resources.unreachable
 import io.github.remmerw.odin.generated.resources.untitled
 import io.github.vinceglb.filekit.FileKit
 import io.github.vinceglb.filekit.PlatformFile
@@ -82,7 +80,6 @@ import io.github.vinceglb.filekit.cacheDir
 import io.github.vinceglb.filekit.dialogs.FileKitMode
 import io.github.vinceglb.filekit.dialogs.compose.rememberFilePickerLauncher
 import io.github.vinceglb.filekit.sink
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.io.buffered
 import kotlinx.io.writeString
@@ -132,8 +129,6 @@ fun MainView(stateModel: StateModel) {
     var showHomepage: Boolean by remember { mutableStateOf(false) }
 
 
-    var isRefreshing by remember { mutableStateOf(false) }
-    val pullToRefreshState = rememberPullToRefreshState()
     val fileInfos by stateModel.fileInfos().collectAsState(emptyList())
     val numRelays by stateModel.numRelays.collectAsState(0)
     val numConnections by stateModel.numConnections.collectAsState(0)
@@ -143,14 +138,7 @@ fun MainView(stateModel: StateModel) {
     val focusManager = LocalFocusManager.current
     val uriHandler = LocalUriHandler.current
 
-    val onRefresh: () -> Unit = {
-        isRefreshing = true
-        scope.launch {
-            stateModel.makeReservations()
-            delay(1500)
-            isRefreshing = false
-        }
-    }
+
 
     Scaffold(
         snackbarHost = {
@@ -293,7 +281,7 @@ fun MainView(stateModel: StateModel) {
         },
     ) { innerPadding ->
 
-        val reachability: Reachability = remember { stateModel.reachability }
+        val reachability by stateModel.reachability.collectAsState(Reachability.UNKNOWN)
         val listState = rememberLazyListState()
         Column(
             modifier = Modifier
@@ -311,44 +299,57 @@ fun MainView(stateModel: StateModel) {
                 Text(
                     text =
                         stringResource(
-                            if (reachability == Reachability.UNKNOWN) {
-                                Res.string.unknown
-                            } else {
-                                Res.string.offline
+
+                            when (reachability) {
+                                Reachability.UNKNOWN -> {
+                                    Res.string.unknown
+                                }
+                                Reachability.UNREACHABLE -> {
+                                    Res.string.unreachable
+                                }
+                                else -> {
+                                    Res.string.offline
+                                }
                             }
                         ),
                     style = MaterialTheme.typography.labelLarge,
-                    color = MaterialTheme.colorScheme.onSurface,
+                    color = when (reachability) {
+                        Reachability.UNKNOWN -> {
+                            MaterialTheme.colorScheme.onSurface
+                        }
+                        Reachability.UNREACHABLE -> {
+                            MaterialTheme.colorScheme.error
+                        }
+                        else -> {
+                            MaterialTheme.colorScheme.error
+                        }
+                    },
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .fillMaxWidth()
                         .align(Alignment.CenterHorizontally)
-                        .background(MaterialTheme.colorScheme.surface)
+                        .background( when (reachability) {
+                            Reachability.UNKNOWN -> {
+                                MaterialTheme.colorScheme.surface
+                            }
+                            Reachability.UNREACHABLE -> {
+                                MaterialTheme.colorScheme.onError
+                            }
+                            else -> {
+                                MaterialTheme.colorScheme.onError
+                            }
+                        })
                 )
             }
 
-            PullToRefreshBox(
-                isRefreshing = isRefreshing,
-                state = pullToRefreshState,
-                onRefresh = onRefresh
+            LazyColumn(
+                modifier = Modifier.fillMaxSize(),
+                state = listState
             ) {
-                LazyColumn(
-                    modifier = Modifier.fillMaxSize(),
-                    state = listState
-                ) {
-                    items(items = fileInfos, key = { fileItem ->
-                        fileItem.idx
-                    }) { fileInfo ->
-                        SwipeFileInfoItem(stateModel, fileInfo)
-                    }
-                }
-            }
-
-            if (isRefreshing) {
-                LaunchedEffect(Unit) {
-                    stateModel.makeReservations()
-                    delay(1000)
-                    isRefreshing = false
+                items(items = fileInfos, key = { fileItem ->
+                    fileItem.idx
+                }) { fileInfo ->
+                    SwipeFileInfoItem(stateModel, fileInfo)
                 }
             }
         }

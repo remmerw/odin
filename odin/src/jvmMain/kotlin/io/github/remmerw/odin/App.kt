@@ -14,6 +14,7 @@ import androidx.compose.ui.window.WindowState
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.jordond.connectivity.Connectivity
 import dev.jordond.connectivity.compose.rememberConnectivityState
+import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.odin.core.Reachability
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.generated.resources.Res
@@ -46,25 +47,40 @@ fun ApplicationScope.App() {
     ) {
         initializeOdin(JvmContext)
 
+
+        val odin = odin()
+
         MainScope().launch {
             startup()
             while (true) {
-                val odin = odin()
-                odin.makeReservations()
-                delay(30 * 60 * 1000) // delay 30 min
+                val peerId = odin.idun().peerId()
+                val address = odin.idun().observedAddress()
+                if(address != null) {
+                    val peeraddr = Peeraddr(peerId, address, ODIN_PORT.toUShort())
+                    if(peeraddr.inet6()) {
+                        odin.makeReservations(peeraddr)
+                        delay(30 * 60 * 1000) // delay 30 min
+                    } else {
+                        delay(60  * 1000)
+                        odin.reachability = Reachability.UNREACHABLE
+                    }
+                } else {
+                    delay(60  * 1000)
+                    odin.reachability = Reachability.UNREACHABLE
+                }
             }
         }
 
-        val stateModel: StateModel = viewModel { StateModel() }
 
+        val stateModel: StateModel = viewModel { StateModel() }
 
         val state = rememberConnectivityState {
             autoStart = true
         }
 
         when (state.status) {
-            is Connectivity.Status.Connected -> stateModel.reachability = Reachability.UNKNOWN
-            is Connectivity.Status.Disconnected -> stateModel.reachability = Reachability.OFFLINE
+            is Connectivity.Status.Connected -> odin.reachability = Reachability.UNKNOWN
+            is Connectivity.Status.Disconnected -> odin.reachability = Reachability.OFFLINE
             else -> {}
         }
 

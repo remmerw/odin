@@ -1,8 +1,5 @@
 package io.github.remmerw.odin.core
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.remmerw.asen.Peeraddr
@@ -16,8 +13,13 @@ import kotlinx.coroutines.runBlocking
 
 class StateModel() : ViewModel() {
 
-    var reachability: Reachability by mutableStateOf(Reachability.UNKNOWN)
-
+    val reachability: Flow<Reachability> = flow {
+        while (true) {
+            val reachability = odin().reachability
+            emit(reachability) // Emits the result of the request to the flow
+            delay(500) // Suspends the coroutine for some time
+        }
+    }
     val numRelays: Flow<Int> = flow {
         while (true) {
             val latestRelays = odin().idun().numReservations()
@@ -57,13 +59,6 @@ class StateModel() : ViewModel() {
 
     fun fileInfos(): Flow<List<FileInfo>> {
         return odin().files().filesDao().flowFileInfos()
-    }
-
-
-    fun makeReservations() {
-        viewModelScope.launch {
-            odin().makeReservations()
-        }
     }
 
     suspend fun sharePageUri(uri: String) {

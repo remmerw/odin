@@ -5,8 +5,6 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import io.github.remmerw.asen.PeerId
-import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.bootstrap
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
@@ -18,9 +16,6 @@ import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
 import java.awt.Desktop
 import java.io.File
-import java.net.Inet6Address
-import java.net.InetAddress
-import java.net.NetworkInterface
 import java.net.URI
 import java.util.UUID
 
@@ -70,10 +65,6 @@ internal class JvmOdin(
         return "$os $version"
     }
 
-    override fun peeraddrs(): List<Peeraddr> {
-        return peeraddrs(idun().peerId())
-    }
-
     override fun datastore(): DataStore<Preferences> {
         return datastore
     }
@@ -102,42 +93,6 @@ private fun workUUID(fileInfo: FileInfo): UUID? {
     return null
 }
 
-
-private fun isLanAddress(inetAddress: InetAddress): Boolean {
-    return inetAddress.isAnyLocalAddress
-            || inetAddress.isLinkLocalAddress
-            || (inetAddress.isLoopbackAddress)
-            || (inetAddress.isSiteLocalAddress)
-}
-
-private fun publicAddresses(): List<InetAddress> {
-    val inetAddresses: MutableList<InetAddress> = ArrayList()
-
-    val interfaces = NetworkInterface.getNetworkInterfaces()
-
-    for (networkInterface in interfaces) {
-        if (networkInterface.isUp) {
-            val addresses = networkInterface.inetAddresses
-            for (inetAddress in addresses) {
-                if (inetAddress is Inet6Address) {
-                    if (!isLanAddress(inetAddress)) {
-                        inetAddresses.add(inetAddress)
-                    }
-                }
-            }
-        }
-    }
-    return inetAddresses
-}
-
-private fun peeraddrs(peerId: PeerId): List<Peeraddr> {
-    val inetSocketAddresses: Collection<InetAddress> = publicAddresses()
-    val result = mutableListOf<Peeraddr>()
-    for (inetAddress in inetSocketAddresses) {
-        result.add(Peeraddr(peerId, inetAddress.address, ODIN_PORT.toUShort()))
-    }
-    return result
-}
 
 @Composable
 actual fun Homepage(stateModel: StateModel) {

@@ -5,7 +5,6 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.bootstrap
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
@@ -53,10 +52,6 @@ internal class IosOdin(
 
     override fun deviceName(): String {
         return "" // todo
-    }
-
-    override fun peeraddrs(): List<Peeraddr> {
-        return emptyList() // todo
     }
 
     override fun datastore(): DataStore<Preferences> {

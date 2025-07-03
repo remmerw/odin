@@ -15,6 +15,7 @@ import io.github.remmerw.idun.Storage
 import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
+import io.github.remmerw.odin.core.Reachability
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.core.directoryContent
 import io.github.remmerw.odin.core.getPrivateKey
@@ -31,7 +32,7 @@ const val ODIN_PORT: Int = 5001
 expect abstract class Context
 
 abstract class Odin {
-
+    var reachability: Reachability = Reachability.UNKNOWN
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
         val content: String = directoryContent(
@@ -41,8 +42,8 @@ abstract class Odin {
         storage().root(content.encodeToByteArray())
     }
 
-    suspend fun makeReservations() {
-        idun().makeReservations(peeraddrs(), 100, 120)
+    suspend fun makeReservations(peeraddr: Peeraddr) {
+        idun().makeReservations(listOf(peeraddr), 100, 120)
     }
 
     abstract suspend fun sharePageUri(uri: String)
@@ -50,7 +51,6 @@ abstract class Odin {
     abstract fun cancelWork(fileInfo: FileInfo)
     abstract fun uploadFiles(absolutePath: String)
     abstract fun deviceName(): String
-    abstract fun peeraddrs(): List<Peeraddr>
     abstract fun datastore(): DataStore<Preferences>
     abstract fun files(): Files
     abstract fun peers(): Peers
