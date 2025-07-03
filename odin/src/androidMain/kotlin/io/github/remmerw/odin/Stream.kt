@@ -1,6 +1,7 @@
 package io.github.remmerw.odin
 
 import io.github.remmerw.idun.Channel
+import io.github.remmerw.idun.debug
 import kotlinx.coroutines.runBlocking
 import kotlinx.io.Source
 import kotlinx.io.buffered
@@ -17,8 +18,9 @@ class Stream(private val channel: Channel) : InputStream() {
     // todo maybe not blocking
     private fun loadNextData(): Unit = runBlocking {
         try {
-            val raw = channel.next()
-            raw?.buffered()
+            buffer?.close() // close previous
+
+            buffer = channel.next()?.buffered()
         } catch (throwable: Throwable) {
             throw IOException(throwable)
         }
@@ -70,5 +72,13 @@ class Stream(private val channel: Channel) : InputStream() {
         channel.seek(n)
         loadNextData()
         return n
+    }
+
+    override fun close(){
+        try {
+            buffer?.close() // close previous
+        } catch (throwable: Throwable){
+            debug(throwable)
+        }
     }
 }
