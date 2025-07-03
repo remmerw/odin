@@ -17,7 +17,8 @@ class Stream(private val channel: Channel) : InputStream() {
     // todo maybe not blocking
     private fun loadNextData(): Unit = runBlocking {
         try {
-            buffer = channel.next()!!.buffered()
+            val raw = channel.next()
+            raw?.buffered()
         } catch (throwable: Throwable) {
             throw IOException(throwable)
         }
