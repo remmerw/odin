@@ -30,6 +30,7 @@ import io.github.remmerw.odin.generated.resources.application
 import io.github.remmerw.odin.generated.resources.information
 import io.github.remmerw.odin.generated.resources.ipv
 import io.github.remmerw.odin.generated.resources.limitation
+import io.github.remmerw.odin.generated.resources.no_ip_detected
 import io.github.remmerw.odin.generated.resources.port
 import io.github.remmerw.odin.generated.resources.port_forwarding
 import io.github.remmerw.odin.generated.resources.port_forwarding_info
@@ -45,7 +46,7 @@ fun InfoView(stateModel: StateModel) {
 
 
     val homepage by remember { mutableStateOf(stateModel.pageUri()) }
-    val observedAddress by remember { mutableStateOf(stateModel.observedAddress())}
+    val peeraddrs by remember { mutableStateOf(stateModel.observedPeeraddrs())}
 
     Column(
         modifier = Modifier
@@ -64,17 +65,27 @@ fun InfoView(stateModel: StateModel) {
             modifier = Modifier.padding(16.dp)
         )
 
-
-        if(observedAddress != null) {
-            if(observedAddress!!.inet4()) {
+        if(peeraddrs.isNotEmpty()) {
+            peeraddrs.forEach { peeraddr ->
                 Text(
-                    text = observedAddress!!.address(),
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.error,
+                    text = peeraddr.address.hostname(),
+                    style = if (peeraddr.address.inet4()) {
+                        MaterialTheme.typography.labelMedium
+                    } else {
+                        MaterialTheme.typography.labelLarge
+                    },
                     modifier = Modifier.padding(8.dp)
                         .align(Alignment.CenterHorizontally)
                 )
             }
+        } else {
+            Text(
+                text = stringResource(Res.string.no_ip_detected),
+                style =  MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.error,
+                modifier = Modifier.padding(8.dp)
+                    .align(Alignment.CenterHorizontally)
+            )
         }
 
         Image(

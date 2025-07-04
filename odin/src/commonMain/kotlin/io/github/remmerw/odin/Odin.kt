@@ -25,6 +25,7 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okio.Path.Companion.toPath
+import kotlin.concurrent.Volatile
 
 const val ODIN_PORT: Int = 5001
 
@@ -32,10 +33,15 @@ const val ODIN_PORT: Int = 5001
 expect abstract class Context
 
 abstract class Odin {
+    @Volatile
     var reachability: Reachability = Reachability.UNKNOWN
-    var observedAddress: Peeraddr? = null
+    @Volatile
+    var observed: List<Peeraddr> = emptyList()
 
 
+    suspend fun observedPeeraddrs() {
+        observed = idun().observedPeeraddrs(ODIN_PORT)
+    }
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
         val content: String = directoryContent(
@@ -45,8 +51,9 @@ abstract class Odin {
         storage().root(content.encodeToByteArray())
     }
 
-    suspend fun makeReservations(peeraddr: Peeraddr) {
-        idun().makeReservations(listOf(peeraddr), 100, 120)
+    suspend fun makeReservations(peeraddrs: List<Peeraddr>, maxReservations : Int = 100,
+                                 timeout: Int = 120) {
+        idun().makeReservations(peeraddrs, maxReservations, timeout)
     }
 
     abstract suspend fun sharePageUri(uri: String)

@@ -14,7 +14,6 @@ import androidx.compose.ui.window.WindowState
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.jordond.connectivity.Connectivity
 import dev.jordond.connectivity.compose.rememberConnectivityState
-import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.odin.core.Reachability
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.generated.resources.Res
@@ -53,18 +52,10 @@ fun ApplicationScope.App() {
         MainScope().launch {
             startup()
             while (true) {
-                val peerId = odin.idun().peerId()
-                val address = odin.idun().observedAddress()
-                if(address != null) {
-                    val peeraddr = Peeraddr(peerId, address, ODIN_PORT.toUShort())
-                    odin.observedAddress = peeraddr
-                    if(peeraddr.inet6()) {
-                        odin.makeReservations(peeraddr)
-                        delay(30 * 60 * 1000) // delay 30 min
-                    } else {
-                        delay(60  * 1000)
-                        odin.reachability = Reachability.UNREACHABLE
-                    }
+                odin.observedPeeraddrs()
+                if(odin.observed.isNotEmpty()) {
+                    odin.makeReservations(odin.observed)
+                    delay(30 * 60 * 1000) // delay 30 min
                 } else {
                     delay(60  * 1000)
                     odin.reachability = Reachability.UNREACHABLE

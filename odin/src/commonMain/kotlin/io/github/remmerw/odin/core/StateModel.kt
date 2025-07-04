@@ -36,8 +36,8 @@ class StateModel() : ViewModel() {
         }
     }
 
-    fun observedAddress() : Peeraddr? {
-        return odin().observedAddress
+    fun observedPeeraddrs() : List<Peeraddr> {
+        return odin().observed
     }
 
     fun homepageImplemented(): Boolean {

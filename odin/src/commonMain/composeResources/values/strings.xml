@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="no_ip_detected">No IP Address detected</string>
     <string name="untitled">Untitled</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>

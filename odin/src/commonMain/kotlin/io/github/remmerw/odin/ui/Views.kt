@@ -144,7 +144,7 @@ fun PeeraddrItem(peeraddr: Peeraddr) {
                     style = MaterialTheme.typography.bodySmall, softWrap = false
                 )
                 Text(
-                    text = peeraddr.address() + ":" + peeraddr.port, maxLines = 2,
+                    text = peeraddr.address.hostname() + ":" + peeraddr.port, maxLines = 2,
                     modifier = Modifier.fillMaxWidth(),
                     style = MaterialTheme.typography.labelSmall, softWrap = false
                 )
