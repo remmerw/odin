@@ -17,7 +17,7 @@ plugins {
 }
 
 group = "io.github.remmerw"
-version = "0.2.7"
+version = "0.2.8"
 
 
 kotlin {
@@ -55,8 +55,8 @@ kotlin {
                 implementation(libs.qrose)
                 implementation(libs.lifecycle)
 
-                implementation("io.github.remmerw:asen:0.3.2")
-                implementation("io.github.remmerw:idun:0.3.2")
+                implementation("io.github.remmerw:asen:0.3.3")
+                implementation("io.github.remmerw:idun:0.3.3")
 
                 implementation("io.github.vinceglb:filekit-core:0.10.0-beta04") // todo
                 implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04") // todo
