@@ -59,6 +59,16 @@ fun InfoView(stateModel: StateModel) {
             textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth()
         )
 
+        Image(
+            painter = rememberQrCodePainter(homepage),
+            contentDescription = stringResource(Res.string.uri_qrcode),
+            modifier = Modifier
+                .size(240.dp)
+                .fillMaxWidth()
+                .padding(16.dp)
+                .align(Alignment.CenterHorizontally)
+        )
+
         Text(
             text = stringResource(Res.string.limitation),
             style = MaterialTheme.typography.labelLarge,
@@ -87,16 +97,6 @@ fun InfoView(stateModel: StateModel) {
                     .align(Alignment.CenterHorizontally)
             )
         }
-
-        Image(
-            painter = rememberQrCodePainter(homepage),
-            contentDescription = stringResource(Res.string.uri_qrcode),
-            modifier = Modifier
-                .size(240.dp)
-                .fillMaxWidth()
-                .padding(16.dp)
-                .align(Alignment.CenterHorizontally)
-        )
 
         Row(modifier = Modifier.padding(16.dp)) {
             Icon(
