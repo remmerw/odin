@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="swarm">Swarm</string>
     <string name="no_ip_detected">No IP Address detected</string>
     <string name="untitled">Untitled</string>
     <string name="ok">Ok</string>
@@ -40,10 +41,8 @@
     <string name="offline">Offline</string>
     <string name="unreachable">Unreachable</string>
     <string name="local_network">Reachability : Local Network</string>
-    <string name="relays_network">Reachability : Relays and Local Network</string>
 
     <string name="limitation">Data sharing is only possible with peers using the IPv6 protocol.</string>
-    <string name="relays">Relays</string>
     <string name="connections">Connections</string>
     <string name="reset">Reset</string>
     <string name="port_forwarding" translatable="false">Port Forwarding</string>

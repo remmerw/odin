@@ -46,7 +46,7 @@ fun InfoView(stateModel: StateModel) {
 
 
     val homepage by remember { mutableStateOf(stateModel.pageUri()) }
-    val peeraddrs by remember { mutableStateOf(stateModel.observedPeeraddrs())}
+    val peeraddrs by remember { mutableStateOf(stateModel.observedPeeraddrs()) }
 
     Column(
         modifier = Modifier
@@ -75,7 +75,7 @@ fun InfoView(stateModel: StateModel) {
             modifier = Modifier.padding(16.dp)
         )
 
-        if(peeraddrs.isNotEmpty()) {
+        if (peeraddrs.isNotEmpty()) {
             peeraddrs.forEach { peeraddr ->
                 Text(
                     text = peeraddr.address.hostname(),
@@ -91,7 +91,7 @@ fun InfoView(stateModel: StateModel) {
         } else {
             Text(
                 text = stringResource(Res.string.no_ip_detected),
-                style =  MaterialTheme.typography.labelLarge,
+                style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.error,
                 modifier = Modifier.padding(8.dp)
                     .align(Alignment.CenterHorizontally)

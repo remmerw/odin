@@ -68,9 +68,9 @@ import io.github.remmerw.odin.generated.resources.lan_connect
 import io.github.remmerw.odin.generated.resources.no_activity_found_to_handle_uri
 import io.github.remmerw.odin.generated.resources.offline
 import io.github.remmerw.odin.generated.resources.plus_thick
-import io.github.remmerw.odin.generated.resources.relays
 import io.github.remmerw.odin.generated.resources.reset
 import io.github.remmerw.odin.generated.resources.share
+import io.github.remmerw.odin.generated.resources.swarm
 import io.github.remmerw.odin.generated.resources.unknown
 import io.github.remmerw.odin.generated.resources.unreachable
 import io.github.remmerw.odin.generated.resources.untitled
@@ -157,7 +157,7 @@ fun MainView(stateModel: StateModel) {
                         Icon(
                             imageVector = Icons.Outlined.Home,
                             contentDescription = stringResource(Res.string.home),
-                            tint = if(reachability == Reachability.UNREACHABLE) {
+                            tint = if (reachability == Reachability.UNREACHABLE) {
                                 MaterialTheme.colorScheme.error
                             } else {
                                 LocalContentColor.current // default
@@ -243,7 +243,7 @@ fun MainView(stateModel: StateModel) {
                         IconButton(onClick = { showRelays = true }) {
                             Icon(
                                 painter = painterResource(Res.drawable.access_point_network),
-                                contentDescription = stringResource(Res.string.relays)
+                                contentDescription = stringResource(Res.string.swarm)
                             )
                         }
                     }
@@ -310,9 +310,11 @@ fun MainView(stateModel: StateModel) {
                                 Reachability.UNKNOWN -> {
                                     Res.string.unknown
                                 }
+
                                 Reachability.UNREACHABLE -> {
                                     Res.string.unreachable
                                 }
+
                                 else -> {
                                     Res.string.offline
                                 }
@@ -323,9 +325,11 @@ fun MainView(stateModel: StateModel) {
                         Reachability.UNKNOWN -> {
                             MaterialTheme.colorScheme.onSurface
                         }
+
                         Reachability.UNREACHABLE -> {
                             MaterialTheme.colorScheme.error
                         }
+
                         else -> {
                             MaterialTheme.colorScheme.error
                         }
@@ -334,17 +338,21 @@ fun MainView(stateModel: StateModel) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .align(Alignment.CenterHorizontally)
-                        .background( when (reachability) {
-                            Reachability.UNKNOWN -> {
-                                MaterialTheme.colorScheme.surface
+                        .background(
+                            when (reachability) {
+                                Reachability.UNKNOWN -> {
+                                    MaterialTheme.colorScheme.surface
+                                }
+
+                                Reachability.UNREACHABLE -> {
+                                    MaterialTheme.colorScheme.onError
+                                }
+
+                                else -> {
+                                    MaterialTheme.colorScheme.onError
+                                }
                             }
-                            Reachability.UNREACHABLE -> {
-                                MaterialTheme.colorScheme.onError
-                            }
-                            else -> {
-                                MaterialTheme.colorScheme.onError
-                            }
-                        })
+                        )
                 )
             }
 
@@ -364,7 +372,7 @@ fun MainView(stateModel: StateModel) {
 
     if (showRelays) {
         ModalBottomSheet(onDismissRequest = { showRelays = false }) {
-            RelaysView(stateModel.reservations())
+            SwarmView(stateModel.reservations())
         }
     }
 

@@ -20,8 +20,8 @@ import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.encodePeerId
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.connections
-import io.github.remmerw.odin.generated.resources.relays
 import io.github.remmerw.odin.generated.resources.server_network
+import io.github.remmerw.odin.generated.resources.swarm
 import io.github.remmerw.odin.generated.resources.untitled
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
@@ -89,7 +89,7 @@ fun AddressItem(address: String) {
 }
 
 @Composable
-fun RelaysView(list: List<Peeraddr>) {
+fun SwarmView(list: List<Peeraddr>) {
 
     Column(
         modifier = Modifier
@@ -97,7 +97,7 @@ fun RelaysView(list: List<Peeraddr>) {
             .padding(0.dp, 0.dp, 0.dp, 32.dp)
     ) {
         Text(
-            text = stringResource(Res.string.relays),
+            text = stringResource(Res.string.swarm),
             style = MaterialTheme.typography.titleLarge,
             textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth()
         )
