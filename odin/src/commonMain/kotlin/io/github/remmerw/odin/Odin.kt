@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import io.github.remmerw.asen.Keys
+import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.generateKeys
 import io.github.remmerw.idun.Idun
@@ -19,7 +20,9 @@ import io.github.remmerw.odin.core.Reachability
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.core.directoryContent
 import io.github.remmerw.odin.core.getPrivateKey
+import io.github.remmerw.odin.core.getPublicKey
 import io.github.remmerw.odin.core.setPrivateKey
+import io.github.remmerw.odin.core.setPublicKey
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.first
@@ -126,11 +129,13 @@ fun peersDatabaseBuilder(
 fun keys(datastore: DataStore<Preferences>): Keys {
     return runBlocking {
         val privateKey = getPrivateKey(datastore).first()
-        if (privateKey.isNotEmpty()) {
-            return@runBlocking generateKeys(privateKey)
+        val publicKey = getPublicKey(datastore).first()
+        if (privateKey.isNotEmpty() && publicKey.isNotEmpty()) {
+            return@runBlocking Keys(PeerId(publicKey), privateKey)
         } else {
             val keys = generateKeys()
             setPrivateKey(datastore, keys.privateKey)
+            setPublicKey(datastore, keys.peerId.hash)
             return@runBlocking keys
         }
     }

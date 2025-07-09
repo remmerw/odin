@@ -20,3 +20,15 @@ fun getPrivateKey(dataStore: DataStore<Preferences>): Flow<ByteArray> =
         settings[privateKey] ?: byteArrayOf()
     }
 
+private val publicKey = byteArrayPreferencesKey("publicKey")
+
+suspend fun setPublicKey(dataStore: DataStore<Preferences>, key: ByteArray) {
+    dataStore.edit { settings ->
+        settings[publicKey] = key
+    }
+}
+
+fun getPublicKey(dataStore: DataStore<Preferences>): Flow<ByteArray> =
+    dataStore.data.map { settings ->
+        settings[publicKey] ?: byteArrayOf()
+    }
