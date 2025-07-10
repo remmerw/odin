@@ -31,9 +31,9 @@ kotlin {
 
 
     jvm()
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
+    //iosX64()
+    //iosArm64()
+    //iosSimulatorArm64()
 
 
     sourceSets {
@@ -62,11 +62,6 @@ kotlin {
                 implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04") // todo
                 implementation("io.github.vinceglb:filekit-dialogs-compose:0.10.0-beta04") // todo
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
-
-                implementation(libs.connectivity.core)
-                implementation(libs.connectivity.compose)
-
             }
         }
 
@@ -82,36 +77,17 @@ kotlin {
                 implementation("androidx.test:core:1.6.1")
             }
         }
+
         androidInstrumentedTest.dependencies {
             implementation(libs.kotlin.test)
             implementation("androidx.test:runner:1.6.2")
             implementation("androidx.test:core:1.6.1")
         }
 
-        iosMain {
-            dependencies {
-                implementation(libs.connectivity.device)
-                implementation(libs.connectivity.compose.device)
-                implementation(libs.connectivity.apple)
-            }
-        }
-
-
-        jvmMain {
-            dependencies {
-                implementation(compose.desktop.common)
-                implementation(libs.connectivity.http)
-                implementation(libs.connectivity.compose.http)
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.10.2")
-            }
-        }
 
         androidMain {
             dependencies {
                 implementation(libs.androidx.work.runtime)
-                implementation(libs.connectivity.device)
-                implementation(libs.connectivity.compose.device)
-                implementation(libs.connectivity.android)
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
             }
         }
@@ -140,9 +116,9 @@ android {
 
 dependencies {
     add("kspAndroid", libs.androidx.room.compiler)
-    add("kspIosX64", libs.androidx.room.compiler)
-    add("kspIosSimulatorArm64", libs.androidx.room.compiler)
-    add("kspIosArm64", libs.androidx.room.compiler)
+    //add("kspIosX64", libs.androidx.room.compiler)
+    //add("kspIosSimulatorArm64", libs.androidx.room.compiler)
+    //add("kspIosArm64", libs.androidx.room.compiler)
     add("kspJvm", libs.androidx.room.compiler)
 }
 
