@@ -1,6 +1,5 @@
 package io.github.remmerw.odin
 
-import androidx.compose.runtime.Composable
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.room.Room
@@ -10,14 +9,9 @@ import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
 import io.github.remmerw.idun.newStorage
-import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
-import io.github.remmerw.odin.core.StateModel
-import java.awt.Desktop
 import java.io.File
-import java.net.URI
-import java.util.UUID
 
 private var odin: Odin? = null
 
@@ -32,38 +26,11 @@ internal class JvmOdin(
     private val peers: Peers
 ) : Odin() {
 
-    override suspend fun sharePageUri(uri: String) {
-        if (Desktop.isDesktopSupported()) {
-            val desktop = Desktop.getDesktop()
-            val mailto = URI("mailto:?subject=$uri?body=$uri")
-            desktop.mail(mailto)
-        } else {
-            throw Exception("no mail program")
-        }
-    }
-
-    override fun homepageImplemented(): Boolean {
-        return false
-    }
-
-
-    override fun cancelWork(fileInfo: FileInfo) {
-        workUUID(fileInfo) ?: return // todo cancel the work
-    }
-
-    override fun uploadFiles(absolutePath: String) {
-        //val job = thread {
-
-        //}
-        //UploadFilesWorker.load(context, name) // todo
-    }
-
     override fun deviceName(): String {
         val os = System.getProperty("os.name")
         val version = System.getProperty("os.version")
         return "$os $version"
     }
-
 
     override fun files(): Files {
         return files
@@ -80,18 +47,6 @@ internal class JvmOdin(
     override fun idun(): Idun {
         return idun
     }
-}
-
-private fun workUUID(fileInfo: FileInfo): UUID? {
-    if (fileInfo.work != null) {
-        return UUID.fromString(fileInfo.work)
-    }
-    return null
-}
-
-
-@Composable
-actual fun Homepage(stateModel: StateModel) {
 }
 
 actual fun odin(): Odin = odin!!

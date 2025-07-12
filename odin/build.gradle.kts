@@ -9,14 +9,12 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSetTree
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.composeMultiplatform)
-    alias(libs.plugins.composeCompiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
 group = "io.github.remmerw"
-version = "0.2.9"
+version = "0.3.0"
 
 
 kotlin {
@@ -30,9 +28,9 @@ kotlin {
 
 
     jvm()
-    //iosX64()
-    //iosArm64()
-    //iosSimulatorArm64()
+    // iosX64()
+    // iosArm64()
+    // iosSimulatorArm64()
 
 
     sourceSets {
@@ -42,24 +40,11 @@ kotlin {
                 implementation(libs.androidx.sqlite.bundled)
                 implementation(libs.androidx.room.runtime)
                 implementation(libs.kotlinx.io.core)
-                implementation(libs.uri.kmp)
                 implementation(libs.androidx.datastore.preferences.core)
                 implementation(libs.androidx.datastore.preferences)
-                implementation(compose.runtime)
-                implementation(compose.foundation)
-                implementation(compose.material3)
-                implementation(compose.ui)
-                implementation(compose.components.resources)
-                implementation(compose.materialIconsExtended)
-                implementation(libs.qrose)
-                implementation(libs.lifecycle)
 
                 implementation("io.github.remmerw:asen:0.3.4")
-                implementation("io.github.remmerw:idun:0.3.5")
-
-                implementation("io.github.vinceglb:filekit-core:0.10.0-beta04") // todo
-                implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04") // todo
-                implementation("io.github.vinceglb:filekit-dialogs-compose:0.10.0-beta04") // todo
+                implementation("io.github.remmerw:idun:0.3.6")
 
             }
         }
@@ -83,13 +68,6 @@ kotlin {
             implementation("androidx.test:core:1.6.1")
         }
 
-
-        androidMain {
-            dependencies {
-                implementation(libs.androidx.work.runtime)
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
-            }
-        }
     }
 }
 
@@ -104,10 +82,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
-    }
-    packaging {
-        resources.excludes.add("META-INF/versions/9/OSGI-INF/MANIFEST.MF")
-        resources.excludes.add("DebugProbesKt.bin")
     }
 }
 

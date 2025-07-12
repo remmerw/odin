@@ -1,6 +1,5 @@
 package io.github.remmerw.odin
 
-import androidx.compose.runtime.Composable
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
@@ -13,17 +12,18 @@ import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.generateKeys
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
+import io.github.remmerw.idun.pnsUri
 import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.Reachability
-import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.core.directoryContent
 import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.getPublicKey
 import io.github.remmerw.odin.core.setPrivateKey
 import io.github.remmerw.odin.core.setPublicKey
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okio.Path.Companion.toPath
@@ -37,13 +37,63 @@ expect abstract class Context
 abstract class Odin {
     @Volatile
     var reachability: Reachability = Reachability.UNKNOWN
+
     @Volatile
     var observed: List<Peeraddr> = emptyList()
 
+    fun numReservations(): Int {
+        return idun().numReservations()
+    }
+
+    fun numIncomingConnections(): Int {
+        return idun().numIncomingConnections()
+    }
+
+    fun fileInfos(): Flow<List<FileInfo>> {
+        return files().filesDao().flowFileInfos()
+    }
+
+    fun pageUri(): String {
+        return pnsUri(idun().peerId())
+    }
+
+
+    suspend fun delete(fileInfo: FileInfo) {
+        // Note: the content itself (in the block store) will not be deleted
+        // this is a limitation (idea the user has to cleanup the block store
+        // from time to time
+        files().filesDao().delete(fileInfo)
+
+        initPage()
+    }
+
+
+    fun incomingConnections(): List<String> {
+        return idun().incomingConnections()
+    }
+
+    fun reservations(): List<Peeraddr> {
+        return idun().reservations()
+    }
+
+
+    suspend fun startup() {
+        initPage()
+        val storage = storage()
+        idun().startup(storage, ODIN_PORT)
+    }
+
+
+    suspend fun reset() {
+        storage().reset()
+        files().reset()
+        initPage()
+    }
 
     suspend fun observedPeeraddrs() {
         observed = idun().observedPeeraddrs(ODIN_PORT)
     }
+
     suspend fun initPage() {
         val fileInfos = files().fileInfos()
         val content: String = directoryContent(
@@ -53,44 +103,38 @@ abstract class Odin {
         storage().root(content.encodeToByteArray())
     }
 
-    suspend fun makeReservations(peeraddrs: List<Peeraddr>, maxReservations : Int = 100,
-                                 timeout: Int = 120) {
+    suspend fun makeReservations(
+        peeraddrs: List<Peeraddr>, maxReservations: Int = 100,
+        timeout: Int = 120
+    ) {
         idun().makeReservations(peeraddrs, maxReservations, timeout)
     }
 
-    abstract suspend fun sharePageUri(uri: String)
-    abstract fun homepageImplemented(): Boolean
-    abstract fun cancelWork(fileInfo: FileInfo)
-    abstract fun uploadFiles(absolutePath: String)
     abstract fun deviceName(): String
+
     //internal abstract fun datastore(): DataStore<Preferences>
-    abstract fun files(): Files
-    abstract fun peers(): Peers
-    abstract fun storage(): Storage
+    internal abstract fun files(): Files
+    internal abstract fun peers(): Peers
+    internal abstract fun storage(): Storage
     abstract fun idun(): Idun
+    suspend fun shutdown() {
+        idun().shutdown()
+    }
 }
 
-@Composable
-expect fun Homepage(stateModel: StateModel)
 
 expect fun odin(): Odin
 
 expect fun initializeOdin(context: Context)
 
-suspend fun startup() {
-    val odin = odin()
-    odin.initPage()
-    val storage = odin().storage()
-    odin().idun().startup(storage, ODIN_PORT)
-}
 
-@Suppress("KotlinNoActualForExpect", "EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object FilesConstructor : RoomDatabaseConstructor<Files> {
     override fun initialize(): Files
 }
 
 
-@Suppress("KotlinNoActualForExpect", "EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
+@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object PeersConstructor : RoomDatabaseConstructor<Peers> {
     override fun initialize(): Peers
 }

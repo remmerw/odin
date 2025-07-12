@@ -1,8 +1,8 @@
 package org.kmp.testing
 
-import io.github.remmerw.odin.Context
 import androidx.test.core.app.ApplicationProvider
+import io.github.remmerw.odin.Context
 
-actual fun context() : Context {
+actual fun context(): Context {
     return ApplicationProvider.getApplicationContext()
 }

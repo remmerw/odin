@@ -1,7 +1,6 @@
 package io.github.remmerw.odin
 
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlin.test.Test
@@ -21,13 +20,15 @@ class IdunTest {
         val odin = odin()
         assertNotNull(odin)
 
+        odin.startup()
+
         delay(45000)
 
-        val numRelays = odin.idun().numReservations()
+        val numRelays = odin.numReservations()
         println("Number of relays $numRelays")
         assertTrue(numRelays > 0)
 
-        odin.idun().shutdown()
+        odin.shutdown()
     }
 
 }

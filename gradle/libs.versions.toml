@@ -1,37 +1,26 @@
 [versions]
 agp = "8.11.1"
-qrose = "1.0.1"
 datastorePreferencesCore = "1.1.7"
 kotlin = "2.2.0"
 kotlinxIoCore = "0.8.0"
 ksp = "2.2.0-2.0.2"
 androidx-room = "2.7.2"
 androidx-sqlite = "2.5.2"
-uriKmp = "0.0.20"
-workRuntime = "2.10.2"
-compose-multiplatform = "1.8.2"
-lifecycle = "2.9.1"
 
 [libraries]
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferencesCore" }
 androidx-datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastorePreferencesCore" }
-androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "workRuntime" }
+
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinxIoCore" }
 androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "androidx-sqlite" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
-uri-kmp = { module = "com.eygraber:uri-kmp", version.ref = "uriKmp" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
-qrose = { module = "io.github.alexzhirkevich:qrose", version.ref = "qrose" }
-lifecycle = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
-
 
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.33.0" }
