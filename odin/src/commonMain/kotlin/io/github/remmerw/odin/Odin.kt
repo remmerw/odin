@@ -11,6 +11,7 @@ import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.generateKeys
 import io.github.remmerw.idun.Idun
+import io.github.remmerw.idun.Response
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.pnsUri
 import io.github.remmerw.odin.core.FileInfo
@@ -26,6 +27,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
+import kotlinx.io.RawSource
 import okio.Path.Companion.toPath
 import kotlin.concurrent.Volatile
 
@@ -40,6 +42,33 @@ abstract class Odin {
 
     @Volatile
     var observed: List<Peeraddr> = emptyList()
+
+
+    fun response(request: String): Response {
+        return storage().response(request)
+    }
+
+    suspend fun fileNames(): List<String> {
+        return files().fileNames()
+    }
+
+    suspend fun storeSource(
+        source: RawSource, uuid: String, name: String,
+        mimeType: String, size: Long
+    ) {
+        val fileInfo = FileInfo(
+            0, name, mimeType,
+            0, uuid, size
+        )
+        val idx = files().storeFileInfo(fileInfo)
+        try {
+            val node = storage().storeSource(source, name, mimeType)
+            files().done(idx, node.cid())
+        } catch (throwable: Throwable) {
+            files().delete(idx)
+            throw throwable
+        }
+    }
 
     fun numReservations(): Int {
         return idun().numReservations()
@@ -57,7 +86,6 @@ abstract class Odin {
         return pnsUri(idun().peerId())
     }
 
-
     suspend fun delete(fileInfo: FileInfo) {
         // Note: the content itself (in the block store) will not be deleted
         // this is a limitation (idea the user has to cleanup the block store
@@ -67,7 +95,6 @@ abstract class Odin {
         initPage()
     }
 
-
     fun incomingConnections(): List<String> {
         return idun().incomingConnections()
     }
@@ -76,13 +103,11 @@ abstract class Odin {
         return idun().reservations()
     }
 
-
     suspend fun startup() {
         initPage()
         val storage = storage()
         idun().startup(storage, ODIN_PORT)
     }
-
 
     suspend fun reset() {
         storage().reset()
@@ -116,7 +141,7 @@ abstract class Odin {
     internal abstract fun files(): Files
     internal abstract fun peers(): Peers
     internal abstract fun storage(): Storage
-    abstract fun idun(): Idun
+    internal abstract fun idun(): Idun
     suspend fun shutdown() {
         idun().shutdown()
     }
