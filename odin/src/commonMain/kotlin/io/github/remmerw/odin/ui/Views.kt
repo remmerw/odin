@@ -18,6 +18,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.encodePeerId
+import io.github.remmerw.asen.hostname
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.connections
 import io.github.remmerw.odin.generated.resources.server_network
@@ -144,7 +145,7 @@ fun PeeraddrItem(peeraddr: Peeraddr) {
                     style = MaterialTheme.typography.bodySmall, softWrap = false
                 )
                 Text(
-                    text = peeraddr.address.hostname() + ":" + peeraddr.port, maxLines = 2,
+                    text = hostname(peeraddr) + ":" + peeraddr.port, maxLines = 2,
                     modifier = Modifier.fillMaxWidth(),
                     style = MaterialTheme.typography.labelSmall, softWrap = false
                 )

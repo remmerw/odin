@@ -3,7 +3,7 @@ package io.github.remmerw.odin.core
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.github.remmerw.asen.Peeraddr
-import io.github.remmerw.asen.encode58
+import io.github.remmerw.idun.pnsUri
 import io.github.remmerw.odin.odin
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -70,7 +70,7 @@ class StateModel() : ViewModel() {
     }
 
     fun pageUri(): String {
-        return "pns://" + encode58(odin().idun().peerId().hash)
+        return pnsUri(odin().idun().peerId())
     }
 
 

@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import io.github.alexzhirkevich.qrose.rememberQrCodePainter
+import io.github.remmerw.asen.hostname
 import io.github.remmerw.odin.ODIN_PORT
 import io.github.remmerw.odin.core.StateModel
 import io.github.remmerw.odin.generated.resources.Res
@@ -78,7 +79,7 @@ fun InfoView(stateModel: StateModel) {
         if (peeraddrs.isNotEmpty()) {
             peeraddrs.forEach { peeraddr ->
                 Text(
-                    text = peeraddr.address.hostname(),
+                    text = hostname(peeraddr),
                     style = if (peeraddr.address.inet4()) {
                         MaterialTheme.typography.labelMedium
                     } else {

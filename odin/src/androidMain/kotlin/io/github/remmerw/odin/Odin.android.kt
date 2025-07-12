@@ -39,8 +39,6 @@ import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.MimeType
 import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.StateModel
-import io.github.remmerw.odin.core.extractCidFromUri
-import io.github.remmerw.odin.core.extractPeerIdFromUri
 import io.github.remmerw.odin.generated.resources.Res
 import io.github.remmerw.odin.generated.resources.no_activity_found_to_handle_uri
 import io.github.remmerw.odin.generated.resources.share
@@ -62,7 +60,6 @@ actual typealias Context = android.content.Context
 
 internal class AndroidOdin(
     private val context: android.content.Context,
-    private val datastore: DataStore<Preferences>,
     private val files: Files,
     private val storage: Storage,
     private val idun: Idun,
@@ -112,11 +109,6 @@ internal class AndroidOdin(
             return model
         }
         return "$manufacturer $model"
-    }
-
-
-    override fun datastore(): DataStore<Preferences> {
-        return datastore
     }
 
     override fun files(): Files {
@@ -225,10 +217,7 @@ private class CustomWebViewClient(val warning: (StringResource) -> Unit) :
 
 
         if (uri.scheme == "pns") {
-            val peerId = extractPeerIdFromUri(uri)
-            checkNotNull(peerId)
-            val cid = extractCidFromUri(uri)
-            val response = odin().storage().response(cid)
+            val response = odin().storage().response(request.url.toString())
             return WebResourceResponse(
                 response.mimeType, response.encoding,
                 response.status, response.reason,
@@ -295,7 +284,7 @@ actual fun initializeOdin(context: Context) {
             peerStore = peers
         )
 
-        odin = AndroidOdin(context, datastore, files, storage, idun, peers)
+        odin = AndroidOdin(context, files, storage, idun, peers)
     }
 
     Log.e("App", "App started " + time.inWholeMilliseconds)

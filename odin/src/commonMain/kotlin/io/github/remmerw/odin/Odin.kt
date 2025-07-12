@@ -24,7 +24,6 @@ import io.github.remmerw.odin.core.getPublicKey
 import io.github.remmerw.odin.core.setPrivateKey
 import io.github.remmerw.odin.core.setPublicKey
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okio.Path.Companion.toPath
@@ -64,7 +63,7 @@ abstract class Odin {
     abstract fun cancelWork(fileInfo: FileInfo)
     abstract fun uploadFiles(absolutePath: String)
     abstract fun deviceName(): String
-    abstract fun datastore(): DataStore<Preferences>
+    //internal abstract fun datastore(): DataStore<Preferences>
     abstract fun files(): Files
     abstract fun peers(): Peers
     abstract fun storage(): Storage

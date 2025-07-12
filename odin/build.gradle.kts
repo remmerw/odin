@@ -11,7 +11,6 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.kotlinxSerialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.vanniktech.mavenPublish)
 }
@@ -55,8 +54,8 @@ kotlin {
                 implementation(libs.qrose)
                 implementation(libs.lifecycle)
 
-                implementation("io.github.remmerw:asen:0.3.3")
-                implementation("io.github.remmerw:idun:0.3.3")
+                implementation("io.github.remmerw:asen:0.3.4")
+                implementation("io.github.remmerw:idun:0.3.5")
 
                 implementation("io.github.vinceglb:filekit-core:0.10.0-beta04") // todo
                 implementation("io.github.vinceglb:filekit-dialogs:0.10.0-beta04") // todo

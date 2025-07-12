@@ -26,7 +26,6 @@ actual abstract class Context
 object JvmContext : Context()
 
 internal class JvmOdin(
-    private val datastore: DataStore<Preferences>,
     private val files: Files,
     private val storage: Storage,
     private val idun: Idun,
@@ -65,9 +64,6 @@ internal class JvmOdin(
         return "$os $version"
     }
 
-    override fun datastore(): DataStore<Preferences> {
-        return datastore
-    }
 
     override fun files(): Files {
         return files
@@ -144,5 +140,5 @@ actual fun initializeOdin(context: Context) {
         peerStore = peers
     )
 
-    odin = JvmOdin(datastore, files, storage, idun, peers)
+    odin = JvmOdin(files, storage, idun, peers)
 }

@@ -1,9 +1,7 @@
 package io.github.remmerw.odin.core
 
-import com.eygraber.uri.Uri
 import io.github.remmerw.asen.PeerId
-import io.github.remmerw.asen.decode58
-import io.github.remmerw.asen.encode58
+import io.github.remmerw.idun.pnsUri
 import kotlin.time.ExperimentalTime
 
 
@@ -161,35 +159,6 @@ private fun fileSize(size: Long): String {
 const val CONTENT_DOWNLOAD: String = "Content-Download"
 
 
-private fun path(peerId: PeerId, fileInfo: FileInfo): String {
-    return "pns://" + encode58(peerId.hash) + "/" + fileInfo.cid.toString(radix = 16)
-}
-
-fun extractPeerIdFromUri(pns: Uri): PeerId {
-    val host = validate(pns)
-    return PeerId(decode58(host))
-}
-
-fun validate(pns: Uri): String {
-    checkNotNull(pns.scheme) { "Scheme not defined" }
-    require(pns.scheme == "pns") { "Scheme not pns" }
-    val host = pns.host
-    checkNotNull(host) { "Host not defined" }
-    require(host.isNotBlank()) { "Host is empty" }
-    return host
-}
-
-fun extractCidFromUri(pns: Uri): Long? {
-    var path = pns.path
-    if (path != null) {
-        path = path.trim().removePrefix("/")
-        if (path.isNotBlank()) {
-            val cid = path.toLong(radix = 16)
-            return cid
-        }
-    }
-    return null
-}
 
 @OptIn(ExperimentalTime::class)
 fun directoryContent(peerId: PeerId, links: List<FileInfo>, title: String): String {
@@ -220,7 +189,7 @@ fun directoryContent(peerId: PeerId, links: List<FileInfo>, title: String): Stri
 
             answer.append("<td width=\"100%\" style=\"word-break:break-word\">")
             answer.append("<a href=\"")
-            answer.append(path(peerId, info))
+            answer.append(pnsUri(peerId, info.cid))
             answer.append("\">")
             answer.append(info.name)
             answer.append("</a>")
@@ -241,7 +210,7 @@ fun directoryContent(peerId: PeerId, links: List<FileInfo>, title: String): Stri
                     "formmethod=\"get\" " +
                     "type=\"submit\" " +
                     "formaction=\"" +
-                    path(peerId, info) + "\">" + SVG_DOWNLOAD + "</button>"
+                    pnsUri(peerId, info.cid) + "\">" + SVG_DOWNLOAD + "</button>"
 
             answer.append(text)
             answer.append("</td>")
