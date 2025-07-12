@@ -22,6 +22,8 @@ class IdunTest {
 
         odin.startup()
 
+        odin.makeReservations(odin.observed, 20, 45)
+
         delay(45000)
 
         val numRelays = odin.numReservations()
