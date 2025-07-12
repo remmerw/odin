@@ -24,8 +24,6 @@ class IdunTest {
 
         odin.makeReservations(odin.observed, 20, 45)
 
-        delay(45000)
-
         val numRelays = odin.numReservations()
         println("Number of relays $numRelays")
         assertTrue(numRelays > 0)
