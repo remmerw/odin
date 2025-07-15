@@ -43,8 +43,8 @@ kotlin {
                 implementation(libs.androidx.datastore.preferences.core)
                 implementation(libs.androidx.datastore.preferences)
 
-                implementation("io.github.remmerw:asen:0.3.5")
-                implementation("io.github.remmerw:idun:0.3.7")
+                implementation("io.github.remmerw:asen:0.3.6")
+                implementation("io.github.remmerw:idun:0.3.8")
 
             }
         }

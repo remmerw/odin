@@ -44,10 +44,6 @@ abstract class Odin {
     var observed: List<Peeraddr> = emptyList()
 
 
-    fun response(request: String): Response {
-        return storage().response(request)
-    }
-
     suspend fun fileNames(): List<String> {
         return files().fileNames()
     }
@@ -70,7 +66,7 @@ abstract class Odin {
         }
     }
 
-    fun numReservations(): Int {
+    fun numPublifications(): Int {
         return idun().numReservations()
     }
 
@@ -99,9 +95,6 @@ abstract class Odin {
         return idun().incomingConnections()
     }
 
-    fun reservations(): List<Peeraddr> {
-        return idun().reservations()
-    }
 
     suspend fun startup() {
         initPage()
@@ -128,11 +121,11 @@ abstract class Odin {
         storage().root(content.encodeToByteArray())
     }
 
-    suspend fun makeReservations(
-        peeraddrs: List<Peeraddr>, maxReservations: Int = 100,
+    suspend fun publishPeeraddrs(
+        peeraddrs: List<Peeraddr>, maxPublifications: Int = 100,
         timeout: Int = 120
     ) {
-        idun().makeReservations(peeraddrs, maxReservations, timeout)
+        idun().publishAddresses(peeraddrs, maxPublifications, timeout)
     }
 
     abstract fun deviceName(): String
