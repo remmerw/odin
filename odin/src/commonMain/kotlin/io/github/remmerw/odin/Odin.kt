@@ -16,7 +16,6 @@ import io.github.remmerw.idun.pnsUri
 import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
-import io.github.remmerw.odin.core.Reachability
 import io.github.remmerw.odin.core.directoryContent
 import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.getPublicKey
@@ -36,9 +35,6 @@ const val ODIN_PORT: Int = 5001
 expect abstract class Context
 
 abstract class Odin {
-    @Volatile
-    var reachability: Reachability = Reachability.UNKNOWN
-
     @Volatile
     var observed: List<Peeraddr> = emptyList()
 
