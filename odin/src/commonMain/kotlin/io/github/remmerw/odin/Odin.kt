@@ -43,6 +43,9 @@ abstract class Odin {
     @Volatile
     var observed: List<Peeraddr> = emptyList()
 
+    fun peerId() : PeerId {
+        return idun().peerId()
+    }
 
     suspend fun fileNames(): List<String> {
         return files().fileNames()
