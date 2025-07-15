@@ -27,7 +27,6 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import kotlinx.io.RawSource
 import okio.Path.Companion.toPath
-import kotlin.concurrent.Volatile
 
 const val ODIN_PORT: Int = 5001
 
@@ -35,10 +34,8 @@ const val ODIN_PORT: Int = 5001
 expect abstract class Context
 
 abstract class Odin {
-    @Volatile
-    var observed: List<Peeraddr> = emptyList()
 
-    fun peerId() : PeerId {
+    fun peerId(): PeerId {
         return idun().peerId()
     }
 
@@ -64,9 +61,10 @@ abstract class Odin {
         }
     }
 
-    fun reservations() : List<Peeraddr>{
+    fun reservations(): List<Peeraddr> {
         return idun().reservations()
     }
+
     fun numReservations(): Int {
         return idun().numReservations()
     }
@@ -109,8 +107,8 @@ abstract class Odin {
         initPage()
     }
 
-    suspend fun observedPeeraddrs() {
-        observed = idun().observedPeeraddrs(ODIN_PORT)
+    suspend fun observedPeeraddrs(): List<Peeraddr> {
+        return idun().observedPeeraddrs(ODIN_PORT)
     }
 
     suspend fun initPage() {
