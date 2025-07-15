@@ -23,7 +23,7 @@ class IdunTest {
 
         odin.publishPeeraddrs(odin.observed, 20, 45)
 
-        val numRelays = odin.numPublifications()
+        val numRelays = odin.numReservations()
         println("Number of relays $numRelays")
         assertTrue(numRelays > 0)
 

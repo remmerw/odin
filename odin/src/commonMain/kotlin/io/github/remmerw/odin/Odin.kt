@@ -11,7 +11,6 @@ import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
 import io.github.remmerw.asen.generateKeys
 import io.github.remmerw.idun.Idun
-import io.github.remmerw.idun.Response
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.pnsUri
 import io.github.remmerw.odin.core.FileInfo
@@ -69,7 +68,10 @@ abstract class Odin {
         }
     }
 
-    fun numPublifications(): Int {
+    fun reservations() : List<Peeraddr>{
+        return idun().reservations()
+    }
+    fun numReservations(): Int {
         return idun().numReservations()
     }
 
