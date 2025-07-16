@@ -8,7 +8,7 @@ import androidx.room.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import io.github.remmerw.asen.Keys
 import io.github.remmerw.asen.PeerId
-import io.github.remmerw.asen.Peeraddr
+import io.github.remmerw.asen.SocketAddress
 import io.github.remmerw.asen.generateKeys
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
@@ -21,6 +21,7 @@ import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.getPublicKey
 import io.github.remmerw.odin.core.setPrivateKey
 import io.github.remmerw.odin.core.setPublicKey
+import io.ktor.network.sockets.InetSocketAddress
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -61,7 +62,7 @@ abstract class Odin {
         }
     }
 
-    fun reservations(): List<Peeraddr> {
+    fun reservations(): List<InetSocketAddress> {
         return idun().reservations()
     }
 
@@ -90,15 +91,14 @@ abstract class Odin {
         initPage()
     }
 
-    fun incomingConnections(): List<String> {
+    fun incomingConnections(): Set<InetSocketAddress> {
         return idun().incomingConnections()
     }
 
 
     suspend fun startup() {
         initPage()
-        val storage = storage()
-        idun().startup(storage, ODIN_PORT)
+        idun().startup(storage(), ODIN_PORT)
     }
 
     suspend fun reset() {
@@ -107,8 +107,8 @@ abstract class Odin {
         initPage()
     }
 
-    suspend fun observedPeeraddrs(): List<Peeraddr> {
-        return idun().observedPeeraddrs(ODIN_PORT)
+    suspend fun observedAddresses(): List<SocketAddress> {
+        return idun().observedAddresses(ODIN_PORT)
     }
 
     suspend fun initPage() {
@@ -121,10 +121,11 @@ abstract class Odin {
     }
 
     suspend fun publishPeeraddrs(
-        peeraddrs: List<Peeraddr>, maxPublifications: Int = 100,
+        addresses: List<SocketAddress>,
+        maxPublifications: Int = 100,
         timeout: Int = 120
     ) {
-        idun().publishAddresses(peeraddrs, maxPublifications, timeout)
+        idun().publishAddresses(addresses, maxPublifications, timeout)
     }
 
     abstract fun deviceName(): String

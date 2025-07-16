@@ -14,7 +14,7 @@ plugins {
 }
 
 group = "io.github.remmerw"
-version = "0.3.3"
+version = "0.3.4"
 
 
 kotlin {
@@ -42,9 +42,10 @@ kotlin {
                 implementation(libs.kotlinx.io.core)
                 implementation(libs.androidx.datastore.preferences.core)
                 implementation(libs.androidx.datastore.preferences)
+                implementation(libs.ktor.network)
 
-                implementation("io.github.remmerw:asen:0.3.6")
-                implementation("io.github.remmerw:idun:0.3.8")
+                implementation("io.github.remmerw:asen:0.3.7")
+                implementation("io.github.remmerw:idun:0.3.9")
 
             }
         }

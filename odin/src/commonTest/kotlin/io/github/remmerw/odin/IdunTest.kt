@@ -21,7 +21,9 @@ class IdunTest {
 
         odin.startup()
 
-        odin.publishPeeraddrs(odin.observed, 20, 45)
+        val publicAddresses = odin.observedAddresses()
+
+        odin.publishPeeraddrs(publicAddresses, 20, 45)
 
         val numRelays = odin.numReservations()
         println("Number of relays $numRelays")
