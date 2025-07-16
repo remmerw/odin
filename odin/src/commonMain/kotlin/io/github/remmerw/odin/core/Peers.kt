@@ -22,8 +22,8 @@ abstract class Peers : RoomDatabase(), PeerStore {
     }
 
     override suspend fun store(peeraddr: Peeraddr) {
-        val data = peeraddr.toSocketAddress().encoded()
-        bootstrapDao().insertPeer(Peer(peeraddr.peerId, data))
+        bootstrapDao().insertPeer(Peer(peeraddr.peerId,
+            peeraddr.address, peeraddr.port.toInt()))
     }
 }
 
