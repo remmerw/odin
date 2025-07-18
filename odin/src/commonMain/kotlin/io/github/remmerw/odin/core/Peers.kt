@@ -5,9 +5,9 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
-import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.PeerStore
 import io.github.remmerw.asen.Peeraddr
+import io.github.remmerw.borr.PeerId
 import io.github.remmerw.odin.PeersConstructor
 import kotlinx.coroutines.flow.first
 
@@ -22,8 +22,12 @@ abstract class Peers : RoomDatabase(), PeerStore {
     }
 
     override suspend fun store(peeraddr: Peeraddr) {
-        bootstrapDao().insertPeer(Peer(peeraddr.peerId,
-            peeraddr.address, peeraddr.port.toInt()))
+        bootstrapDao().insertPeer(
+            Peer(
+                peeraddr.peerId,
+                peeraddr.address, peeraddr.port.toInt()
+            )
+        )
     }
 }
 

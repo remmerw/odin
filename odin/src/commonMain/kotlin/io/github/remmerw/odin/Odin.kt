@@ -6,10 +6,10 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import io.github.remmerw.asen.Keys
-import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.SocketAddress
-import io.github.remmerw.asen.generateKeys
+import io.github.remmerw.borr.Keys
+import io.github.remmerw.borr.PeerId
+import io.github.remmerw.borr.generateKeys
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.pnsUri

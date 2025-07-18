@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import io.github.remmerw.asen.PeerId
+import io.github.remmerw.borr.PeerId
 import kotlinx.coroutines.flow.Flow
 
 @Dao

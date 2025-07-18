@@ -44,8 +44,9 @@ kotlin {
                 implementation(libs.androidx.datastore.preferences)
                 implementation(libs.ktor.network)
 
-                implementation("io.github.remmerw:asen:0.3.7")
-                implementation("io.github.remmerw:idun:0.3.9")
+                implementation("io.github.remmerw:asen:0.3.9")
+                implementation("io.github.remmerw:idun:0.4.0")
+                implementation("io.github.remmerw:borr:0.0.3")
 
             }
         }

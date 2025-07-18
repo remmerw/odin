@@ -1,6 +1,6 @@
 package io.github.remmerw.odin.core
 
-import io.github.remmerw.asen.PeerId
+import io.github.remmerw.borr.PeerId
 import io.github.remmerw.idun.pnsUri
 import kotlin.time.ExperimentalTime
 

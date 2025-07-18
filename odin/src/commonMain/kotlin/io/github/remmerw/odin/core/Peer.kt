@@ -3,8 +3,8 @@ package io.github.remmerw.odin.core
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import io.github.remmerw.asen.PeerId
 import io.github.remmerw.asen.Peeraddr
+import io.github.remmerw.borr.PeerId
 
 @Entity
 data class Peer(
