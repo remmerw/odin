@@ -14,7 +14,7 @@ plugins {
 }
 
 group = "io.github.remmerw"
-version = "0.3.4"
+version = "0.3.5"
 
 
 kotlin {
@@ -37,15 +37,17 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.kotlin.stdlib)
+                implementation(libs.kotlinx.io.core)
+
                 implementation(libs.androidx.sqlite.bundled)
                 implementation(libs.androidx.room.runtime)
-                implementation(libs.kotlinx.io.core)
+
                 implementation(libs.androidx.datastore.preferences.core)
                 implementation(libs.androidx.datastore.preferences)
-                implementation(libs.ktor.network)
 
-                implementation("io.github.remmerw:asen:0.3.9")
-                implementation("io.github.remmerw:idun:0.4.0")
+                implementation("io.github.remmerw:asen:0.4.1")
+                implementation("io.github.remmerw:idun:0.4.1")
+                implementation("io.github.remmerw:dagr:0.0.8")
                 implementation("io.github.remmerw:borr:0.0.3")
 
             }

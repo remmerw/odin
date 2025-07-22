@@ -12,6 +12,7 @@ import io.github.remmerw.idun.newStorage
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
 import java.io.File
+import kotlin.time.measureTime
 
 private var odin: Odin? = null
 
@@ -83,17 +84,22 @@ private fun createDataStore(): DataStore<Preferences> = createDataStore(
 
 
 actual fun initializeOdin(context: Context) {
-    val datastore = createDataStore()
-    val files = createFiles()
-    val peers = createPeers()
 
+    val time = measureTime {
+        val datastore = createDataStore()
+        val files = createFiles()
+        val peers = createPeers()
+        val storage = newStorage()
+        val idun = newIdun(
+            storage = storage,
+            port = ODIN_PORT,
+            keys = keys(datastore),
+            bootstrap = bootstrap(),
+            peerStore = peers
+        )
 
-    val storage = newStorage()
-    val idun = newIdun(
-        keys = keys(datastore),
-        bootstrap = bootstrap(),
-        peerStore = peers
-    )
+        odin = JvmOdin(files, storage, idun, peers)
+    }
 
-    odin = JvmOdin(files, storage, idun, peers)
+    println("App started " + time.inWholeMilliseconds)
 }

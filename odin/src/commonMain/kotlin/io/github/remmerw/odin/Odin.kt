@@ -21,7 +21,6 @@ import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.getPublicKey
 import io.github.remmerw.odin.core.setPrivateKey
 import io.github.remmerw.odin.core.setPublicKey
-import io.ktor.network.sockets.InetSocketAddress
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -62,7 +61,7 @@ abstract class Odin {
         }
     }
 
-    fun reservations(): List<InetSocketAddress> {
+    fun reservations(): List<String> {
         return idun().reservations()
     }
 
@@ -91,14 +90,13 @@ abstract class Odin {
         initPage()
     }
 
-    fun incomingConnections(): Set<InetSocketAddress> {
+    fun incomingConnections(): Set<String> {
         return idun().incomingConnections()
     }
 
 
     suspend fun startup() {
         initPage()
-        idun().startup(storage(), ODIN_PORT)
     }
 
     suspend fun reset() {
@@ -108,7 +106,7 @@ abstract class Odin {
     }
 
     suspend fun observedAddresses(): List<SocketAddress> {
-        return idun().observedAddresses(ODIN_PORT)
+        return idun().observedAddresses()
     }
 
     suspend fun initPage() {

@@ -94,8 +94,6 @@ private fun createDataStore(context: Context): DataStore<Preferences> = createDa
 actual fun initializeOdin(context: Context) {
 
     val time = measureTime {
-
-
         val datastore = createDataStore(context)
         val files = createFiles(context)
         val peers = createPeers(context)
@@ -106,6 +104,8 @@ actual fun initializeOdin(context: Context) {
 
         val storage = newStorage(path)
         val idun = newIdun(
+            storage = storage,
+            port = ODIN_PORT,
             keys = keys(datastore),
             bootstrap = bootstrap(),
             peerStore = peers
