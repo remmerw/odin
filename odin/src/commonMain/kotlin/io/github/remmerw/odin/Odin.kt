@@ -6,7 +6,6 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import androidx.sqlite.driver.bundled.BundledSQLiteDriver
-import io.github.remmerw.asen.SocketAddress
 import io.github.remmerw.borr.Keys
 import io.github.remmerw.borr.PeerId
 import io.github.remmerw.borr.generateKeys
@@ -27,6 +26,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import kotlinx.io.RawSource
 import okio.Path.Companion.toPath
+import java.net.InetSocketAddress
 
 const val ODIN_PORT: Int = 5001
 
@@ -90,13 +90,8 @@ abstract class Odin {
         initPage()
     }
 
-    fun incomingConnections(): Set<String> {
+    fun incomingConnections(): List<String> {
         return idun().incomingConnections()
-    }
-
-
-    suspend fun startup() {
-        initPage()
     }
 
     suspend fun reset() {
@@ -105,7 +100,7 @@ abstract class Odin {
         initPage()
     }
 
-    suspend fun observedAddresses(): List<SocketAddress> {
+    suspend fun observedAddresses(): List<InetSocketAddress> {
         return idun().observedAddresses()
     }
 
@@ -119,7 +114,7 @@ abstract class Odin {
     }
 
     suspend fun publishPeeraddrs(
-        addresses: List<SocketAddress>,
+        addresses: List<InetSocketAddress>,
         maxPublifications: Int = 100,
         timeout: Int = 120
     ) {
