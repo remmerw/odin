@@ -61,10 +61,6 @@ abstract class Odin {
         }
     }
 
-    fun reservations(): List<String> {
-        return idun().reservations()
-    }
-
     fun numReservations(): Int {
         return idun().numReservations()
     }
@@ -90,9 +86,6 @@ abstract class Odin {
         initPage()
     }
 
-    fun incomingConnections(): List<String> {
-        return idun().incomingConnections()
-    }
 
     suspend fun reset() {
         storage().reset()

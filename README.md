@@ -17,7 +17,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             ...
-            implementation("io.github.remmerw:odin:0.3.8")
+            implementation("io.github.remmerw:odin:0.3.9")
         }
         ...
     }
