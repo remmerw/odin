@@ -1,17 +1,15 @@
 [versions]
 agp = "8.11.1"
-datastorePreferencesCore = "1.1.7"
 kotlin = "2.2.0"
-kotlinxIoCore = "0.8.0"
 ksp = "2.2.0-2.0.2"
 androidx-room = "2.7.2"
 androidx-sqlite = "2.5.2"
 
 [libraries]
-androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferencesCore" }
-androidx-datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastorePreferencesCore" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version = "1.1.7" }
+androidx-datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version = "1.1.7" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version.ref = "kotlinxIoCore" }
+kotlinx-io-core = { module = "org.jetbrains.kotlinx:kotlinx-io-core", version = "0.8.0" }
 androidx-sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "androidx-sqlite" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidx-room" }
