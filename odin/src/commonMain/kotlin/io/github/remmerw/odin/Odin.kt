@@ -15,7 +15,6 @@ import io.github.remmerw.idun.pnsUri
 import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
 import io.github.remmerw.odin.core.Peers
-import io.github.remmerw.odin.core.directoryContent
 import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.getPublicKey
 import io.github.remmerw.odin.core.setPrivateKey
@@ -82,28 +81,27 @@ abstract class Odin {
         // this is a limitation (idea the user has to cleanup the block store
         // from time to time
         files().filesDao().delete(fileInfo)
-
-        initPage()
     }
 
+    fun createPnsUri(
+        peerId: PeerId,
+        cid: Long,
+        attributes: Map<String, String>
+    ): String {
+        return pnsUri(peerId, cid, attributes)
+    }
 
     suspend fun reset() {
         storage().reset()
         files().reset()
-        initPage()
     }
 
     suspend fun observedAddresses(): List<InetSocketAddress> {
         return idun().observedAddresses()
     }
 
-    suspend fun initPage() {
-        val fileInfos = files().fileInfos()
-        val content: String = directoryContent(
-            idun().peerId(),
-            fileInfos, deviceName()
-        )
-        storage().root(content.encodeToByteArray())
+    fun initPage(bytes: ByteArray) {
+        storage().root(bytes)
     }
 
     suspend fun publishPeeraddrs(
@@ -121,7 +119,7 @@ abstract class Odin {
     internal abstract fun peers(): Peers
     internal abstract fun storage(): Storage
     internal abstract fun idun(): Idun
-    suspend fun shutdown() {
+    fun shutdown() {
         idun().shutdown()
     }
 }
