@@ -83,12 +83,8 @@ abstract class Odin {
         files().filesDao().delete(fileInfo)
     }
 
-    fun createPnsUri(
-        peerId: PeerId,
-        cid: Long,
-        attributes: Map<String, String>
-    ): String {
-        return pnsUri(peerId, cid, attributes)
+    fun pnsUri(peerId: PeerId, cid: Long, name: String, mimeType: String, size: Long): String {
+        return pnsUri(peerId, cid, name, mimeType, size)
     }
 
     suspend fun reset() {
@@ -100,9 +96,7 @@ abstract class Odin {
         return idun().observedAddresses()
     }
 
-    fun initPage(bytes: ByteArray) {
-        storage().root(bytes)
-    }
+
 
     suspend fun publishPeeraddrs(
         addresses: List<InetSocketAddress>,

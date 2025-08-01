@@ -14,7 +14,7 @@ plugins {
 }
 
 group = "io.github.remmerw"
-version = "0.4.2"
+version = "0.4.3"
 
 
 kotlin {
@@ -45,12 +45,12 @@ kotlin {
                 implementation(libs.androidx.datastore.preferences.core)
                 implementation(libs.androidx.datastore.preferences)
 
-                implementation("io.github.remmerw:asen:0.4.5")
-                implementation("io.github.remmerw:idun:0.4.9")
-                implementation("io.github.remmerw:dagr:0.2.2")
+                implementation(libs.asen)
+                implementation(libs.idun)
+                implementation(libs.dagr)
 
 
-                api("io.github.remmerw:borr:0.0.4")
+                api(libs.borr)
 
             }
         }
@@ -64,14 +64,14 @@ kotlin {
         androidUnitTest {
             dependencies {
                 implementation(libs.kotlin.test)
-                implementation("androidx.test:core:1.6.1")
+                implementation(libs.androidx.core)
             }
         }
 
         androidInstrumentedTest.dependencies {
             implementation(libs.kotlin.test)
-            implementation("androidx.test:runner:1.6.2")
-            implementation("androidx.test:core:1.6.1")
+            implementation(libs.androidx.runner)
+            implementation(libs.androidx.core)
         }
 
     }
