@@ -18,6 +18,7 @@ class IdunTest {
 
         val odin = odin()
         assertNotNull(odin)
+        odin.startup()
 
 
         val publicAddresses = odin.observedAddresses()

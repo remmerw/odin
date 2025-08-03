@@ -91,8 +91,6 @@ actual fun initializeOdin(context: Context) {
         val peers = createPeers()
         val storage = newStorage()
         val idun = newIdun(
-            storage = storage,
-            port = ODIN_PORT,
             keys = keys(datastore),
             bootstrap = bootstrap(),
             peerStore = peers

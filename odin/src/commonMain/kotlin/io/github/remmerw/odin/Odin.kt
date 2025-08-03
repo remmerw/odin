@@ -42,6 +42,10 @@ abstract class Odin {
         return files().fileNames()
     }
 
+    suspend fun startup() {
+        idun().startup(port = ODIN_PORT, storage = storage())
+    }
+
     suspend fun storeSource(
         source: RawSource, uuid: String, name: String,
         mimeType: String, size: Long
