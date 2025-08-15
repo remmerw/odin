@@ -6,13 +6,11 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import io.github.remmerw.asen.bootstrap
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
 import io.github.remmerw.idun.newStorage
 import io.github.remmerw.odin.core.Files
-import io.github.remmerw.odin.core.Peers
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
 import kotlin.time.measureTime
@@ -25,8 +23,7 @@ actual typealias Context = android.content.Context
 internal class AndroidOdin(
     private val files: Files,
     private val storage: Storage,
-    private val idun: Idun,
-    private val peers: Peers
+    private val idun: Idun
 ) : Odin() {
 
 
@@ -43,10 +40,6 @@ internal class AndroidOdin(
         return files
     }
 
-    override fun peers(): Peers {
-        return peers
-    }
-
     override fun storage(): Storage {
         return storage
     }
@@ -58,20 +51,6 @@ internal class AndroidOdin(
 
 
 actual fun odin(): Odin = odin!!
-
-private fun databasePeers(ctx: Context): RoomDatabase.Builder<Peers> {
-    val appContext = ctx.applicationContext
-    val dbFile = appContext.getDatabasePath("peers.db")
-    return Room.databaseBuilder<Peers>(
-        context = appContext,
-        name = dbFile.absolutePath
-    )
-}
-
-private fun createPeers(ctx: Context): Peers {
-    return peersDatabaseBuilder(databasePeers(ctx))
-}
-
 
 private fun databaseFiles(ctx: Context): RoomDatabase.Builder<Files> {
     val appContext = ctx.applicationContext
@@ -96,7 +75,7 @@ actual fun initializeOdin(context: Context) {
     val time = measureTime {
         val datastore = createDataStore(context)
         val files = createFiles(context)
-        val peers = createPeers(context)
+
         val path = Path(context.filesDir.absolutePath, "storage")
         if (!SystemFileSystem.exists(path)) {
             SystemFileSystem.createDirectories(path, true)
@@ -104,12 +83,10 @@ actual fun initializeOdin(context: Context) {
 
         val storage = newStorage(path)
         val idun = newIdun(
-            keys = keys(datastore),
-            bootstrap = bootstrap(),
-            peerStore = peers
+            keys = keys(datastore)
         )
 
-        odin = AndroidOdin(files, storage, idun, peers)
+        odin = AndroidOdin(files, storage, idun)
     }
 
     Log.e("App", "App started " + time.inWholeMilliseconds)

@@ -21,7 +21,7 @@ class IdunTest {
         odin.startup()
 
 
-        val publicAddresses = odin.observedAddresses()
+        val publicAddresses = odin.publishedAddresses()
 
         odin.publishPeeraddrs(publicAddresses, 20, 45)
 

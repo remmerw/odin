@@ -14,7 +14,6 @@ import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.pnsUri
 import io.github.remmerw.odin.core.FileInfo
 import io.github.remmerw.odin.core.Files
-import io.github.remmerw.odin.core.Peers
 import io.github.remmerw.odin.core.getPrivateKey
 import io.github.remmerw.odin.core.getPublicKey
 import io.github.remmerw.odin.core.setPrivateKey
@@ -57,7 +56,7 @@ abstract class Odin {
         val idx = files().storeFileInfo(fileInfo)
         try {
             val node = storage().storeSource(source, name, mimeType)
-            files().done(idx, node.cid())
+            files().done(idx, node.cid)
         } catch (throwable: Throwable) {
             files().delete(idx)
             throw throwable
@@ -96,8 +95,8 @@ abstract class Odin {
         files().reset()
     }
 
-    suspend fun observedAddresses(): List<InetSocketAddress> {
-        return idun().observedAddresses()
+    fun publishedAddresses(): List<InetSocketAddress> {
+        return idun().publishedAddresses()
     }
 
 
@@ -113,7 +112,7 @@ abstract class Odin {
 
     //internal abstract fun datastore(): DataStore<Preferences>
     internal abstract fun files(): Files
-    internal abstract fun peers(): Peers
+
     internal abstract fun storage(): Storage
     internal abstract fun idun(): Idun
     fun shutdown() {
@@ -130,12 +129,6 @@ expect fun initializeOdin(context: Context)
 @Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object FilesConstructor : RoomDatabaseConstructor<Files> {
     override fun initialize(): Files
-}
-
-
-@Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
-expect object PeersConstructor : RoomDatabaseConstructor<Peers> {
-    override fun initialize(): Peers
 }
 
 
@@ -157,16 +150,6 @@ fun filesDatabaseBuilder(
         .build()
 }
 
-
-fun peersDatabaseBuilder(
-    builder: RoomDatabase.Builder<Peers>
-): Peers {
-    return builder
-        .fallbackToDestructiveMigrationOnDowngrade(true)
-        .setDriver(BundledSQLiteDriver())
-        .setQueryCoroutineContext(Dispatchers.IO)
-        .build()
-}
 
 fun keys(datastore: DataStore<Preferences>): Keys {
     return runBlocking {
