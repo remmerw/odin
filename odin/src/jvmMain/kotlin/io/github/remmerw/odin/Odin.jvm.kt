@@ -4,13 +4,11 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import io.github.remmerw.asen.bootstrap
 import io.github.remmerw.idun.Idun
 import io.github.remmerw.idun.Storage
 import io.github.remmerw.idun.newIdun
 import io.github.remmerw.idun.newStorage
 import io.github.remmerw.odin.core.Files
-import io.github.remmerw.odin.core.Peers
 import java.io.File
 import kotlin.time.measureTime
 
@@ -23,8 +21,7 @@ object JvmContext : Context()
 internal class JvmOdin(
     private val files: Files,
     private val storage: Storage,
-    private val idun: Idun,
-    private val peers: Peers
+    private val idun: Idun
 ) : Odin() {
 
     override fun deviceName(): String {
@@ -37,9 +34,6 @@ internal class JvmOdin(
         return files
     }
 
-    override fun peers(): Peers {
-        return peers
-    }
 
     override fun storage(): Storage {
         return storage
@@ -51,17 +45,6 @@ internal class JvmOdin(
 }
 
 actual fun odin(): Odin = odin!!
-
-private fun databasePeers(): RoomDatabase.Builder<Peers> {
-    val dbFile = File(System.getProperty("java.io.tmpdir"), "peers.db")
-    return Room.databaseBuilder<Peers>(
-        name = dbFile.absolutePath,
-    )
-}
-
-private fun createPeers(): Peers {
-    return peersDatabaseBuilder(databasePeers())
-}
 
 
 private fun databaseFiles(): RoomDatabase.Builder<Files> {
@@ -88,15 +71,13 @@ actual fun initializeOdin(context: Context) {
     val time = measureTime {
         val datastore = createDataStore()
         val files = createFiles()
-        val peers = createPeers()
+
         val storage = newStorage()
         val idun = newIdun(
-            keys = keys(datastore),
-            bootstrap = bootstrap(),
-            peerStore = peers
+            keys = keys(datastore)
         )
 
-        odin = JvmOdin(files, storage, idun, peers)
+        odin = JvmOdin(files, storage, idun)
     }
 
     println("App started " + time.inWholeMilliseconds)

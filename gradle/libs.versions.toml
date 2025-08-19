@@ -1,11 +1,11 @@
 [versions]
-agp = "8.12.0"
+agp = "8.12.1"
 borr = "0.0.4"
 core = "1.7.0"
-dagr = "0.3.6"
-idun = "0.6.0"
-kotlin = "2.2.0"
-ksp = "2.2.0-2.0.2"
+dagr = "0.3.9"
+idun = "0.6.2"
+kotlin = "2.2.10"
+ksp = "2.2.10-2.0.2"
 androidx-room = "2.7.2"
 androidx-sqlite = "2.5.2"
 

@@ -22,7 +22,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
-import kotlinx.io.RawSource
 import okio.Path.Companion.toPath
 import java.net.InetSocketAddress
 
@@ -43,24 +42,6 @@ abstract class Odin {
 
     suspend fun startup() {
         idun().startup(port = ODIN_PORT, storage = storage())
-    }
-
-    suspend fun storeSource(
-        source: RawSource, uuid: String, name: String,
-        mimeType: String, size: Long
-    ) {
-        val fileInfo = FileInfo(
-            0, name, mimeType,
-            0, uuid, size
-        )
-        val idx = files().storeFileInfo(fileInfo)
-        try {
-            val node = storage().storeSource(source, name, mimeType)
-            files().done(idx, node.cid)
-        } catch (throwable: Throwable) {
-            files().delete(idx)
-            throw throwable
-        }
     }
 
     fun numReservations(): Int {
@@ -91,7 +72,6 @@ abstract class Odin {
     }
 
     suspend fun reset() {
-        storage().reset()
         files().reset()
     }
 
